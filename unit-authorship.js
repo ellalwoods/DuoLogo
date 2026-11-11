@@ -69,11 +69,11 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} s 22(3)–(5) (quoted and checked). ${WJO}, "Ownership of Copyright in Part IV".`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Author ≠ owner',
             core: `<p>The author is usually the <em>first</em> owner (s 35(2)), but:</p>
               <ul><li>copyright can be assigned, and often is (in writing: unit 1.8);</li><li>the Act makes exceptions for employees, some journalists and some commissioned works (s 35(4)–(6), unit 1.7), and those exceptions can themselves be excluded or modified by agreement (s 35(3)).</li></ul>
-              <p>In a problem question, name the <strong>author</strong> first, then work out who <strong>owns</strong> it now.</p>`,
+              <p>When someone asks "do we own this?", name the <strong>author</strong> first, then trace who <strong>owns</strong> it now.</p>`,
             source: `${CA} s 35(2)–(3) (text checked). ${WJO}, "Ownership of Original (Part III) Works" (ownership is often transferred by assignment).`,
           },
         ],
@@ -133,7 +133,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} ss 29, 32; ${REGS}, reg 4. The checklist order is our teaching structure.`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Connecting-factor traps',
             core: `<ol><li><b>Testing the wrong time.</b> Unpublished: when the work was <em>made</em>. Published: at <em>first publication</em>.</li>
               <li><b>Calling a performance or an exhibition "publication".</b> It isn't (s 29(3)).</li>

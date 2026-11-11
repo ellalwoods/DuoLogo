@@ -47,7 +47,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             title: 'Orphan works: the 2026 scheme',
             core: `<p>A different problem: the work is still in copyright, but you <strong>can't find the owner</strong> to ask permission. Since <strong>2 April 2026</strong>, if you use it anyway and the conditions are met, the court can't award damages or an account of profits against you, only a "reasonable payment" to the owner (s 116AAD).</p>
               <p>The conditions (s 116AAE): a <b>reasonably diligent search</b>, done within a reasonable time before the use; a <b>record</b> of the search; the owner <b>couldn't be identified and located</b>; and a clear, reasonably prominent <b>notice</b> saying so.</p>`,
-            deeper: `<p>Wikijuris uses "orphan works" for works whose author is unknown (the duration rules above). The 2026 scheme is about remedies when the <em>owner</em> can't be found. Keep the two apart in an exam.</p>
+            deeper: `<p>Wikijuris uses "orphan works" for works whose author is unknown (the duration rules above). The 2026 scheme is about remedies when the <em>owner</em> can't be found. Keep the two apart when advising.</p>
               <p>No reasonable payment can be ordered either if the use was solely private and domestic <em>and</em> the defendant promptly stopped, or has agreed terms with the owner for continuing use (s 116AAD(4)). The defendant bears the burden of proving the conditions (s 116AAD(5)).</p>`,
             source: `${CA} ss 116AAB, 116AAD(2)–(5), 116AAE (text checked); <i>Copyright Amendment Act 2026</i> Sch 1 (in force 2 April 2026). ${WJD} (its "orphan works" usage).`,
           },
@@ -93,7 +93,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: 'Fictional facts; terms calculated from ss 33, 93, 95 and 96.',
           },
           {
-            kind: 'critique', margin: ['ESSAY', 'PC 2016'],
+            kind: 'critique', margin: ['POLICY', 'PC 2016'],
             title: 'Is 70 years too long?',
             core: `<p><b>Against long terms:</b> most commercial works earn for only a few years, yet stay locked up for decades. Landes and Posner (2002) suggested about 25 years would give owners most of the value of perpetual protection. The Productivity Commission (2016): "While a single optimal copyright term is arguably elusive, it is likely to be considerably less than 70 years after death".</p>
               <p><b>The constraint:</b> Australia can't simply shorten the term. Berne and the AUSFTA tie it in.</p>
@@ -101,7 +101,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJD}, "Finding the Balance" and "The Future" (Productivity Commission, <i>Intellectual Property Arrangements</i>, Inquiry Report No 78 (2016), quoted; Landes and Posner, <i>Indefinitely Renewable Copyright</i> (2002)).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Duration traps',
             core: `<ol><li><b>Counting from the date, not the year.</b> Terms end on 31 December of the 70th year.</li>
               <li><b>Using the author's death for Part IV.</b> Recordings and films run from when they're made public; broadcasts and editions from making or publication.</li>

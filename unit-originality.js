@@ -84,11 +84,11 @@ window.DUOLOGO = window.DUOLOGO || {};
             title: 'The modern originality test, step by step',
             steps: ['<b>Identify the work</b> and its type (literary, dramatic, musical, artistic; a compilation?)', '<b>Identify the author(s)</b>: human beings whose effort produced it', '<b>Not copied:</b> did the work originate with them?', '<b>Independent intellectual effort:</b> skill, judgement or effort of their own?', '<b>Directed to expression:</b> to the particular form of the work, not just gathering facts or business decisions?'],
             core: `<p>All five met → original. For compilations, the originality often lies in the <strong>selection or arrangement</strong>.</p>`,
-            deeper: `<p>The five-step order is a teaching structure for exam answers, not a test any court has stated in these words. Each step is drawn from s 32 and the passages in <i>IceTV</i> and <i>Phone Directories</i>.</p>`,
+            deeper: `<p>The five steps are a working checklist, not a test any court has stated in these words. Each step is drawn from s 32 and the passages in <i>IceTV</i> and <i>Phone Directories</i>.</p>`,
             source: `${CA} s 32; ${WJ} (<i>IceTV</i> [48], [52]; <i>Phone Directories</i> [344], [58], [96]).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Three classic mistakes',
             core: `<ol><li><b>Saying "original" means "novel" or "creative".</b> Say: originates with the author, independent intellectual effort directed to expression.</li>
               <li><b>Citing <i>Desktop Marketing</i> as current law</b> without flagging that <i>IceTV</i> doubted it and <i>Phone Directories</i> reached the opposite result on the same directories. It isn't formally overruled: say "treated with caution".</li>
@@ -170,19 +170,19 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJ}; EUR-Lex: C‑5/08 <i>Infopaq</i> (16 July 2009); Directive 96/9/EC art 7(1). ⚑ US and UK entries not checked against primary sources.`,
           },
           {
-            kind: 'critique', margin: ['ESSAY'],
+            kind: 'critique', margin: ['POLICY'],
             title: 'Should Australia protect databases?',
             core: `<p><b>For:</b> databases are costly to build and easy to copy; without protection there's less incentive to invest. The EU gives a separate database right for this reason.</p>
               <p><b>Against:</b> information should stay free; a low bar creates monopolies over facts (<i>IceTV</i> warned of "anti-competitive behaviour"). The European Commission's first evaluation (December 2005) found no proven effect of the database right on database production <span class="flag">⚑</span>. Contract, technical measures and confidentiality already protect investment.</p>`,
-            deeper: `<p><b>Current position:</b> no Australian database right, and the post-<i>IceTV</i> test leaves many factual compilations unprotected. A good essay weighs both sides and tells the <i>Desktop</i> → <i>IceTV</i> → <i>Phone Directories</i> story.</p>`,
+            deeper: `<p><b>Current position:</b> no Australian database right, and the post-<i>IceTV</i> test leaves many factual compilations unprotected. The <i>Desktop</i> → <i>IceTV</i> → <i>Phone Directories</i> story explains how the law got here. In practice, clients with valuable databases rely on contracts, access controls and confidentiality.</p>`,
             source: `${WJ} (<i>IceTV</i> [52]); EUR-Lex (Dir 96/9/EC). ⚑ The 2005 evaluation: secondary sources only.`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Separate subsistence from infringement',
-            core: `<p>In a problem question about a compilation, always separate:</p>
+            core: `<p>When a client asks whether its database or directory is protected, or whether a rival copied it, keep two questions separate:</p>
               <ol><li><b>Subsistence:</b> is the compilation original at all? (Authors? Effort directed to expression?)</li><li><b>Infringement:</b> did the defendant take a <strong>substantial part</strong> of <em>what made it original</em>, or just the facts? (Unit 1.11.)</li></ol>
-              <p>Students often merge these. Examiners notice.</p>`,
+              <p>They're easy to run together, and they can have different answers.</p>`,
             source: `${WJ}: "Whether a selection or arrangement of elements constitutes a substantial part of a work depends on the degree of originality of that selection or arrangement" (<i>IceTV</i> [42]–[43]).`,
           },
         ],
@@ -193,7 +193,7 @@ window.DUOLOGO = window.DUOLOGO || {};
           { type: 'tf', q: 'Redrawing old engineering drawings with minor changes creates a new original work.', a: false, explain: 'False (<i>Interlego v Tyco</i>): skill and labour in copying doesn\'t create a new original work.', flag: true },
           { type: 'choice', q: 'A designer types a two-line prompt into an image generator and publishes the first image. Best answer?', options: ['Probably no copyright: no human author directed the expression', 'Copyright belongs to the designer because they wrote the prompt', 'Copyright belongs to the AI company', 'Copyright belongs to whoever made the arrangements, as in the UK'], a: 0, explain: 'Following <i>Phone Directories</i>, a work needs a human author whose effort produced its expression. No Australian decision on AI output yet.', flag: true },
           { type: 'choice', q: 'Which jurisdiction protects computer-generated works by statute?', options: ['The UK (s 9(3) CDPA)', 'Australia (s 32 CA)', 'The US (Feist)', 'The EU (Infopaq)'], a: 0, explain: 'The UK deems the person who made the arrangements to be the author. Australia has no equivalent.', flag: true },
-          { type: 'sort', label: 'Essay plan', q: 'Should Australia have a database right? Sort each argument.', buckets: ['For', 'Against'], items: [{ t: 'Databases are costly to build and cheap to copy', b: 0 }, { t: 'Protection gives an incentive to invest', b: 0 }, { t: 'The EU protects substantial investment', b: 0 }, { t: 'Monopolies over facts are anti-competitive', b: 1 }, { t: "The EU's 2005 review found no proven effect on production", b: 1 }, { t: 'Contract and confidentiality already protect investment', b: 1 }], explain: 'Use <i>Desktop</i> → <i>IceTV</i> → <i>Phone Directories</i> as the spine of the essay.' },
+          { type: 'sort', label: 'For or against', q: 'Should Australia have a database right? Sort each argument.', buckets: ['For', 'Against'], items: [{ t: 'Databases are costly to build and cheap to copy', b: 0 }, { t: 'Protection gives an incentive to invest', b: 0 }, { t: 'The EU protects substantial investment', b: 0 }, { t: 'Monopolies over facts are anti-competitive', b: 1 }, { t: "The EU's 2005 review found no proven effect on production", b: 1 }, { t: 'Contract and confidentiality already protect investment', b: 1 }], explain: 'Use <i>Desktop</i> → <i>IceTV</i> → <i>Phone Directories</i> to see how Australian law got where it is.' },
           { type: 'tf', label: 'From unit 1.1', q: 'A newspaper headline is usually a literary work.', a: false, explain: 'Usually not: headlines are "too insubstantial and too short" (<i>Fairfax v Reed</i> at [44]).' },
         ],
       },

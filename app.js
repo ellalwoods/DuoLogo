@@ -261,8 +261,8 @@
         return st === 'locked' ? `<div class="row path-locked">${inner}</div>` : `<a class="row ${st === 'next' ? 'path-next' : ''}" style="text-decoration:none" href="#unit-${e.id}">${inner}</a>`;
       }).join('')}</div>
       <p class="note mono" style="margin:6px 16px 0;font-size:10.5px;color:var(--muted)">Only written lessons are listed. Units still being written are skipped and will slot into their place in the order.</p>
-      <p class="sect">Your outline</p>
-      ${outlines.length ? outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('') : '<div class="empty-msg">Each element you discover adds its tests, sections and cases here. By the end it\'s your exam outline.</div>'}
+      <p class="sect">Your notes</p>
+      ${outlines.length ? outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('') : '<div class="empty-msg">Each element you discover adds its tests, sections and cases here. By the end it\'s your own reference notes for the job.</div>'}
       <p class="sect">Experiments to run</p>
       <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>Balance the equation · ${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>
       <p class="sect">Sections</p>
@@ -326,7 +326,7 @@
 
   /* ---------- PLAYER ---------- */
   let P = null;
-  const KIND = { guide: 'How it works', rule: 'Rule', statute: 'Statute', case: 'Case', test: 'Test', trap: 'Trap', example: 'Worked example', compare: 'Compare', critique: 'Peer review' };
+  const KIND = { guide: 'How it works', rule: 'Rule', statute: 'Statute', case: 'Case', test: 'Test', trap: 'Watch out', example: 'Worked example', compare: 'Compare', critique: 'Debate' };
   const QLABEL = { choice: 'Multiple choice', tf: 'True or false', match: 'Citation network', order: 'Put in order', sort: 'Sort it', similarity: 'Similarity index' };
 
   function startUnit(id) {
@@ -484,7 +484,7 @@
       <div class="score">${pct}%</div><p class="mono" style="font-size:11px">${P.correct} of ${P.total} tests passed</p>
       ${P.u.treasures ? `<p class="note" style="margin-top:16px">Case treasures: ${P.u.treasures.map(t => `<span class="treasure">${esc(t)}</span>`).join('')}</p>` : ''}
       <p class="note">Half-life: ${fmtDays(halfLife(S.items[P.id]))}. It starts to decay now; Half-life will tell you when to stabilise it.</p>
-      <p class="note">Your outline has a new entry in the Notebook.</p>
+      <p class="note">Your notes in the Notebook have a new entry.</p>
     </div>`, `<a class="btn" href="#table">Back to the Table</a>`, 100);
   }
 
@@ -672,7 +672,7 @@
     if (a === 'restore') return restoreBackup();
     if (a === 'copy') { const ta = overlay.querySelector('.textbox'); ta.select(); (navigator.clipboard ? navigator.clipboard.writeText(ta.value) : Promise.reject()).catch(() => document.execCommand('copy')).finally(() => { overlay.querySelector('.copied').hidden = false; }); return; }
     if (a === 'reset') {
-      modal(`<p class="eyebrow">Reset</p><h2>Forget everything?</h2><p class="note">This clears your elements, half-lives and outline on this device. Export a backup first if you might want them back.</p><button class="btn" data-act="reset-yes" style="width:100%;margin:0">Reset the lab</button>`);
+      modal(`<p class="eyebrow">Reset</p><h2>Forget everything?</h2><p class="note">This clears your elements, half-lives and notes on this device. Export a backup first if you might want them back.</p><button class="btn" data-act="reset-yes" style="width:100%;margin:0">Reset the lab</button>`);
       return;
     }
     if (a === 'reset-yes') { S = defaults(); save(); overlay.innerHTML = ''; go('#table'); }

@@ -26,14 +26,14 @@ window.DUOLOGO = window.DUOLOGO || {};
               <ul><li><b>Follow the numbers.</b> Each element has a number in its top-left corner. That's the course order: <strong>1, 2, 3 … 81</strong>.</li>
               <li><b>The route:</b> the four Foundations elements along the top first (1–4). Then <strong>down the Copyright column</strong> (5–21), then down Trade marks, Passing off, Patents, Designs and Confidential information, then the blocks below.</li>
               <li><b>One at a time.</b> Each element unlocks when you finish the one before. The next one is always highlighted in green.</li></ul>`,
-            deeper: `<p><b>Columns</b> are the rights. <b>Rows</b> are the same five questions asked of every right: 1 What does it protect? 2 How do you get it? 3 Who owns it, and for how long? 4 What infringes it? 5 What are the defences? Reading across a row compares the rights; that's how exams often test you.</p>
+            deeper: `<p><b>Columns</b> are the rights. <b>Rows</b> are the same five questions asked of every right: 1 What does it protect? 2 How do you get it? 3 Who owns it, and for how long? 4 What infringes it? 5 What are the defences? Reading across a row compares the rights side by side, which is handy when a client's problem could fall under more than one.</p>
               <p>Some cells hold several elements. Tap a cell to see them all, in order.</p>`,
             source: 'About this app. The structure follows the course syllabus.',
           },
           {
             kind: 'guide', margin: ['START'],
             title: 'Each lesson: read, then test, then remember',
-            core: `<ol><li><b>Cards.</b> Each card is one idea, with the section or case in the corner. Tap <b>Go deeper</b> for the detail you'd want for an exam.</li>
+            core: `<ol><li><b>Cards.</b> Each card is one idea, with the section or case in the corner. Tap <b>Go deeper</b> when you want more detail.</li>
               <li><b>Tests.</b> After the cards come questions. Every answer explains the law behind it.</li>
               <li><b>Half-life.</b> Once you finish an element, it starts to fade. The Half-life tab tells you when to review it, at growing intervals: 1, 3, 7, 16, 35, then 90 days.</li></ol>
               <p>Every card ends with its <b>source</b>. A <span class="flag">⚑</span> means something hasn't yet been confirmed against a primary source.</p>`,
@@ -85,11 +85,11 @@ window.DUOLOGO = window.DUOLOGO || {};
             title: 'The natural rights theory, and its critics',
             core: `<p>A second view: creators <strong>deserve</strong> property in their work, as the fruits of their labour (a Lockean argument). It's less often stated openly, and contested.</p>
               <p>Thomas Jefferson's objection: an idea, once shared, "forces itself into the possession of every one". "He who lights his taper at mine, receives light without darkening me."</p>`,
-            deeper: `<p>Benjamin Kaplan put the counter-argument sharply: "if man has any 'natural' rights, not the least must be a right to imitate his fellows, and thus to reap where he has not sown". Other theories (personality, reward) appear in essay questions too.</p>`,
+            deeper: `<p>Benjamin Kaplan put the counter-argument sharply: "if man has any 'natural' rights, not the least must be a right to imitate his fellows, and thus to reap where he has not sown". Other theories (personality, reward) also come up in policy debates.</p>`,
             source: `${WI}, "The Natural Rights Justification" (Jefferson and Kaplan quoted).`,
           },
           {
-            kind: 'critique', margin: ['ESSAY', 'PC 2016'],
+            kind: 'critique', margin: ['POLICY', 'PC 2016'],
             title: 'The costs: monopoly, access, the public domain',
             core: `<p>Exclusive rights make access <strong>more expensive</strong>, and they make future creation more expensive too, because new authors and inventors build on the past. So IP law always <strong>balances</strong> incentive against access.</p>
               <p>That's why every right has <strong>limits</strong>: it expires, it doesn't protect ideas, and it has exceptions such as fair dealing.</p>`,
@@ -97,9 +97,9 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WI}, "Why do we have Intellectual Property?" and "The Economic (Utilitarian) Justification". ${WD} (Productivity Commission, quoted).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
-            title: 'Name the theory you\'re using',
-            core: `<p>In essay questions, say which justification an argument relies on. "Authors deserve it" is natural rights; "we'll get less of it otherwise" is incentive. Then test it: would the incentive argument justify <em>this much</em> protection, for <em>this long</em>?</p>`,
+            kind: 'trap', margin: ['IN PRACTICE'],
+            title: 'Spot the theory behind the argument',
+            core: `<p>When you hear arguments about IP reform (from clients, industry groups or government reviews), notice which justification they rely on. "Creators deserve it" is natural rights; "we'll get less of it otherwise" is incentive. Then ask: does the argument justify <em>this much</em> protection, for <em>this long</em>?</p>`,
             source: `${WI}.`,
           },
         ],
@@ -162,7 +162,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WI}, "Types of IP" (copyright, patents, trade marks, designs). The five-way split is our teaching structure.`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'A business name isn\'t a trade mark',
             core: `<p>Registering a <b>company name</b>, <b>business name</b> or <b>domain name</b> doesn't give you the right to stop others using the same or a similar name. Only a <strong>registered trade mark</strong> (or a passing-off reputation) does that.</p>`,
             source: `${WI}, "Trademarks" (tip box).`,
@@ -195,7 +195,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             kind: 'rule', margin: ['overlaps'],
             title: 'Rights overlap, and sometimes cancel out',
             core: `<p>Most products carry several rights at once, owned by different people and lasting different times. But the regimes also interact: for example, mass-producing an artistic design can affect its copyright protection, which pushes designers towards registering designs (unit 1.17).</p>
-              <p>So an IP answer always asks: which rights exist, who owns each, how long each lasts, and which one gives the best remedy here.</p>`,
+              <p>So in practice, always ask: which rights exist, who owns each, how long each lasts, and which one gives the best remedy here.</p>`,
             source: `${WI}, "Designs" (tip box on copyright and mass production). Details in unit 1.17.`,
           },
         ],
@@ -291,9 +291,9 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `<i>Trade Marks Act 1995</i> ss 191–191A (text checked). Special leave as described throughout Wikijuris (e.g. <i>Phone Directories</i>, <i>The Panel</i>). Fictional facts.`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Registry decisions are not the last word',
-            core: `<p>An IP Australia decision (say, refusing a trade mark) can be appealed to the courts, and courts decide infringement and validity. In a problem question, don't stop at "the Registrar would refuse it": say what happens next.</p>`,
+            core: `<p>An IP Australia decision (say, refusing a trade mark) can be appealed to the courts, and courts decide infringement and validity. If a client's application is refused, that isn't the end of the road: work out what happens next.</p>`,
             source: '<i>Trade Marks Act 1995</i> s 191(2); <i>Patents Act 1990</i> s 154(2) (text checked).',
           },
         ],
@@ -383,7 +383,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `<i>Patents Act 1990</i> and <i>Patents Regulations 1991</i> (PCT applications, e.g. reg 3.13A, checked). ⚑ Hague status from secondary sources only (see VERIFICATION.md).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Priority and grace periods aren\'t the same',
             core: `<p><b>Priority</b> lets a later foreign filing take an earlier date. A <b>grace period</b> forgives your <em>own</em> disclosures before filing (12 months for patents and designs in Australia: units 4.6 and 5.3). Many inventors lose rights by talking first and filing later: always ask what happened before the filing date.</p>`,
             source: `<i>Designs Act 2003</i> s 17(1); <i>Patents Act 1990</i> s 24(1) and <i>Patents Regulations 1991</i> reg 2.2C(3) (12 months) (all text checked).`,

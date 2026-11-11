@@ -58,9 +58,9 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJI}, "Substantial Part" (<i>IceTV</i>, quoted). ${WJ}, <i>Desktop Marketing</i>.`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Where does the idea end and the expression begin?',
-            core: `<p>There's no bright line, and examiners know it. Two traps:</p>
+            core: `<p>There's no bright line, and real disputes turn on it. Two traps:</p>
               <ol><li><b>Saying "it's only an idea"</b> about a detailed plot, structure or sequence. <i>Zeccola</i> shows that a specific combination of incidents can be expression.</li>
               <li><b>Treating any resemblance as copying.</b> Shared themes, genres and stock situations (<i>Goggomobil</i>, <i>Baigent</i>) are ideas.</li></ol>
               <p>Ask: how <em>abstract</em> is the thing that was taken?</p>`,
@@ -116,7 +116,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} ss 22(1), 32(1), 33 (text checked).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Two material-form mistakes',
             core: `<ol><li><b>Thinking material form must be visible or on paper.</b> s 10 says "whether visible or not": digital storage counts.</li>
               <li><b>Mixing up fixing and authoring.</b> s 22(2) only says <em>when</em> Maya's spoken work is made: when Sam's phone captures it. It says nothing about who the author is. The author is the person who created the work (unit 1.6), so Maya.</li></ol>`,

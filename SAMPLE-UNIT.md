@@ -4,6 +4,8 @@
 > **Law as at 2 April 2026** (*Copyright Act 1968* Compilation No. 65, register ID C2026C00138, the latest compilation on 11 November 2026).
 > **Checked 11 November 2026** against the Act on legislation.gov.au, the Wikijuris open textbook and EUR-Lex. The judgments themselves could not be opened (see [`VERIFICATION.md`](VERIFICATION.md)), so pinpoints come from the judgment extracts that Wikijuris quotes. Anything still unconfirmed is marked ⚑.
 
+> **Note:** in the app, this unit is reframed for someone starting work in IP rather than sitting an exam: the "Trap" cards are "Watch out" cards about mistakes in practice, the critique is a "Debate" card, and the essay-plan question is a "For or against" sort. The legal content is the same.
+
 This is what one unit looks like at full depth. Each card has a **core** (always shown) and **Go deeper** (tap to expand). The margin column is the statute or case reference shown beside the card. **Source** says what the card was checked against.
 
 **Source keys**

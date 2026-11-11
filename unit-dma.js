@@ -139,7 +139,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: 'Fictional facts, applying <i>Burge v Swarbrick</i> and <i>Coogi</i>.',
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Three-dimensional object? Run through the categories',
             core: `<ol><li>Is it a <b>sculpture</b> (made by an artist's hand, not purely functional)?</li><li>A <b>building or model</b> ("a structure of any kind")?</li><li>A work of <b>artistic craftsmanship</b> (form unconstrained by function: <i>Burge</i>)?</li><li>If none: copyright may still protect the <b>drawings</b> it was made from, subject to the design overlap (unit 1.17).</li></ol>`,
             source: `${CA} s 10(1); ${WJ}, "Artistic Work" (<i>Metix</i>, <i>Darwin Fibreglass</i>, <i>Burge</i>). The checklist order is our teaching structure.`,

@@ -47,11 +47,11 @@ window.DUOLOGO = window.DUOLOGO || {};
             kind: 'test', margin: ['STRUCTURE'],
             title: 'Six questions for any copyright problem',
             steps: ['<b>Subsistence:</b> is there copyright in it?', '<b>Ownership:</b> who owns it?', '<b>Infringement:</b> has an exclusive right been infringed?', '<b>Defences:</b> does an exception apply?', '<b>Remedies:</b> what can the owner get?', '<b>Related rights:</b> moral rights, anti-circumvention, designs?'],
-            core: '<p>Use this skeleton in every problem answer. The Copyright column teaches each step in turn.</p>',
+            core: '<p>Run through these six whenever a copyright issue lands on your desk. The Copyright column teaches each step in turn.</p>',
             source: `${WB}, "A Practical Structure for Approaching Copyright Questions".`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Two myths to drop now',
             core: `<ol><li><b>"It's fair use."</b> Australia has no general fair use defence: only fair dealing for listed purposes (research or study, criticism or review, parody or satire, reporting news, professional advice from a lawyer or patent or trade marks attorney, disability access), and the dealing must also be fair.</li>
               <li><b>"No © symbol, so it's free."</b> Copyright is automatic. Assume a work is protected unless you know otherwise.</li></ol>
@@ -111,7 +111,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJ}, <i>Data Access v Powerflex</i> and <i>Autodesk v Dyason (No 2)</i>.`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Quality is irrelevant; "work" is not',
             core: `<ol><li><b>Don't ask whether it's good writing.</b> A shopping list can be a literary work (<i>ULP</i>).</li>
               <li><b>Do ask whether it's a "work" at all.</b> Very short things (titles, names, slogans, most headlines) usually aren't (Lesson B).</li>
@@ -150,7 +150,7 @@ window.DUOLOGO = window.DUOLOGO || {};
               ],
             },
             core: '',
-            deeper: `<p>The difference is partly evidence: Proudman J noted the evidence before her was "much fuller than that before Bennett J in Fairfax". In an Australian exam, <i>Fairfax</i> states the law; <i>Meltwater</i> is useful for critique.</p>`,
+            deeper: `<p>The difference is partly evidence: Proudman J noted the evidence before her was "much fuller than that before Bennett J in Fairfax". In Australia, <i>Fairfax</i> states the law; <i>Meltwater</i> shows England has gone the other way.</p>`,
             source: `${WJ}, <i>Fairfax v Reed</i> and <i>NLA v Meltwater</i> (quoted).`,
           },
           {
@@ -162,11 +162,11 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJ}, "Headlines, Titles and Names" (<i>WH Allen</i>; <i>McWilliam's Wines</i>, decided under the former <i>Trade Practices Act</i> s 52, now ACL s 18).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Name questions: switch regimes',
-            core: `<p>If a problem question involves a <strong>title, brand name, slogan or headline</strong>:</p>
-              <ol><li>Say copyright is unlikely (too insubstantial: <i>Exxon</i>, <i>Fairfax</i>).</li><li>Then move on to trade marks, passing off and the ACL, where names are actually protected.</li></ol>
-              <p>Spending a page on copyright in a three-word title costs marks.</p>`,
+            core: `<p>If a client wants to protect a <strong>title, brand name, slogan or headline</strong>:</p>
+              <ol><li>Copyright is unlikely to help (too insubstantial: <i>Exxon</i>, <i>Fairfax</i>).</li><li>Go straight to trade marks, passing off and the ACL, where names are actually protected.</li></ol>
+              <p>A trade mark search and application is usually the first practical step.</p>`,
             source: `${WJ}, "Headlines, Titles and Names".`,
           },
         ],

@@ -37,9 +37,9 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} s 197(1) (text checked). ${WJA}, "Assignments" (APRA example).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: '"We paid for it, so we own it"',
-            core: `<p>The most common real-world mistake, and a favourite exam fact pattern:</p>
+            core: `<p>One of the most common real-world mistakes:</p>
               <ol><li>A business pays a <b>contractor</b> to make something (a logo, website, report).</li><li>Nobody signs anything about copyright.</li><li>The contractor still <strong>owns</strong> it (s 35(2); s 35(6) only covers employees), and there's no assignment without signed writing (s 196(3)).</li></ol>
               <p>The business usually has an <strong>implied licence</strong> to use the work for its intended purpose (Lesson B), but not ownership.</p>`,
             source: `${CA} ss 35(2), (6), 196(3). ${WJA}, "Implied licenses".`,
@@ -96,7 +96,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} ss 113N–113U, 113Q(2A) (checked); <i>Copyright Amendment Act 2026</i> Sch 1 item 1B. ${WJA}, "Statutory Licences".`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Licence or assignment?',
             core: `<ul><li><b>Who can sue?</b> Owner and assignee, yes. Exclusive licensee, yes (s 119). Non-exclusive licensee, no.</li>
               <li><b>Formalities?</b> Assignment and exclusive licence: signed writing. Non-exclusive licences can be oral or implied.</li>

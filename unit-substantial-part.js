@@ -55,10 +55,10 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJI}, "Element 1 – Causal Connection" and "Deemed Reproductions". ${CA} s 21(3) (text checked).`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: '"It looks the same, so it\'s copied"',
             core: `<p>Similarity is evidence of copying, not proof. Strong similarity plus access can support an <em>inference</em> of copying (as in <i>Zeccola</i>, unit 1.4). But without access, a defendant who created independently doesn't infringe, however close the result.</p>
-              <p>In your answer, deal with <strong>causal connection</strong> and <strong>objective similarity</strong> separately.</p>`,
+              <p>When assessing a claim, deal with <strong>causal connection</strong> and <strong>objective similarity</strong> separately.</p>`,
             source: `${WJI}, "Infringement – Reproduce the Work" and "Element 1 – Causal Connection".`,
           },
         ],
@@ -130,7 +130,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${WJI}, "Substantial Part" and "Element 2 – Objective Similarity".`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Don\'t count the seconds',
             core: `<ol><li><b>Using percentages.</b> "Only 5% was taken" proves nothing. Ask whether what was taken was the <em>original</em>, important, recognisable part.</li>
               <li><b>Measuring against the wrong work.</b> Substantiality is judged against the <em>plaintiff's</em> work, not the defendant's: two bars were a small part of <i>Down Under</i> but the heart of <i>Kookaburra</i>.</li></ol>`,
@@ -151,9 +151,9 @@ window.DUOLOGO = window.DUOLOGO || {};
         cards: [
           {
             kind: 'test', margin: ['s 36 CA', 's 14 CA'],
-            title: 'The full infringement answer',
+            title: 'The full infringement checklist',
             steps: ['<b>Subsistence:</b> is there a work with copyright in it? (1.1–1.6)', '<b>Ownership:</b> does the plaintiff own it, or have standing? (1.7–1.8)', '<b>Act:</b> which exclusive right in s 31? Done in Australia?', '<b>Reproduction:</b> causal connection + objective similarity', '<b>Substantial part:</b> did they take the original, important part? (s 14)', '<b>No licence:</b> and then defences (1.14–1.15) and remedies'],
-            core: `<p>This is the skeleton of almost every copyright problem question.</p>`,
+            core: `<p>The checklist for almost any copyright dispute.</p>`,
             source: `${CA} ss 14, 31, 36. The six-step order is our teaching structure.`,
           },
           {
@@ -168,7 +168,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: 'Fictional facts, applying the cards in this unit.',
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Subsistence vs infringement (again)',
             core: `<p>Keep the two questions apart, even though originality runs through both:</p>
               <ol><li><b>Subsistence:</b> is the <em>work</em> original? (Unit 1.5.)</li>
@@ -178,7 +178,7 @@ window.DUOLOGO = window.DUOLOGO || {};
           },
         ],
         questions: [
-          { type: 'order', q: 'Put the infringement answer in order.', items: ['Subsistence', 'Ownership', 'Act comprised in the copyright', 'Causal connection and objective similarity', 'Substantial part', 'Licence, defences and remedies'], explain: 'Subsistence → ownership → act → copying → substantial part → licence, defences, remedies.' },
+          { type: 'order', q: 'Put the infringement checklist in order.', items: ['Subsistence', 'Ownership', 'Act comprised in the copyright', 'Causal connection and objective similarity', 'Substantial part', 'Licence, defences and remedies'], explain: 'Subsistence → ownership → act → copying → substantial part → licence, defences, remedies.' },
           { type: 'choice', q: 'In IceTV, Nine\'s Weekly Schedule was accepted as original. Why did IceTV still not infringe?', options: ['The part taken (time and title information) wasn\'t a substantial part', 'IceTV had a licence from Nine', 'The schedules were not in material form', 'IceTV acted outside Australia'], a: 0, explain: 'Originality of the whole work was conceded; the part taken lacked originality, so it wasn\'t substantial.' },
           { type: 'tf', q: 'A defendant who copied innocently, not knowing the work was protected, has not infringed.', a: false, explain: 'Innocence isn\'t a defence to infringement. Under s 115(3) it means no damages, but the owner can still get an account of profits.' },
           { type: 'choice', q: 'In the café jingle problem, which fact best supports causal connection?', options: ['The composer admitted hearing Lena\'s jingle on local radio', 'The ad is 30 seconds long', 'Both businesses sell coffee', 'The café\'s hook is in a different key'], a: 0, explain: 'Access is the usual route to proving copying. The key change goes to similarity, and didn\'t help in <i>Larrikin</i>.' },

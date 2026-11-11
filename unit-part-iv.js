@@ -90,7 +90,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} s 92(1)–(2) (quoted). ${WJ4}, "Published Editions of Works".`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Count the layers',
             core: `<p>For any media product, list every copyright before you analyse infringement. A TV broadcast of a music video may involve:</p>
               <ol><li>the musical work and the lyrics (Part III);</li><li>the sound recording (Part IV);</li><li>the music video, a film (Part IV);</li><li>the broadcast (Part IV);</li><li>performers' protection (Part XIA).</li></ol>

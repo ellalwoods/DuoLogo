@@ -4,6 +4,8 @@ The whole of a law-school **Australian Intellectual Property** course, then a fi
 
 A sample of the depth, fully written: [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md) (Copyright 1.5, *Originality*).
 
+> **Audience (updated November 2026):** this is for someone learning IP quickly **before starting a job in the field**, not for exam preparation. In the app, "Trap" cards are **Watch out** cards about mistakes people make in practice, "Critique" cards are **Debate** cards on live policy questions, and there are no essay plans or exam-technique tips. References below to exams, essays and problem questions describe the original plan.
+
 ## Sources
 
 Content is written from, and checked against, these sources. Every card cites the one it relies on.

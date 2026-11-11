@@ -47,7 +47,7 @@ window.DUOLOGO = window.DUOLOGO || {};
             source: `${CA} s 35(4), (7) (text checked). ${WJO}, "Journalists".`,
           },
           {
-            kind: 'trap', margin: ['EXAM'],
+            kind: 'trap', margin: ['IN PRACTICE'],
             title: 'Employee or contractor?',
             core: `<ol><li><b>Don't assume the business owns what it paid for.</b> If the creator was a contractor, the creator owns the copyright unless there's a written assignment (s 196(3), unit 1.8).</li>
               <li><b>Check "in pursuance of the terms of employment".</b> An employee's weekend novel isn't the employer's.</li>
