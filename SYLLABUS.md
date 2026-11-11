@@ -160,45 +160,45 @@ Units are studied **in element-number order**, and each one unlocks when the one
 ## 2 · Trade marks *(11 units)*
 
 ### Stick 1 · What?
-**2.1 Signs and what trade marks do** · 2 lessons
+**2.1 Signs and what trade marks do** · 2 lessons · ✅ *written, in the app; lesson A is "Trade marks at a glance"*
 - "Sign" (s 6) and "trade mark" (s 17); badge of origin and other functions; non-traditional marks (shape, colour, sound, scent); the register, the Nice classes and specifications.
 
 ### Stick 2 · How?
-**2.2 The application** · 2 lessons
+**2.2 The application** · 1 lesson in the app · ✅ *written*
 - Filing, priority date (s 12), Paris priority (6 months), examination, acceptance, the opposition window, registration; series marks; the Madrid route.
 
-**2.3 Distinctiveness I: words** · 3 lessons
+**2.3 Distinctiveness I: words** · 1 lesson in the app · ✅ *written (Cantarella ⚑)*
 - s 41 (as rewritten in 2012): inherently adapted, partly adapted, not adapted at all. *Clark Equipment v Registrar* (1964, HCA: the "other traders" test, MICHIGAN); descriptive and laudatory words; place names; surnames; invented words; **foreign words**: *Cantarella Bros v Modena Trading* (2014, HCA: ORO, CINQUE STELLE). *Mark Foy's v Davies Co-op* (1956, HCA: TUB HAPPY).
 
-**2.4 Distinctiveness II: shapes, colours and acquired distinctiveness** · 2 lessons
+**2.4 Distinctiveness II: shapes, colours and acquired distinctiveness** · 1 lesson in the app · ✅ *written*
 - Evidence of use before filing; *Kenman Kandy v Registrar* (2002, FCAFC: the bug-shaped lolly); *Philips v Remington* (2000, FCAFC: the three-headed shaver); colour marks.
 
-**2.5 Other grounds of rejection, and comparing marks** · 3 lessons
+**2.5 Other grounds of rejection, and comparing marks** · 2 lessons in the app · ✅ *written (Australian Woollen Mills left out: not in Wikijuris)*
 - s 39, s 42 (scandalous, contrary to law), s 43 (deceptive connotation), s 44 (earlier marks); honest concurrent use and prior continuous use.
 - The comparison tests every later unit uses: **substantially identical** (side by side, *Shell v Esso*, 1963 HCA) vs **deceptively similar** (imperfect recollection, *Australian Woollen Mills v FS Walton*, 1937 HCA; *Southern Cross Refrigerating v Toowoomba Foundry*, 1954 HCA); goods of the same description and closely related services. Heavy **similarity** practice.
 
-**2.6 Opposition and ownership** · 2 lessons
+**2.6 Opposition and ownership** · 1 lesson in the app · ✅ *written (Food Channel left out: not in Wikijuris)*
 - Grounds: s 58 (not the owner: first use beats first filing), s 59 (no intention to use), s 60 (another mark's reputation), s 61, s 62A (bad faith). *Food Channel Network v TV Food Network* (2010, FCAFC).
 
 ### Stick 3 · Whose & how long?
-**2.7 Duration, non-use and cancellation** · 3 lessons
+**2.7 Duration, non-use and cancellation** · 1 lesson in the app · ✅ *written (Gallo HCA left out; Killer Queen ⚑)*
 - 10-year terms renewable forever (ss 72, 75); assignment and licensing, authorised use (s 8, s 7(3)); removal for non-use (s 92, 3 years; s 101 discretion): *E & J Gallo Winery v Lion Nathan* (2010, HCA: BAREFOOT wine); rectification (s 88) and **genericide**; *Taylor v Killer Queen LLC* [2026] HCA 5 (Katie Perry v Katy Perry): decided 11 March 2026, reportedly 3–2 for Ms Taylor, restoring her KATIE PERRY registration and finding infringement by the singer's companies, with some issues remitted to the Federal Court ⚑ *outcome from secondary reports only; the judgment couldn't be opened*.
 
 ### Stick 4 · Breach
-**2.8 Use as a trade mark** · 2 lessons
+**2.8 Use as a trade mark** · 1 lesson in the app · ✅ *written (Self Care ⚑)*
 - The threshold question. *Shell v Esso* (1963, HCA: the oil-drop man); *Johnson & Johnson v Sterling Pharmaceuticals* (1991, FCAFC: CAPLETS); *Coca-Cola v All-Fect* (1999, FCAFC: cola bottle lollies); *Self Care IP v Allergan* (2023, HCA: PROTOX, "instant Botox® alternative").
 
-**2.9 The three kinds of infringement** · 2 lessons
+**2.9 The three kinds of infringement** · 1 lesson in the app · ✅ *written*
 - s 120(1) same goods or services; s 120(2) related goods or services (and its defence); s 120(3) well-known marks; dilution (blurring and tarnishment) and why Australia has no general anti-dilution law; contributory liability.
 
 ### Stick 5 · Escape
-**2.10 Defences and parallel imports** · 2 lessons
+**2.10 Defences and parallel imports** · 1 lesson in the app · ✅ *written (Paul's Retail v Lonsdale left out: not in Wikijuris)*
 - s 122: own name, descriptive use in good faith, intended purpose, comparative advertising, exercising a right under the Act; prior continuous use (s 124); parallel imports (s 122A ✔, inserted by the *IP Laws Amendment (Productivity Commission Response Part 1 and Other Measures) Act 2018* Sch 1 item 2, in force 25 Aug 2018), *Paul's Retail v Lonsdale* (2012, FCAFC); unjustified threats (s 129); remedies (s 126, additional damages).
 
 ### Also in this chapter
-**2.11 Certification marks, collective marks and geographical indications** · 2 lessons
+**2.11 Certification marks, collective marks and geographical indications** · 1 lesson in the app · ✅ *written*
 - Parts 16–17; wine GIs under the *Wine Australia Act 2013*; the Prosecco dispute and GIs in trade agreements: the Australia–EU FTA was concluded on 24 March 2026, reportedly protecting Prosecco as an EU GI for export labelling (phased out over 10 years) while Australian producers keep it as a grape variety name at home; not yet in force ⚑ *secondary sources only*.
-- ✦ **Problem question: "The Food Truck"**: a name clash, a lookalike logo, a lapsed registration and a cease-and-desist letter.
+- ✦ **Worked scenario (not yet written): "The Food Truck"**: a name clash, a lookalike logo, a lapsed registration and a cease-and-desist letter.
 
 ---
 

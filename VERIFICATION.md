@@ -107,6 +107,26 @@ Written from the current Act (Compilation No. 65, in force 2 April 2026) and Wik
 - *Meskenas v ACP Publishing* (syllabus 1.16): not in Wikijuris; left out.
 - **AI (1.17 lesson B):** no Australian decision on generative AI and copyright could be found (⚑, searches to November 2026); the October 2025 announcement that there will be no text-and-data-mining exception is from press reports only (⚑). The lesson is labelled as analysis applying the Act and earlier cases, not settled law.
 
+## Trade marks 2.1–2.11 (11 November 2026)
+
+Written from the *Trade Marks Act 1995* (Compilation No. 48, in force 19 September 2026), the *Trade Marks Regulations 1995* (Compilation No. 53, in force 18 December 2025; downloaded for this chapter), the *Wine Australia Act 2013* (Compilation No. 42) and Wikijuris (Trade Mark Overview; Trade Mark Registration; Trade Mark Infringement & Defences), in `unit-tm-basics.js`, `unit-tm-registration.js` and `unit-tm-infringement.js`.
+
+**Statutory text quoted or checked:** TMA ss 6 ("sign", "geographical indication", "filing date"), 7, 8, 9, 10, 12, 14, 17, 19, 20, 24, 27, 29, 31, 33, 38–44, 52, 52A, 54A, 55–62A, 68, 72, 75, 77–79, 88, 92, 93, 100, 101, 106, 120, 122, 122A, 123, 124, 126, 129, 130A, 132, 151, 162, 163, 169, 170, 173, 175, 185, 186, 189A; TMR regs 2.1 and Sch 1 (45 classes), 4.12 (15-month lapse), 4.15 (prescribed signs), 5.6 (2 months to oppose), 5.13 (2 months to defend), and the 12-month renewal window for s 75(1); WAA ss 40C, 40D, 40DA (Part VIB).
+
+**Cases (checked against the extracts or summaries Wikijuris gives; judgments not reachable):** *Clark Equipment* [1964] HCA 55 (Kitto J); *Mark Foy's* [1956] HCA 41; *Burger King* [1973] HCA 15; *Ocean Spray* [2000] FCA 177; *Blount* [1998] FCA 440; *Gazal* [1999] ATMO 90; *Kenman Kandy* [2002] FCAFC 273; *Philips v Remington* [1999] FCA 816; *Guylian* [2009] FCA 891; *Smith Kline & French* [1967] HCA 42; *Philmac* [2002] FCA 1551; *Woolworths v BP* [2013] ATMO 61; *Scotch Whisky Association v De Witt* [2007] FCA 1649; *Shell v Esso* [1963] HCA 66 (Windeyer and Kitto JJ); *Southern Cross* [1954] HCA 82; *Wingate v Levi Strauss* [1994] FCA 1001; *Torpedoes v Thorpedo* [2003] FCA 901; *Angoves v Johnson* (1982) 43 ALR 349; *Mars v Sweet Rewards* [2009] FCA 606; *Campomar v Nike* [2000] HCA 12; *Registrar v Woolworths* [1999] FCA 1020; *Gallo v Lion Nathan* [2009] FCAFC 27; *J&J v Sterling* [1991] FCA 310; *Top Heavy v Killin* (1996) 34 IPR 282; *Musidor v Tansing* [1993] FCA 645; *Twentieth Century Fox v SA Brewing* [1996] FCA 1484; *Coca-Cola v All-Fect* [1999] FCA 1721; *Nintendo v Care* [2000] FCA 1538; *Virgin v Klapsas* [2001] FCA 1502; *San Remo* [2000] FCA 1842; *Geoffrey v Luik* (1997) 38 IPR 555.
+
+**Corrections to Wikijuris:**
+- **Renewal:** Wikijuris says a mark can be renewed "as long as the trade mark is still in use" and that "the basic requirement to renew … is continuous use". The Act requires only a request in the prescribed period (ss 75, 77); non-use is dealt with by removal applications (s 92). Unit 2.7 says so.
+- **Definition of "sign":** Wikijuris refers to s 7 in one place; the definition is in s 6.
+- **Section 41:** Wikijuris describes three categories using older wording; the units quote the current s 41(2)–(4).
+- **Opposition:** Wikijuris describes a single 2-month opposition period. The current regulations have a 2-month window for a notice of intention to oppose (reg 5.6), then a statement of grounds, and a 2-month window for the applicant's notice of intention to defend, failing which the application lapses (s 54A, reg 5.13).
+
+**Still ⚑ or left out:**
+- *Cantarella v Modena* [2014] HCA 48, *Self Care v Allergan* [2023] HCA 8 and *Taylor v Killer Queen* [2026] HCA 5: not in Wikijuris and the judgments couldn't be opened; outcomes from secondary sources, flagged.
+- *Gallo* in the High Court (2010, non-use): left out; only the Full Court point on goods of the same description is used, flagged for its later history.
+- The Australia–EU FTA and Prosecco (concluded March 2026): press reports only, flagged.
+- *Australian Woollen Mills v Walton*, *Food Channel Network*, *Paul's Retail v Lonsdale* (syllabus): not in Wikijuris; left out.
+
 ## Foundations 0.1–0.4 and the copyright introduction (11 November 2026)
 
 Written as the course's introductory lessons (`unit-foundations.js`, and lesson A of 1.1 in `unit-literary.js`).
