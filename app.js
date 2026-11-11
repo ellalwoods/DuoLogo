@@ -249,37 +249,35 @@
   }
 
   /* ---------- NOTEBOOK ---------- */
+  const NB_TABS = [['notes', 'Notes'], ['units', 'Units'], ['reactions', 'Reactions'], ['settings', 'Settings']];
+  let nbTab = 'notes';
   function notebook() {
     const outlines = D.elements.filter(e => S.items[e.id] && D.units[e.id] && D.units[e.id].outline);
-    app.className = '';
-    app.innerHTML = `
-      <div class="top"><span>Notebook</span><span>${PATH.filter(isDone).length} / ${PATH.length} lessons done</span></div>
-      <p class="sect">Your path · in order</p>
-      <div class="rows">${PATH.map(e => {
-        const st = isDone(e) ? 'done' : e === nextElement() ? 'next' : 'locked';
-        const inner = `${tile(e, { tag: 'div', small: true })}<div class="t">${pathNo(e)}. ${esc(e.name)}<small>Element ${e.z} · unit ${e.unit} · ${st === 'done' ? 'done' : st === 'next' ? 'next up' : 'locked'}</small></div><span class="p">${st === 'done' ? '✓' : st === 'next' ? '▶' : '🔒'}</span>`;
-        return st === 'locked' ? `<div class="row path-locked">${inner}</div>` : `<a class="row ${st === 'next' ? 'path-next' : ''}" style="text-decoration:none" href="#unit-${e.id}">${inner}</a>`;
-      }).join('')}</div>
-      <p class="note mono" style="margin:6px 16px 0;font-size:10.5px;color:var(--muted)">Only written lessons are listed. Units still being written are skipped and will slot into their place in the order.</p>
-      <p class="sect">Your notes</p>
-      ${outlines.length ? outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('') : '<div class="empty-msg">Each element you discover adds its tests, sections and cases here. By the end it\'s your own reference notes for the job.</div>'}
-      <p class="sect">Experiments to run</p>
-      <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>Balance the equation · ${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>
-      <p class="sect">Sections</p>
-      ${D.chapters.map(ch => {
-        const els = D.elements.filter(e => e.ch === ch.n), f = els.filter(e => S.items[e.id]).length;
-        return `<details class="chap" ${els.some(playable) ? 'open' : ''}><summary><span>${ch.n} · ${esc(ch.name)}</span><span class="mono">${f}/${els.length}</span></summary>
-          <div class="units">${els.map(e => `<button class="row" data-act="cell" data-id="${e.id}">${tile(e, { tag: 'div', small: true })}<div class="t">${esc(e.name)}<small>Unit ${e.unit}${playable(e) ? '' : ' · not yet written'}</small></div></button>`).join('')}</div></details>`;
-      }).join('')}
-      <p class="sect">Lab equipment</p>
-      <div class="rows">
+    const status = e => !playable(e) ? 'not yet written' : isDone(e) ? '✓ done' : e === nextElement() ? '▶ next up' : '🔒 locked';
+    let body = '';
+    if (nbTab === 'notes') body = outlines.length
+      ? `<p class="note" style="margin:14px 16px 4px">A one-paragraph summary of every unit you've finished: the tests, sections and cases. Your own reference notes for the job.</p>${outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('')}`
+      : '<div class="empty-msg">Each unit you finish adds its tests, sections and cases here. By the end it\'s your own reference notes for the job.</div>';
+    if (nbTab === 'units') body = D.chapters.map(ch => {
+      const els = D.elements.filter(e => e.ch === ch.n), f = els.filter(e => S.items[e.id]).length;
+      return `<details class="chap" ${els.includes(nextElement()) ? 'open' : ''}><summary><span>${ch.n} · ${esc(ch.name)}</span><span class="mono">${f}/${els.length}</span></summary>
+        <div class="units">${els.map(e => `<button class="row ${e === nextElement() ? 'path-next' : ''}" data-act="cell" data-id="${e.id}">${tile(e, { tag: 'div', small: true })}<div class="t">${esc(e.name)}<small>Unit ${e.unit} · ${status(e)}</small></div></button>`).join('')}</div></details>`;
+    }).join('') + '<p class="note mono" style="margin:6px 16px 0;font-size:10.5px;color:var(--muted)">Lessons unlock one at a time in element-number order. Units still being written are skipped.</p>';
+    if (nbTab === 'reactions') body = `<p class="note" style="margin:14px 16px 4px">Balance the equation: pick the elements of the cause of action and leave out the red herrings.</p>
+      <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>`;
+    if (nbTab === 'settings') body = `<div class="rows" style="margin-top:14px">
         <button class="row" data-act="welcome"><div class="t">How the course works<small>Where to start, and the order of lessons</small></div></button>
         <button class="row" data-act="sound"><div class="t">Sound<small>Pings, fizzes and the odd Geiger click</small></div><span class="p">${soundOn() ? 'ON' : 'OFF'}</span></button>
         <button class="row" data-act="export"><div class="t">Export backup<small>Copy or download your progress</small></div></button>
         <button class="row" data-act="import"><div class="t">Import backup<small>Restore on a new phone</small></div></button>
         <button class="row" data-act="reset"><div class="t">Reset the lab<small>Forget everything on this device</small></div></button>
       </div>
-      <p class="note mono" style="margin:16px;font-size:10.5px;color:var(--muted)">Content checked against legislation.gov.au, Wikijuris (CC BY-SA 3.0) and EUR-Lex on 11 Nov 2026. ⚑ marks anything not yet confirmed against a primary source. Study aid, not legal advice.</p>
+      <p class="note mono" style="margin:16px;font-size:10.5px;color:var(--muted)">Content checked against legislation.gov.au, Wikijuris (CC BY-SA 3.0) and EUR-Lex on 11 Nov 2026. ⚑ marks anything not yet confirmed against a primary source. Study aid, not legal advice.</p>`;
+    app.className = '';
+    app.innerHTML = `
+      <div class="top"><span>Notebook</span><span>${PATH.filter(isDone).length} / ${PATH.length} lessons done</span></div>
+      <div class="seg" role="tablist">${NB_TABS.map(([k, label]) => `<button role="tab" aria-selected="${k === nbTab}" class="${k === nbTab ? 'on' : ''}" data-act="nbtab" data-tab="${k}">${label}</button>`).join('')}</div>
+      ${body}
       ${tabs('#notebook')}`;
   }
 
@@ -591,7 +589,7 @@
   /* ---------- events ---------- */
   const go = h => { if (location.hash === h) route(); else location.hash = h; };
   // Actions that make their own sound (or none): everything else gets a soft tick.
-  const SELF_SOUNDING = new Set(['choose', 'tf', 'slot', 'bucket', 'pair', 'simcheck', 'rxin', 'rxcheck', 'nextcard', 'prev', 'sound', 'close']);
+  const SELF_SOUNDING = new Set(['choose', 'tf', 'slot', 'bucket', 'pair', 'simcheck', 'rxin', 'rxcheck', 'nextcard', 'prev', 'sound', 'close', 'nbtab']);
   document.addEventListener('click', ev => {
     const link = ev.target.closest('a[href^="#"]');
     if (link) sfx(link.closest('.tabs') ? 'tab' : 'tick');
@@ -609,6 +607,7 @@
     if (a === 'deeper') { const d = t.nextElementSibling; d.hidden = !d.hidden; t.textContent = d.hidden ? 'TAP ▸ GO DEEPER' : 'TAP ▾ LESS'; t.setAttribute('aria-expanded', String(!d.hidden)); return; }
     if (a === 'nextcard') { sfx('page'); return step(1); }
     if (a === 'prev') { sfx('page'); return step(-1); }
+    if (a === 'nbtab') { sfx('tab'); nbTab = t.dataset.tab; return notebook(); }
     if (a === 'sound') { S.settings.sound = !soundOn(); save(); sfx('ok'); return notebook(); }
     if (a === 'startlesson') return renderCard();
     if (a === 'nextq') return nextQ();
