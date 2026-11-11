@@ -6,11 +6,67 @@ window.DUOLOGO = window.DUOLOGO || {};
   D.units = D.units || {};
   const WJ = '<a href="https://wikijuris.net/ausip/copyrightsubsp3/" target="_blank" rel="noopener">Wikijuris, Copyright: Subject matter</a> (CC BY-SA 3.0)';
   const CA = '<i>Copyright Act 1968</i> (Cth), Compilation No. 65';
+  const WB = '<a href="https://wikijuris.net/ausip/copyrightbackground/" target="_blank" rel="noopener">Wikijuris, Copyright introduction</a> (CC BY-SA 3.0)';
 
   D.units['u1-1'] = {
     lawAsAt: '2 April 2026',
     checked: '11 November 2026',
     lessons: [
+      {
+        title: 'Copyright at a glance',
+        cards: [
+          {
+            kind: 'guide', margin: ['CHAPTER 1'],
+            title: 'Welcome to the Copyright column',
+            core: `<p>The next 17 elements (5 to 21) run down the Copyright column, in the same five-question order you'll use for every right:</p>
+              <ol><li><b>What</b> does it protect? (1.1–1.3)</li><li><b>How</b> do you get it? (1.4–1.6)</li><li><b>Whose</b>, and for how long? (1.7–1.9)</li><li>What is a <b>breach</b>? (1.10–1.13)</li><li>What are the <b>escapes</b>? (1.14–1.15)</li></ol>
+              <p>This first lesson is an overview of the whole regime. Every point gets its own element later.</p>`,
+            source: 'About this app. The structure follows the course syllabus.',
+          },
+          {
+            kind: 'rule', margin: ['Wikijuris'],
+            title: 'Copyright in six facts',
+            core: `<ol><li>It protects <strong>creative works</strong> and other subject matter (recordings, films, broadcasts, editions), not ideas or facts.</li>
+              <li>It's <strong>automatic</strong>: it arises when a work is fixed in material form. No registration, no © needed.</li>
+              <li>It usually lasts for the author's <strong>life plus 70 years</strong>, then the work enters the public domain.</li>
+              <li>The <strong>creator</strong> is generally the first owner (employers own employees' work).</li>
+              <li>The owner has <strong>exclusive rights</strong>: to reproduce, publish, perform, communicate and adapt.</li>
+              <li>Australia has <strong>fair dealing</strong> exceptions for specific purposes, not American-style "fair use".</li></ol>`,
+            deeper: `<p>Creators also have <b>moral rights</b> (attribution, against false attribution, integrity), which stay with the individual creator even when the copyright is sold (unit 1.16).</p>`,
+            source: `${WB}, "Copyright basics".`,
+          },
+          {
+            kind: 'rule', margin: ['Statute of Anne', '1968 Act'],
+            title: 'Where copyright came from',
+            core: `<p>Before copyright, a printers' guild, the <strong>Stationers' Company</strong>, held a royal monopoly over printing, enforced through censorship laws. When Parliament let the licensing system lapse, the Stationers pressed for new protection, framed this time around authors.</p>
+              <p>The result was the <i>Statute of Anne</i> (1710), the first copyright statute administered by government and courts rather than private parties: a term of <strong>14 years</strong>, renewable once, after which works fell into the public domain.</p>
+              <p>In Australia, the <i>Copyright Act 1968</i> took effect on 1 May 1969 and is still the governing Act (unit 0.3).</p>`,
+            source: `${WB}, "International and Historical Context" and timeline. ${CA}, endnotes (commencement checked).`,
+          },
+          {
+            kind: 'test', margin: ['STRUCTURE'],
+            title: 'Six questions for any copyright problem',
+            steps: ['<b>Subsistence:</b> is there copyright in it?', '<b>Ownership:</b> who owns it?', '<b>Infringement:</b> has an exclusive right been infringed?', '<b>Defences:</b> does an exception apply?', '<b>Remedies:</b> what can the owner get?', '<b>Related rights:</b> moral rights, anti-circumvention, designs?'],
+            core: '<p>Use this skeleton in every problem answer. The Copyright column teaches each step in turn.</p>',
+            source: `${WB}, "A Practical Structure for Approaching Copyright Questions".`,
+          },
+          {
+            kind: 'trap', margin: ['EXAM'],
+            title: 'Two myths to drop now',
+            core: `<ol><li><b>"It's fair use."</b> Australia has no general fair use defence: only fair dealing for listed purposes (research or study, criticism or review, parody or satire, reporting news, professional advice from a lawyer or patent or trade marks attorney, disability access), and the dealing must also be fair.</li>
+              <li><b>"No © symbol, so it's free."</b> Copyright is automatic. Assume a work is protected unless you know otherwise.</li></ol>
+              <p>And one more: transferring copyright needs writing signed by the <strong>assignor</strong> (s 196(3)). Some summaries say "signed by both parties"; the Act only needs the assignor's signature.</p>`,
+            source: `${WB}, "Exceptions: Fair dealing and fair use are different" and "Copyright is automatic". ${CA} s 43(2) (professional advice, text checked), s 196(3) (quoted in unit 1.8). Note: Wikijuris says an assignment must be "signed by both parties"; the Act requires only the assignor's signature.`,
+          },
+        ],
+        questions: [
+          { type: 'tf', q: 'A work without a © symbol is free to copy.', a: false, explain: 'Copyright is automatic; no notice or registration is needed.' },
+          { type: 'choice', q: 'What was the first copyright statute, and how long did its protection last?', options: ['The Statute of Anne (1710): 14 years, renewable once', 'The Copyright Act 1968: life + 70', 'The Berne Convention: life + 50', 'The Stationers\' Charter: forever'], a: 0, explain: 'The Statute of Anne set a 14-year term with one renewal, then the public domain.' },
+          { type: 'order', q: 'Put the six copyright questions in order.', items: ['Subsistence', 'Ownership', 'Infringement', 'Defences', 'Remedies', 'Related rights'], explain: 'The skeleton for every copyright problem.' },
+          { type: 'tf', q: 'Australia has a general "fair use" defence like the United States.', a: false, explain: 'Australia has fair dealing for specific purposes only.' },
+          { type: 'choice', q: 'Whose signature does an assignment of copyright need (s 196(3))?', options: ['The assignor\'s (or someone on their behalf)', 'Both parties\'', 'A witness\'s', 'IP Australia\'s'], a: 0, explain: '"In writing signed by or on behalf of the assignor".' },
+        ],
+      },
       {
         title: 'What counts as a literary work',
         cards: [

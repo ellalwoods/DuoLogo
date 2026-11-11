@@ -37,6 +37,9 @@ Every right is taught through the same five questions, in the same order. Both d
 | 4 · **BREACH** | What infringes? | Substantial part, authorisation | Exploiting a claim, supply |
 | 5 · **ESCAPE** | Defences, exceptions, removal | Fair dealing | Prior use, exhaustion, revocation |
 
+### The order of study
+Units are studied **in element-number order**, and each one unlocks when the one before it is finished: Foundations 0.1–0.4 first, then down each column of the table, starting with Copyright (1.1 → 1.17), then Trade marks, Passing off & ACL, Patents, Designs and Confidential information, then chapters 7–9. Units not yet written are skipped and slot into place when they are.
+
 ### Course → Unit → Lesson → Card
 - A **unit** is one topic (e.g. *Inventive step*). Each unit has **2–3 lessons**.
 - A **lesson** is one sitting, **~8 minutes**: 8–12 cards, then 6–8 questions.
@@ -68,20 +71,20 @@ Every right is taught through the same five questions, in the same order. Both d
 
 ## 0 · Foundations *(4 units)*
 
-**0.1 Why have IP at all?** · 3 lessons
+**0.1 Why have IP at all?** · 2 lessons in the app · ✅ *written; lesson A also explains how the course works*
 - Lessons: *Property in intangibles* · *Theories: incentive, labour, personality, reward* · *The costs: monopoly, access, the public domain*
 - Law & cases: public goods (non-rival, non-excludable); *Victoria Park Racing v Taylor* (1937, HCA): no general property in a spectacle or in information.
 - Critique: Productivity Commission *Intellectual Property Arrangements* (2016): its main findings and what happened next.
 
-**0.2 The map of rights** · 2 lessons
+**0.2 The map of rights** · 2 lessons · ✅ *written, in the app*
 - Lessons: *Registered and unregistered rights* · *Idea, expression, function, look, badge*
 - Every regime in one card each; how one product can carry five rights at once. First **issue-spotting** round.
 
-**0.3 Constitution, institutions and courts** · 2 lessons
-- Constitution s 51(xviii); s 51(xxxi) and IP. *Grain Pool of WA v Commonwealth* (2000, HCA): the power is not frozen in 1900. *Nintendo v Centronics* (1994, HCA). *Phonographic Performance Co v Commonwealth* (2012, HCA).
+**0.3 Constitution, institutions and courts** · 2 lessons · ✅ *written, in the app*
+- Constitution s 51(xviii); s 51(xxxi) and IP. *Grain Pool of WA v Commonwealth* (2000, HCA): the power is not frozen in 1900. *Nintendo v Centronics* (1994, HCA). *Phonographic Performance Co v Commonwealth* (2012, HCA). *In the app: s 51(xviii) and (xxxi) ✔ (Constitution text checked). The three cases ⚑ aren't in Wikijuris and are left out until the judgments can be checked.*
 - IP Australia, the registers and hearing officers; Federal Court, Federal Circuit and Family Court (Div 2), state Supreme Courts; review and appeal routes: the Administrative Review Tribunal replaced the AAT on 14 October 2024 ✔ (*Administrative Review Tribunal Act 2024* s 2).
 
-**0.4 The international framework** · 2 lessons
+**0.4 The international framework** · 2 lessons · ✅ *written, in the app*
 - Paris (national treatment, priority: **12 months for patents, 6 months for trade marks and designs**), Berne (no formalities, national treatment), TRIPS (minimum standards, three-step test), PCT, Madrid Protocol, Hague (Australia is **not** a party; under the 2021 Australia–UK FTA it agreed to make reasonable efforts to join ⚑ *secondary sources only*); WIPO; AUSFTA (2004) and why it changed Australian copyright.
 - Territoriality as the unit's theme.
 - ✦ **Problem question: "The Café"**: spot every right in one small business.
@@ -91,7 +94,7 @@ Every right is taught through the same five questions, in the same order. Both d
 ## 1 · Copyright *(17 units)*
 
 ### Stick 1 · What?
-**1.1 Literary works** · 2 lessons · ✅ *written, in the app*
+**1.1 Literary works** · 3 lessons in the app · ✅ *written; lesson A is "Copyright at a glance", the chapter introduction (history, the six-question structure, myths)*
 - s 10 definitions; tables and compilations; computer programs. Single words, titles, slogans and headlines: *Exxon v Exxon Insurance* (UK, 1982); *Fairfax Media v Reed International* (2010, FCA). Software: *Data Access v Powerflex* (1999, HCA).
 
 **1.2 Dramatic, musical and artistic works** · 3 lessons · ✅ *written, in the app*

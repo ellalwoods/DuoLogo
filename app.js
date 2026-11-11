@@ -139,10 +139,18 @@
   const itemName = id => EL[id] ? EL[id].name : RX[id] ? `Reaction: ${RX[id].product.toLowerCase()}` : id;
 
   /* ---------- tiles ---------- */
+  /* ---------- the path: written units in element-number order, unlocked one at a time ---------- */
+  const PATH = D.elements.filter(playable);
+  const isDone = e => !!(S.units[e.id] || S.items[e.id]);
+  const nextElement = () => PATH.find(e => !isDone(e));
+  const unlocked = e => playable(e) && (isDone(e) || e === nextElement());
+  const pathNo = e => PATH.indexOf(e) + 1;
+  const prevOnPath = e => PATH[PATH.indexOf(e) - 1];
   function tileState(e) {
     const it = S.items[e.id];
     if (it) return isDue(it) ? 'decay' : isStable(it) ? 'stable' : 'found';
-    return playable(e) ? 'ready' : 'un';
+    if (!playable(e)) return 'un';
+    return e === nextElement() ? 'ready' : 'locked';
   }
   function tile(e, { now: isNow = false, more = 0, tag = 'button', small = false } = {}) {
     if (!e) return '<div class="el empty"></div>';
@@ -150,14 +158,13 @@
     const p = it ? recall(it) : 0;
     // Decay is desaturation: knowledge you're losing literally greys out.
     const style = `--c:${colourOf(e)};${it ? `filter:saturate(${(0.2 + 0.8 * p).toFixed(2)}) brightness(${(1 + 0.15 * (1 - p)).toFixed(2)})` : ''}`;
-    const cls = ['el', st === 'un' ? 'un' : st === 'ready' ? 'ready' : '', st === 'decay' ? 'decay' : '', st === 'stable' ? 'stable' : '', isNow ? 'now' : ''].join(' ');
-    const label = `${e.name} (${e.unit}): ${st === 'un' ? 'not yet written' : st === 'ready' ? 'ready to discover' : `${Math.round(p * 100)}% recall`}`;
+    const cls = ['el', st === 'un' ? 'un' : st === 'ready' ? 'ready' : st === 'locked' ? 'locked' : '', st === 'decay' ? 'decay' : '', st === 'stable' ? 'stable' : '', isNow ? 'now' : ''].join(' ');
+    const label = `Element ${e.z}, ${e.name}: ${st === 'un' ? 'not yet written' : st === 'ready' ? 'next to study' : st === 'locked' ? 'locked' : `${Math.round(p * 100)}% recall`}`;
     return `<${tag} class="${cls}" style="${style}" ${tag === 'button' ? `data-act="cell" data-id="${e.id}"` : ''} aria-label="${esc(label)}">
       <div class="n"><span>${e.z}</span></div>${more ? `<span class="more">${esc(more)}</span>` : ''}
-      <div class="s">${st === 'un' ? '?' : e.sym}</div>
+      <div class="s">${st === 'un' ? '?' : e.sym}</div>${st === 'locked' ? '<span class="lock" aria-hidden="true">🔒</span>' : ''}
       ${it && !small ? `<div class="bar"><i style="width:${Math.round(p * 100)}%"></i></div>` : ''}</${tag}>`;
   }
-  const nextElement = () => D.elements.find(e => playable(e) && !S.items[e.id]);
 
   /* ---------- tabs ---------- */
   const tabs = on => `<nav class="tabs">${[['#table', 'TABLE'], ['#notebook', 'NOTEBOOK'], ['#halflife', 'HALF-LIFE']].map(([h, t]) => `<a href="${h}" class="${on === h ? 'on' : ''}"><span>${t}</span></a>`).join('')}</nav>`;
@@ -183,14 +190,15 @@
     const block = b => D.elements.filter(e => e.block === b).map(e => tile(e, { now: e === nx, small: true })).join('');
     let cta;
     if (due.length) cta = `<a class="btn" href="#stabilise">Stabilise ${due.length} element${due.length > 1 ? 's' : ''}</a>`;
-    else if (nx) cta = `<a class="btn" href="#unit-${nx.id}"><b>${nx.sym}</b>Continue · ${esc(nx.name)}</a>`;
+    else if (nx) cta = `<a class="btn" href="#unit-${nx.id}"><b>${nx.sym}</b>${pathNo(nx) === 1 ? 'Start' : 'Continue'} · lesson ${pathNo(nx)} of ${PATH.length}<span class="cta-sub">${esc(nx.name)}</span></a>`;
     else cta = `<a class="btn" href="#${D.reactions[0].id}">Run a reaction</a>`;
     app.className = 'has-cta';
     app.innerHTML = `
       <div class="top"><span>The Table</span><span>${found} / ${D.elements.length} discovered</span></div>
       <div class="stat"><span class="big">${learned().length ? ret + '%' : '—'}</span><span class="lab">Course retention<br>${tr == null ? (learned().length ? 'measuring…' : 'discover an element to start') : `${tr >= 0 ? '▲' : '▼'} ${Math.abs(tr)}% this week`}</span></div>
+      <p class="route mono">${nx && pathNo(nx) === 1 ? '<b>Start here:</b> the green element, number 1.' : '<b>Route:</b> follow the numbers.'} Foundations (1–4) first, then down each column, starting with Copyright (5–21). Each element unlocks the next.</p>
       <div class="ptable">
-        <div class="blk-h">Foundations</div>
+        <div class="blk-h">Foundations · start here</div>
         <div class="blk">${block('fnd')}</div>
         <div class="colh"><span></span>${D.groups.map(g => `<span style="color:${g.colour}">${g.short}</span>`).join('')}</div>
         <div class="grid">${grid}</div>
@@ -199,12 +207,27 @@
         <div class="blk-h">Field work · IP in practice</div>
         <div class="blk">${block('fld')}</div>
       </div>
-      <div class="legend"><span>▮ discovered</span><span class="d">◉ decaying</span><span>⬚ undiscovered</span></div>
+      <div class="legend"><span>▮ done</span><span class="nx">▣ next</span><span>🔒 locked</span><span class="d">◉ decaying</span><span>? not yet written</span></div>
       <div class="cta">${cta}</div>
       ${tabs('#table')}`;
+    if (!S.seenWelcome && !PATH.some(isDone)) welcome();
   }
 
-  /* element / cell sheet */
+  /* first visit: how the course runs */
+  function welcome() {
+    const first = PATH[0];
+    overlay.innerHTML = `<div class="scrim"><div class="panel" style="--g:var(--ink)" data-stop>
+      <p class="eyebrow">Welcome to the Lab</p><h2>How to start</h2>
+      <ol class="welcome">
+        <li><b>Start with element 1</b>, the green tile at the top: <i>${esc(first.name)}</i>. The four Foundations lessons explain how IP is regulated: the Constitution, the Acts, the courts, the history and the treaties.</li>
+        <li><b>Follow the numbers.</b> After Foundations, the course runs down each column of the table, starting with Copyright. Each element unlocks when you finish the one before it.</li>
+        <li><b>Each lesson</b> is a set of cards, then questions.</li>
+        <li><b>Come back to review.</b> The Half-life tab tells you when something you learned is fading.</li>
+      </ol>
+      <button class="btn" data-act="welcome-go" style="width:100%;margin:0 0 6px">Start lesson 1</button>
+      <button class="link" data-act="welcome-close">Look around first</button>
+    </div></div>`;
+  }
   function cellSheet(id) {
     const e0 = EL[id];
     const list = ['fnd', 'low', 'fld'].includes(e0.block) ? [e0] : D.elements.filter(e => e.block === e0.block && e.period === e0.period);
@@ -212,9 +235,10 @@
     const where = g ? `${g.name} · Stick ${e0.period}: ${D.sticks[e0.period - 1].q}` : (e0.block === 'fnd' ? 'Foundations' : e0.block === 'fld' ? 'Field work · IP in practice' : 'Culture, specialist rights & enforcement');
     const rows = list.map(e => {
       const it = S.items[e.id];
-      const status = it ? `${Math.round(recall(it) * 100)}% · t½ ${fmtDays(halfLife(it))}` : playable(e) ? 'Ready' : 'Not yet written';
-      const btn = playable(e) ? `<a class="btn ghost" style="width:auto;margin:0;padding:8px 12px;font-size:13px" href="#unit-${e.id}">${it ? 'Re-read' : 'Discover'}</a>` : '';
-      return `<div class="row">${tile(e, { tag: 'div', small: true })}<div class="t">${esc(e.name)}<small>Unit ${e.unit}${e.sec ? ' · ' + esc(e.sec) : ''} · ${status}</small></div>${btn}</div>`;
+      const st = tileState(e), pv = prevOnPath(e);
+      const status = it ? `${Math.round(recall(it) * 100)}% · t½ ${fmtDays(halfLife(it))}` : st === 'ready' ? 'Next up' : st === 'locked' ? `Locked: finish ${pv ? `element ${pv.z} first` : 'the one before'}` : 'Not yet written';
+      const btn = unlocked(e) ? `<a class="btn ${st === 'ready' ? '' : 'ghost'}" style="width:auto;margin:0;padding:8px 12px;font-size:13px" href="#unit-${e.id}">${isDone(e) ? 'Re-read' : 'Start'}</a>` : '';
+      return `<div class="row">${tile(e, { tag: 'div', small: true })}<div class="t">${e.z}. ${esc(e.name)}<small>Unit ${e.unit}${e.sec ? ' · ' + esc(e.sec) : ''} · ${status}</small></div>${btn}</div>`;
     }).join('');
     overlay.innerHTML = `<div class="scrim" data-act="close"><div class="panel" style="--g:${colourOf(e0)}" data-stop>
       <button class="x" data-act="close" aria-label="Close">✕</button>
@@ -229,7 +253,14 @@
     const outlines = D.elements.filter(e => S.items[e.id] && D.units[e.id] && D.units[e.id].outline);
     app.className = '';
     app.innerHTML = `
-      <div class="top"><span>Notebook</span><span>${D.chapters.length} sections</span></div>
+      <div class="top"><span>Notebook</span><span>${PATH.filter(isDone).length} / ${PATH.length} lessons done</span></div>
+      <p class="sect">Your path · in order</p>
+      <div class="rows">${PATH.map(e => {
+        const st = isDone(e) ? 'done' : e === nextElement() ? 'next' : 'locked';
+        const inner = `${tile(e, { tag: 'div', small: true })}<div class="t">${pathNo(e)}. ${esc(e.name)}<small>Element ${e.z} · unit ${e.unit} · ${st === 'done' ? 'done' : st === 'next' ? 'next up' : 'locked'}</small></div><span class="p">${st === 'done' ? '✓' : st === 'next' ? '▶' : '🔒'}</span>`;
+        return st === 'locked' ? `<div class="row path-locked">${inner}</div>` : `<a class="row ${st === 'next' ? 'path-next' : ''}" style="text-decoration:none" href="#unit-${e.id}">${inner}</a>`;
+      }).join('')}</div>
+      <p class="note mono" style="margin:6px 16px 0;font-size:10.5px;color:var(--muted)">Only written lessons are listed. Units still being written are skipped and will slot into their place in the order.</p>
       <p class="sect">Your outline</p>
       ${outlines.length ? outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('') : '<div class="empty-msg">Each element you discover adds its tests, sections and cases here. By the end it\'s your exam outline.</div>'}
       <p class="sect">Experiments to run</p>
@@ -242,6 +273,7 @@
       }).join('')}
       <p class="sect">Lab equipment</p>
       <div class="rows">
+        <button class="row" data-act="welcome"><div class="t">How the course works<small>Where to start, and the order of lessons</small></div></button>
         <button class="row" data-act="sound"><div class="t">Sound<small>Pings, fizzes and the odd Geiger click</small></div><span class="p">${soundOn() ? 'ON' : 'OFF'}</span></button>
         <button class="row" data-act="export"><div class="t">Export backup<small>Copy or download your progress</small></div></button>
         <button class="row" data-act="import"><div class="t">Import backup<small>Restore on a new phone</small></div></button>
@@ -294,12 +326,18 @@
 
   /* ---------- PLAYER ---------- */
   let P = null;
-  const KIND = { rule: 'Rule', statute: 'Statute', case: 'Case', test: 'Test', trap: 'Trap', example: 'Worked example', compare: 'Compare', critique: 'Peer review' };
+  const KIND = { guide: 'How it works', rule: 'Rule', statute: 'Statute', case: 'Case', test: 'Test', trap: 'Trap', example: 'Worked example', compare: 'Compare', critique: 'Peer review' };
   const QLABEL = { choice: 'Multiple choice', tf: 'True or false', match: 'Citation network', order: 'Put in order', sort: 'Sort it', similarity: 'Similarity index' };
 
   function startUnit(id) {
     const e = EL[id], u = D.units[id];
     if (!e || !u) { location.hash = '#table'; return; }
+    if (!unlocked(e)) {
+      const nx = nextElement();
+      location.hash = '#table';
+      setTimeout(() => modal(`<p class="eyebrow">Locked</p><h2>${esc(e.name)}</h2><p class="note">Lessons unlock in order. Finish <b>${nx.z}. ${esc(nx.name)}</b> next, then keep following the numbers.</p><a class="btn" style="width:100%;margin:0" href="#unit-${nx.id}">Go to lesson ${pathNo(nx)}</a>`), 50);
+      return;
+    }
     P = { kind: 'unit', id, e, u, L: 0, phase: 'cards', card: 0, i: 0, correct: 0, total: 0, misses: [] };
     renderCard();
   }
@@ -564,6 +602,8 @@
     const a = t.dataset.act;
     if (a === 'close') { overlay.innerHTML = ''; return; }
     if (a === 'cell') return cellSheet(t.dataset.id);
+    if (a === 'welcome') return welcome();
+    if (a === 'welcome-go' || a === 'welcome-close') { S.seenWelcome = true; save(); overlay.innerHTML = ''; if (a === 'welcome-go') go('#unit-' + PATH[0].id); return; }
     if (a === 'quit') { const back = P && (P.kind === 'rx' || P.kind === 'review') ? '#halflife' : '#table'; P = null; go(back); return; }
     if (a === 'go') { overlay.innerHTML = ''; go(t.dataset.h); return; }
     if (a === 'deeper') { const d = t.nextElementSibling; d.hidden = !d.hidden; t.textContent = d.hidden ? 'TAP ▸ GO DEEPER' : 'TAP ▾ LESS'; t.setAttribute('aria-expanded', String(!d.hidden)); return; }

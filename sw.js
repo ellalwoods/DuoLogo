@@ -1,6 +1,6 @@
 // Network-first service worker (as in DuoVino): works offline, always picks up new versions when online.
-const CACHE = 'duologo-v9';
-const ASSETS = ['./', 'index.html', 'styles.css', 'course.js', 'unit-literary.js', 'unit-dma.js', 'unit-part-iv.js', 'unit-ideas.js', 'unit-originality.js', 'unit-authorship.js', 'unit-ownership.js', 'unit-dealings.js', 'unit-duration.js', 'unit-substantial-part.js', 'reactions.js', 'app.js', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'manifest.webmanifest'];
+const CACHE = 'duologo-v10';
+const ASSETS = ['./', 'index.html', 'styles.css', 'course.js', 'unit-foundations.js', 'unit-literary.js', 'unit-dma.js', 'unit-part-iv.js', 'unit-ideas.js', 'unit-originality.js', 'unit-authorship.js', 'unit-ownership.js', 'unit-dealings.js', 'unit-duration.js', 'unit-substantial-part.js', 'reactions.js', 'app.js', 'icon.svg', 'icon-180.png', 'icon-192.png', 'icon-512.png', 'manifest.webmanifest'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS.map(a => new Request(a, { cache: 'reload' }))))); self.skipWaiting(); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

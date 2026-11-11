@@ -85,6 +85,20 @@ Units 1.1–1.4, 1.6–1.9 and 1.11 and the copyright-infringement Reaction were
 
 **Wording that is ours, not a court's:** the checklists (1.6 connecting factors; 1.11 full infringement answer) and every worked example are teaching structures built on the cited provisions and cases, and say so on the card.
 
+## Foundations 0.1–0.4 and the copyright introduction (11 November 2026)
+
+Written as the course's introductory lessons (`unit-foundations.js`, and lesson A of 1.1 in `unit-literary.js`).
+
+**Primary sources read:** *Commonwealth of Australia Constitution Act* s 51(xviii), (xxxi); *Copyright Act 1968* ss 33, 36(1), 43(2), 131A, 131C–131D, 196(3) and the endnotes (assent 27 June 1968; commencement 1 May 1969); *Patents Act 1990* ss 24(1), 67, 154–155, 224; *Patents Regulations 1991* (vol 1) regs 2.2C(3) (12-month grace period), 3.11 (12-month Convention priority), 3.13A (PCT); *Trade Marks Act 1995* ss 29(1) (6-month priority), 72(3), 77, 191–191A; *Designs Act 2003* ss 17(1), 46, 83–83A, 136; *Designs Regulations 2004* reg 3.06(2) (6-month priority); *Treasury Laws Amendment (2018 Measures No. 5) Act 2019* Sch 4 (just-terms saving rule); *Administrative Review Tribunal Act 2024* s 2.
+
+**Wikijuris chapters used:** Introduction to IP (types of IP, sources of law, justifications, international timeline); Copyright introduction (basics, history, timeline, the six-question structure; *Victoria Park Racing* quotation); Duration (Productivity Commission quotation).
+
+**Corrections to Wikijuris:**
+- It says an assignment of copyright must be "signed by both parties". s 196(3) requires writing "signed by or on behalf of the assignor" only. The copyright introduction says so.
+- It lists the fair dealing purposes including "use in legal proceedings". The Act's s 43 covers anything done for judicial proceedings (s 43(1)) and fair dealing for professional advice by a lawyer, patent attorney or trade marks attorney (s 43(2)). The card uses the Act's wording.
+
+**Left out or flagged:** *Grain Pool*, *Nintendo v Centronics* and *Phonographic Performance Co v Commonwealth* (not in Wikijuris; noted on the just-terms card with ⚑); the Australia–EU agreement and Hague status (secondary only, ⚑); the "five ways a product can be protected" split and the course-guide cards are our teaching structure and say so.
+
 ## SYLLABUS.md ⚑ items
 
 ✔ = verified against the current Act. ⚑ = still unverified (reason given). "Secondary" = news or law-firm reports found by web search, not primary sources.
