@@ -29,6 +29,7 @@ a { color: inherit; }
 .tabs a { text-decoration: none; opacity: .45; padding: 10px 8px; }
 .tabs a.on { opacity: 1; font-weight: 600; }
 .tabs a.on span { border-bottom: 2px solid var(--ink); padding-bottom: 2px; }
+.tabs .brand { display: none; }
 .btn { display: block; width: calc(100% - 32px); margin: 0 16px; padding: 14px; border-radius: 8px; background: var(--ink); color: #fff; text-align: center; font-weight: 600; font-size: 15.5px; text-decoration: none; }
 #app.has-cta { padding-bottom: calc(170px + var(--safe-b)); }
 .cta { position: fixed; left: 0; right: 0; bottom: calc(70px + var(--safe-b)); z-index: 19; max-width: 520px; margin: 0 auto; }
@@ -260,3 +261,88 @@ a { color: inherit; }
 .seg { display: flex; gap: 4px; margin: 12px 16px 4px; padding: 3px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
 .seg button { flex: 1; border: 0; background: none; padding: 9px 4px; border-radius: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: .6px; color: var(--muted); cursor: pointer; }
 .seg button.on { background: var(--ink); color: #fff; font-weight: 600; }
+
+.nb-intro { margin: 14px 16px 6px; }
+.nb-foot { margin: 10px 16px 16px; font-size: 10.5px; color: var(--muted); }
+
+/* ---------- wide screens (desktop browsers) ---------- */
+@media (min-width: 900px) {
+  :root { --nav: 220px; }
+  /* bottom tab bar becomes a left sidebar */
+  body:has(nav.tabs) { padding-left: var(--nav); }
+  .tabs { top: 0; bottom: 0; right: auto; width: var(--nav); height: auto; padding: 22px 14px; border-top: 0; border-right: 1px solid var(--line); flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 4px; font-size: 12px; }
+  .tabs a { opacity: .6; padding: 11px 12px; border-radius: 6px; }
+  .tabs a:hover { opacity: 1; background: #fff; }
+  .tabs a.on { opacity: 1; background: var(--ink); color: #fff; }
+  .tabs a.on span { border-bottom: 0; padding-bottom: 0; }
+  .tabs .brand { display: flex; align-items: center; gap: 10px; opacity: 1; margin-bottom: 18px; padding: 4px 6px; font-family: var(--sans); font-size: 17px; font-weight: 700; letter-spacing: 0; }
+  .tabs .brand:hover { background: none; }
+  .tabs .brand img { border-radius: 7px; }
+
+  #app { max-width: 880px; padding-bottom: 40px; }
+  #app.has-cta { padding-bottom: 40px; }
+  .top { padding: 28px 24px 0; font-size: 12px; }
+  .cta { position: static; max-width: none; margin: 8px 24px 0; width: auto; }
+  .btn { width: calc(100% - 48px); margin: 0 24px; }
+  .cta .btn { max-width: 520px; width: 100%; margin: 0; }
+
+  /* the table, bigger */
+  .stat { padding: 14px 24px; } .stat .big { font-size: 46px; } .stat .lab { font-size: 11px; }
+  .route { margin: 4px 24px 6px; font-size: 13px; }
+  .ptable { padding: 0 24px; }
+  .colh, .grid { grid-template-columns: 22px repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .colh { font-size: 10px; margin: 14px 0 6px; }
+  .rh { font-size: 12px; }
+  .grid .el { height: 74px; }
+  .el .n { font-size: 10px; } .el .more, .el .lock { font-size: 10px; }
+  .el .s { font-size: 26px; } .grid .el .s { margin-top: 10px; }
+  .el .bar { height: 3px; } .el .bar i { height: 3px; }
+  .blk { gap: 8px; margin-left: 30px; } .blk-h { font-size: 10px; margin: 16px 0 6px 30px; }
+  .blk .el { height: 48px; } .blk .el .s { font-size: 18px; margin-top: 4px; }
+  .legend { padding: 16px 24px; font-size: 11.5px; }
+  .el { cursor: pointer; }
+
+  /* lists, notebook, half-life */
+  .sect { margin: 26px 24px 8px; font-size: 11px; }
+  .rows, .chap, .outline, .empty-msg { margin-left: 24px; margin-right: 24px; }
+  .seg { margin: 18px 24px 8px; } .seg button { font-size: 12.5px; padding: 11px 6px; }
+  .row { padding: 10px 14px; } .row .t { font-size: 15.5px; } .row .t small { font-size: 11px; }
+  .row .el { width: 44px; height: 44px; } .row .el .s { font-size: 16px; margin-top: 6px; }
+  .row:hover, .chap summary:hover { border-color: var(--ink); }
+  .chap summary { font-size: 16px; padding: 13px 16px; }
+  .outline { font-size: 15.5px; line-height: 1.6; padding: 16px 18px; margin-bottom: 10px; }
+  .note { font-size: 15px; }
+  .nb-intro, .nb-foot { margin-left: 24px; margin-right: 24px; } .nb-foot { font-size: 12px; }
+  .chart { width: 100%; height: auto; max-width: 560px; margin-top: 14px; }
+
+  /* lesson player: a readable column */
+  .p-top { padding: 18px max(24px, calc((100% - 712px) / 2)) 14px; font-size: 12px; }
+  .p-body { max-width: 760px; margin: 0 auto; padding: 24px 24px 140px; }
+  .p-foot .inner { max-width: 760px; padding: 0 24px; }
+  .paper { padding: 26px 30px 22px; }
+  .fig { font-size: 11px; }
+  .paper h3 { font-size: 25px; margin: 10px 0 14px; }
+  .paper p, .paper li { font-size: 17px; line-height: 1.6; }
+  .paper .v { font-size: 16.5px; line-height: 1.55; }
+  .paper .k { font-size: 11px; }
+  .specimen { padding: 16px 18px; } .specimen p { font-size: 15px; } .specimen li { font-size: 14px; }
+  .flow li { font-size: 16px; padding: 11px 14px 11px 44px; } .flow li::before { top: 11px; left: 12px; }
+  .cmp { font-size: 14.5px; } .cmp th, .cmp td { padding: 8px 10px; } .cmp th, .cmp td:first-child { font-size: 11.5px; }
+  .src { font-size: 13px; }
+  .deeper-btn { font-size: 12px; }
+  .q-t { font-size: 24px; margin: 10px 0 20px; }
+  .q-k { font-size: 11.5px; }
+  .opt { font-size: 17px; padding: 15px 16px; } .opt:hover { border-color: var(--ink); }
+  .chip { font-size: 14.5px; padding: 10px 12px; }
+  .slot { font-size: 16px; min-height: 48px; }
+  .sort-stage .card { font-size: 18px; } .bucket strong { font-size: 13px; } .bucket em { font-size: 14px; }
+  .ans .in { max-width: 760px; } .ans p { font-size: 16.5px; } .ans h3 { font-size: 15px; }
+  .result h2 { font-size: 28px; } .result .note { font-size: 16px; }
+  .result .btn, .result .rows { max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  /* sheets open as centred dialogs */
+  .scrim { align-items: center; }
+  body:has(nav.tabs) .scrim { padding-left: var(--nav); }
+  .panel { max-width: 560px; border-radius: 12px; padding: 24px 26px; max-height: 84vh; border: 1px solid var(--line); border-top: 4px solid var(--g); box-shadow: 0 20px 60px rgba(17,20,24,.18); }
+  .panel h2 { font-size: 23px; } .welcome li { font-size: 16px; } .panel .note { font-size: 15px; }
+}

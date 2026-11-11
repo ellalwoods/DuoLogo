@@ -167,7 +167,7 @@
   }
 
   /* ---------- tabs ---------- */
-  const tabs = on => `<nav class="tabs">${[['#table', 'TABLE'], ['#notebook', 'NOTEBOOK'], ['#halflife', 'HALF-LIFE']].map(([h, t]) => `<a href="${h}" class="${on === h ? 'on' : ''}"><span>${t}</span></a>`).join('')}</nav>`;
+  const tabs = on => `<nav class="tabs"><a class="brand" href="#table"><img src="icon.svg" alt="" width="30" height="30"><span>Duo Logo</span></a>${[['#table', 'TABLE'], ['#notebook', 'NOTEBOOK'], ['#halflife', 'HALF-LIFE']].map(([h, t]) => `<a href="${h}" class="${on === h ? 'on' : ''}"><span>${t}</span></a>`).join('')}</nav>`;
 
   /* ---------- HOME: the periodic table ---------- */
   function table() {
@@ -256,14 +256,14 @@
     const status = e => !playable(e) ? 'not yet written' : isDone(e) ? '✓ done' : e === nextElement() ? '▶ next up' : '🔒 locked';
     let body = '';
     if (nbTab === 'notes') body = outlines.length
-      ? `<p class="note" style="margin:14px 16px 4px">A one-paragraph summary of every unit you've finished: the tests, sections and cases. Your own reference notes for the job.</p>${outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('')}`
+      ? `<p class="note nb-intro">A one-paragraph summary of every unit you've finished: the tests, sections and cases. Your own reference notes for the job.</p>${outlines.map(e => `<div class="outline" style="border-left-color:${colourOf(e)}">${D.units[e.id].outline}</div>`).join('')}`
       : '<div class="empty-msg">Each unit you finish adds its tests, sections and cases here. By the end it\'s your own reference notes for the job.</div>';
     if (nbTab === 'units') body = D.chapters.map(ch => {
       const els = D.elements.filter(e => e.ch === ch.n), f = els.filter(e => S.items[e.id]).length;
       return `<details class="chap" ${els.includes(nextElement()) ? 'open' : ''}><summary><span>${ch.n} · ${esc(ch.name)}</span><span class="mono">${f}/${els.length}</span></summary>
         <div class="units">${els.map(e => `<button class="row ${e === nextElement() ? 'path-next' : ''}" data-act="cell" data-id="${e.id}">${tile(e, { tag: 'div', small: true })}<div class="t">${esc(e.name)}<small>Unit ${e.unit} · ${status(e)}</small></div></button>`).join('')}</div></details>`;
-    }).join('') + '<p class="note mono" style="margin:6px 16px 0;font-size:10.5px;color:var(--muted)">Lessons unlock one at a time in element-number order. Units still being written are skipped.</p>';
-    if (nbTab === 'reactions') body = `<p class="note" style="margin:14px 16px 4px">Balance the equation: pick the elements of the cause of action and leave out the red herrings.</p>
+    }).join('') + '<p class="note mono nb-foot">Lessons unlock one at a time in element-number order. Units still being written are skipped.</p>';
+    if (nbTab === 'reactions') body = `<p class="note nb-intro">Balance the equation: pick the elements of the cause of action and leave out the red herrings.</p>
       <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>`;
     if (nbTab === 'settings') body = `<div class="rows" style="margin-top:14px">
         <button class="row" data-act="welcome"><div class="t">How the course works<small>Where to start, and the order of lessons</small></div></button>
@@ -272,7 +272,7 @@
         <button class="row" data-act="import"><div class="t">Import backup<small>Restore on a new phone</small></div></button>
         <button class="row" data-act="reset"><div class="t">Reset the lab<small>Forget everything on this device</small></div></button>
       </div>
-      <p class="note mono" style="margin:16px;font-size:10.5px;color:var(--muted)">Content checked against legislation.gov.au, Wikijuris (CC BY-SA 3.0) and EUR-Lex on 11 Nov 2026. ⚑ marks anything not yet confirmed against a primary source. Study aid, not legal advice.</p>`;
+      <p class="note mono nb-foot">Content checked against legislation.gov.au, Wikijuris (CC BY-SA 3.0) and EUR-Lex on 11 Nov 2026. ⚑ marks anything not yet confirmed against a primary source. Study aid, not legal advice.</p>`;
     app.className = '';
     app.innerHTML = `
       <div class="top"><span>Notebook</span><span>${PATH.filter(isDone).length} / ${PATH.length} lessons done</span></div>

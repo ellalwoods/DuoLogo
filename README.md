@@ -17,6 +17,8 @@ Status: **a working build of Design B, The Lab**, with the four Foundations less
 
 The other 45 units are in the table but not written yet; they're skipped in the order until they are. ⚑ in the app marks content not yet confirmed against a primary source.
 
+**On a computer:** in a desktop browser (wider than 900px) the tab bar becomes a left sidebar, the table and text scale up, lessons sit in a readable column, and pop-ups open as centred dialogs. Phones keep the original layout.
+
 ## Run it
 
 No build step. Serve the folder with any static server:
