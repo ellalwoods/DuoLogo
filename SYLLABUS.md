@@ -101,14 +101,14 @@ Every right is taught through the same five questions, in the same order. Both d
 - Sound recordings, films, broadcasts, published editions (ss 89–92); makers; performers as co-owners of sound recordings (2005); performers' rights (Part XIA).
 
 ### Stick 2 · How?
-**1.4 Ideas, facts and material form** · 2 lessons
+**1.4 Ideas, facts and material form** · 2 lessons · ✅ *written, in the app*
 - The idea/expression dichotomy; *Zeccola v Universal City Studios* (1982, FCAFC: *Jaws* vs *Great White*); facts and history; material form (s 10) and when a work is "made" (s 22).
 
-**1.5 Originality** · 2 lessons · ✅ *fully written in [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md)*
+**1.5 Originality** · 2 lessons · ✅ *fully written in [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md), in the app*
 - *University of London Press* (1916); *Sands & McDougall v Robinson* (1917, HCA); *Desktop Marketing v Telstra* (2002, FCAFC); *IceTV v Nine Network* (2009, HCA); *Telstra v Phone Directories* (2010, FCAFC); *Acohs v Ucorp* (2012, FCAFC); *Interlego v Tyco* (1989, PC ⚑ *report year; check the judgment year*). AI-generated material ⚑ *no Australian decision found as at Nov 2026*.
 
-**1.6 Authorship and connecting factors** · 2 lessons
-- Qualified persons and first publication (s 32); the international regulations; **joint authorship** (s 10: collaboration, contributions not separate); *Prior v Lansdowne Press* (1977, Vic SC); authorship of films and sound recordings.
+**1.6 Authorship and connecting factors** · 2 lessons · ✅ *written, in the app*
+- Qualified persons and first publication (s 32); the international regulations (the *Copyright (International Protection) Regulations 1969* are still in force: reg 4 covers Berne, UCC, WCT and WTO countries, plus Rome and WPPT for some subject matter ✔); **joint authorship** (s 10: collaboration, contributions not separate); *Prior v Lansdowne Press* (1977, Vic SC) ⚑ *not covered by Wikijuris; left out of the unit until checked*; authorship of films and sound recordings (makers, s 22(3)–(5) ✔).
 
 ### Stick 3 · Whose & how long?
 **1.7 Ownership** · 2 lessons
@@ -124,7 +124,7 @@ Every right is taught through the same five questions, in the same order. Both d
 **1.10 The exclusive rights** · 2 lessons
 - s 31 (works) and ss 85–88 (Part IV): reproduce, publish, perform in public, communicate to the public (2001), adapt. "In public": the domestic vs commercial circle.
 
-**1.11 Direct infringement: copying a substantial part** · 3 lessons
+**1.11 Direct infringement: copying a substantial part** · 3 lessons · ✅ *written, in the app*
 - s 36 and s 101; s 14 (substantial part); objective similarity plus causal connection; subconscious copying; quality not quantity. *IceTV* (2009, HCA); *Larrikin Music v EMI* (2010 FCA, 2011 FCAFC: *Kookaburra* and *Down Under*); *Network Ten v TCN Channel Nine* (2004, HCA: what is "a broadcast"?).
 
 **1.12 Authorisation and intermediaries** · 3 lessons

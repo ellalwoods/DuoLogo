@@ -57,6 +57,26 @@ To finish the job, open the judgments in a browser (AustLII or the courts' sites
 | Lesson B questions | ◐ | As above | ⚑ on Q3–Q6 where the card is unverified |
 | Outline | ✔ | As above | Rewritten to match |
 
+## Units written after the sample (11 November 2026)
+
+Units 1.4, 1.6 and 1.11 and the copyright-infringement Reaction were written directly from the current Act and Wikijuris, and live in the app's data files (`unit-ideas.js`, `unit-authorship.js`, `unit-substantial-part.js`, `reactions.js`). Every card has a source line; ⚑ marks anything unconfirmed. Extra source read for these: *Copyright (International Protection) Regulations 1969*, Compilation No. 16, in force 1 January 2026 (F2026C00025), and the *Copyright Regulations 2017* (to confirm they don't replace the 1969 Regulations).
+
+**Statutory text quoted or checked:** CA ss 10(1) ("material form", "writing", "work of joint authorship", "author" of a photograph), 14(1), 21(3), 22(1)–(5), 29(1)(a), (3)–(6), 31(1), 32(1)–(4), 35(2)–(6), 36(1), 115(3), 184(1); International Protection Regulations reg 4.
+
+**Cases (checked against the extracts Wikijuris quotes; judgments not reachable):** *Skybase v Fortuity* (Hill J at 531); *Zeccola v Universal City Studios*; *Telstra v Royal & Sun Alliance* (the Goggomobil ad); *Baigent v Random House*; *IceTV* ([157]–[160] and the substantial-part passages); *Desktop Marketing*; *Star Micronics*; *Donoghue v Allied Newspapers*; *SW Hart v Edwards Hot Water Systems*; *Francis Day & Hunter v Bron*; *Ladbroke v William Hill*; *Burke & Margot Burke v Spicers*; *EMI Songs v Larrikin* (Emmett J at [93]); *Network Ten v TCN Channel Nine* and *TCN Channel Nine v Network Ten (No 2)* (Finkelstein and Hely JJ).
+
+**Where the sources disagreed, the Act won:**
+- **Qualified person:** Wikijuris lists "an Australian protected person". The current s 32(4) says only "an Australian citizen or a person resident in Australia". The unit follows the Act.
+- **International protection:** Wikijuris says it applies only to Berne Convention countries. Current reg 4 covers Berne, UCC, WCT and WTO countries, plus Rome and WPPT countries for some subject matter. The unit follows the regulations.
+
+**Still ⚑ or left out:**
+- *Prior v Sheldon*: Wikijuris cites it for joint owners holding as tenants in common; flagged on the joint-authorship card.
+- *Prior v Lansdowne Press* (syllabus 1.6): not covered by Wikijuris, so left out of the unit rather than guessing at its facts.
+- *Larrikin* at first instance (2010 FCA): only the Full Court decision is in Wikijuris, so the unit uses that.
+- **Breach-of-confidence Reaction: not built.** Wikijuris states three elements and says detriment "must" be shown; the syllabus and design docs use the four *Smith Kline* elements, and whether detriment is required is unsettled in Australia. That needs the judgments before it goes in the app.
+
+**Wording that is ours, not a court's:** the checklists (1.6 connecting factors; 1.11 full infringement answer) and every worked example are teaching structures built on the cited provisions and cases, and say so on the card.
+
 ## SYLLABUS.md ⚑ items
 
 ✔ = verified against the current Act. ⚑ = still unverified (reason given). "Secondary" = news or law-firm reports found by web search, not primary sources.

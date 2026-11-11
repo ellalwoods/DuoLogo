@@ -153,7 +153,7 @@
     const cls = ['el', st === 'un' ? 'un' : st === 'ready' ? 'ready' : '', st === 'decay' ? 'decay' : '', st === 'stable' ? 'stable' : '', isNow ? 'now' : ''].join(' ');
     const label = `${e.name} (${e.unit}): ${st === 'un' ? 'not yet written' : st === 'ready' ? 'ready to discover' : `${Math.round(p * 100)}% recall`}`;
     return `<${tag} class="${cls}" style="${style}" ${tag === 'button' ? `data-act="cell" data-id="${e.id}"` : ''} aria-label="${esc(label)}">
-      <div class="n"><span>${e.z}</span></div>${more ? `<span class="more">+${more}</span>` : ''}
+      <div class="n"><span>${e.z}</span></div>${more ? `<span class="more">${esc(more)}</span>` : ''}
       <div class="s">${st === 'un' ? '?' : e.sym}</div>
       ${it && !small ? `<div class="bar"><i style="width:${Math.round(p * 100)}%"></i></div>` : ''}</${tag}>`;
   }
@@ -175,7 +175,9 @@
       grid += `<div class="rh" title="${esc(st.long)}">${st.n}</div>`;
       D.groups.forEach(g => {
         const list = cell(g.id, st.n), e = lead(list);
-        grid += e ? tile(e, { now: e === nx, more: list.length - 1 }) : '<div class="el empty"></div>';
+        // a cell holding several elements shows how many are discovered ("2/3"), or how many wait there ("+2")
+        const got = list.filter(x => S.items[x.id]).length, more = list.length > 1 ? (got ? `${got}/${list.length}` : `+${list.length - 1}`) : '';
+        grid += e ? tile(e, { now: e === nx, more }) : '<div class="el empty"></div>';
       });
     });
     const block = b => D.elements.filter(e => e.block === b).map(e => tile(e, { now: e === nx, small: true })).join('');
@@ -324,7 +326,7 @@
         <h3>${esc(c.title)}</h3>
         <div class="k">HYPOTHESIS</div><div class="v">${x.hyp}</div>
         <div class="k">METHOD</div><div class="v">${x.method}</div>
-        <div class="k">RESULT</div><div class="res">✗ ${esc(x.result.toUpperCase())}</div>
+        <div class="k">RESULT</div><div class="res ${x.ok ? 'ok' : ''}">${x.ok ? '✓' : '✗'} ${esc(x.result.toUpperCase())}</div>
         <div class="k">DISCUSSION</div><div class="v">${x.discussion}</div>
         ${x.replication ? `<div class="k">REPLICATION</div>${replication(x)}` : ''}`;
     } else {

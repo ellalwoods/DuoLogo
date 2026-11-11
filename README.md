@@ -2,18 +2,19 @@
 
 A study app for learning a full Australian intellectual property law course, in cards: fun to use, but with real depth (statutes, leading cases, tests, critique and problem questions), ending with a chapter on IP in practice.
 
-Status: **first working slice of Design B, The Lab.** A static PWA built the DuoVino way (no build step, vanilla JS, progress in localStorage, offline service worker).
+Status: **a working build of Design B, The Lab**, with four copyright units written. A static PWA built the DuoVino way (no build step, vanilla JS, progress in localStorage, offline service worker).
 
 ## What's in this build
 
 - **The Table (home):** the whole syllabus as a periodic table. Columns are the rights (copyright, trade marks, passing off & ACL, patents, designs, confidential information); rows are the Five Sticks (What? · How? · Whose & how long? · Breach · Escape). Foundations sit above; culture, specialist rights and enforcement sit below like the lanthanides; IP in practice is the Field work block. Each of the 81 units is an element. Tiles are **undiscovered** (dashed "?"), **ready** (dashed in the group colour), **discovered** (filled, with a memory bar), **decaying** (desaturated and glowing) or **stable** (thick border). Tap a tile to see every element in that cell. The headline number is **course retention**: the average estimated recall across everything you've learned.
+- **Four copyright units:** 1.4 *Ideas, facts and material form*, 1.5 *Originality*, 1.6 *Authorship and connecting factors* and 1.11 *Copying a substantial part*: 9 lessons, 51 cards and 57 questions. That completes Copyright's "How?" row of the table. Each was checked against the current Act and Wikijuris; see `VERIFICATION.md`.
 - **Copyright 1.5 · Originality, in full:** both lessons from [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md), 15 cards and 16 questions. Cards sit on graph paper as numbered figures with their section or citation in the margin, a **Go deeper** layer, and a **Source** line. Case cards for *IceTV* and *Phone Directories* are written up as experiments (hypothesis · method · result · discussion · replication); the statute card is a specimen with numbered elements; the test card is a flowchart; traps carry the hazard label. Question formats: multiple choice, true/false, citation network (match), order, Spectroscopy and essay plan (sort), and Similarity index (slider).
-- **One Reaction:** passing off. Tap reactants into the equation; contaminants (intention to deceive, a registered mark, evidence of actual confusion) are flagged with the reason. A missing reactant makes the reaction fizzle.
+- **Two Reactions:** passing off, and direct infringement of copyright. Tap reactants into the equation; contaminants (intention to deceive, a registered mark, evidence of actual confusion; intention to infringe, registration, copying the idea) are flagged with the reason. A missing reactant makes the reaction fizzle.
 - **Half-life:** real spaced repetition. Recall decays as p = 2^(−elapsed ÷ half-life); an element is due once p falls to 50%. Half-lives step 1 → 3 → 7 → 16 → 35 → 90 days with each successful review and step back one on a miss. The screen draws each element's forgetting curve over the last 14 days and lists what's below threshold. **Stabilise** reviews everything decaying (three questions per element, pass at two of three) and then re-runs any due reactions.
 - **Notebook:** your outline (each discovered element adds its summary), the reactions, every chapter and unit, backup export/import, reset, and a sound switch.
 - **Sound:** synthesised with Web Audio (no audio files, so it works offline), in its own palette of lab electronics and liquids, distinct from DuoVino's glass and wood: relay clicks for buttons, a toggle switch for tabs, graph paper sliding for card turns, a pipette drop when a piece goes into place, an FM "result ready" chime for a right answer and a detuned buzzer for a wrong one, effervescence when a contaminant goes in, bubbling and a soft electric chord when a reaction balances (or a deflating tone when it fizzles), a rising sweep and bell chord when you discover an element, a radar ping with echoes when you stabilise one, and a faint Geiger crackle when Half-life opens with something decaying. Turn it off in **Notebook → Sound**.
 
-Units other than 1.5 are in the table but not written yet. ⚑ in the app marks content not yet confirmed against a primary source.
+The other 77 units are in the table but not written yet. ⚑ in the app marks content not yet confirmed against a primary source.
 
 ## Run it
 
@@ -42,8 +43,8 @@ Progress is stored only in the browser on that device. Use **Notebook → Export
 | `index.html` | Shell |
 | `styles.css` | The Lab's visual language (lab white, graph grid, group colours, IBM Plex) |
 | `course.js` | The periodic table: groups, sticks, and all 81 units as elements |
-| `unit-originality.js` | Copyright 1.5, transcribed from the checked `SAMPLE-UNIT.md` |
-| `reactions.js` | Reaction questions (passing off) |
+| `unit-ideas.js`, `unit-originality.js`, `unit-authorship.js`, `unit-substantial-part.js` | Copyright 1.4, 1.5, 1.6 and 1.11 (1.5 transcribed from the checked `SAMPLE-UNIT.md`) |
+| `reactions.js` | Reaction questions (passing off; copyright infringement) |
 | `app.js` | Screens, lesson player, question formats, half-life spaced repetition, sound, backup |
 | `sw.js`, `manifest.webmanifest`, `icon.svg`, `icon-*.png` | Offline support and home-screen install (the PNGs are for iPhone and Android, which don't use SVG icons) |
 

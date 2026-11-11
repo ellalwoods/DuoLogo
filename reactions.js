@@ -21,5 +21,22 @@ window.DUOLOGO = window.DUOLOGO || {};
       explain: 'The "classic trinity": reputation, misrepresentation, damage (<i>ConAgra v McCain</i> (1992) 33 FCR 302 at 355–356, Gummow J).',
       source: `${WJ}: "The Elements of Passing Off"; "Fraud is Not an Essential Element"; "Other Requirements for Misrepresentation"; "Element 3: Damage". The ConAgra pinpoint is as cited by Wikijuris.`,
     },
+    {
+      id: 'rx-copyright', group: 'cr', product: 'INFRINGEMENT', home: 'u1-11',
+      q: 'Balance the equation for direct infringement of copyright in a work.',
+      reactants: [
+        { t: 'Subsisting copyright', why: 'There must be a work in which copyright subsists, owned by the plaintiff (units 1.1–1.8).' },
+        { t: 'Act comprised in the copyright', why: 'The defendant did, in Australia, one of the owner\'s exclusive acts in s 31, such as reproducing the work (s 36(1)).' },
+        { t: 'Substantial part', why: 'The act was done in relation to the whole work or a substantial part of it: judged by quality, not quantity (s 14(1)).' },
+        { t: 'No licence', why: 'The defendant wasn\'t the owner and had no licence from the owner (s 36(1)).' },
+      ],
+      contaminants: [
+        { t: 'Intention to infringe', why: 'Not an element: s 36(1) doesn\'t mention it. An innocent infringer still infringes; innocence only means no damages, though an account of profits is still available (s 115(3)).' },
+        { t: 'Registration of the work', why: 'Not an element. There\'s no system for registering copyright in Australia: protection is automatic.' },
+        { t: 'Copying the idea', why: 'A contaminant, not a reactant: ideas are free. Only taking expression can infringe (units 1.4 and 1.11).' },
+      ],
+      explain: 'Infringement of a work under s 36(1): copyright subsists, and someone other than the owner, without a licence, does in Australia an act comprised in the copyright (s 31) in relation to the work or a substantial part of it (s 14). For reproduction, that act needs a causal connection and objective similarity.',
+      source: `<i>Copyright Act 1968</i> (Cth), Compilation No. 65, ss 14(1), 31(1), 36(1), 115(3) (text checked). <a href="https://wikijuris.net/ausip/copyrightinfringement/" target="_blank" rel="noopener">Wikijuris, Copyright infringement</a> and <a href="https://wikijuris.net/ausip/copyrightbackground/" target="_blank" rel="noopener">Copyright background</a> ("There is no system to register copyright in Australia") (CC BY-SA 3.0).`,
+    },
   ];
 })();
