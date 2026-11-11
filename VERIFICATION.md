@@ -127,6 +127,16 @@ Written from the *Trade Marks Act 1995* (Compilation No. 48, in force 19 Septemb
 - The Australia–EU FTA and Prosecco (concluded March 2026): press reports only, flagged.
 - *Australian Woollen Mills v Walton*, *Food Channel Network*, *Paul's Retail v Lonsdale* (syllabus): not in Wikijuris; left out.
 
+## Passing off & the ACL 3.1–3.4 (11 November 2026)
+
+Written from the *Competition and Consumer Act 2010* Sch 2, the Australian Consumer Law (Compilation No. 168, in force 27 October 2026; volume 4 downloaded for Sch 2), and Wikijuris, Passing Off, in `unit-passing-off.js`.
+
+**Statutory text quoted or checked:** ACL ss 4 (heading), 18, 29, 224(1), (3)–(3A) (s 18 is not among the penalty provisions; s 29, in Part 3-1, is), 232, 236.
+
+**Cases (as summarised or quoted in Wikijuris; judgments not reachable):** *ConAgra v McCain* (1992) 33 FCR 302 / [1992] FCA 159; *Reckitt & Colman v Borden* (1990) 17 IPR 1; *Erven Warnink v Townend* [1979] AC 731; *Bollinger v Costa Brava* [1960] Ch 262; *Hansen v Bickfords* (Finkelstein J only); *Sydneywide v Red Bull* [2002] FCAFC 157; *Cadbury Schweppes v Pub Squash* [1980] 2 NSWLR 851; *Philips v Remington* (2000) 100 FCR 90; *Lego v Lemelstrich* (1983) 9 FSR 155; *Twentieth Century Fox v SA Brewing* (1996) 66 FCR 451; *Mars v Sweet Rewards* (2009) 81 IPR 354 (Perram J at [32]); *Parkdale v Puxu* (1982) 149 CLR 191; *Henderson v Radio Corp* (1960) 60 SR (NSW) 576; *Hogan v Koala Dundee* [1988] FCA 333 (Pincus J); *Pacific Dunlop v Hogan* [1989] FCA 185 (Beaumont and Burchett JJ); *Talmax v Telstra* [1997] 2 Qd R 444; *Irvine v Talksport* [2002] EWHC 367 (Ch); *Honey v Australian Airlines* [1988] FCA 177; *CTW v Woolworths* [1981] 1 NSWLR 273; *Buttrose v Senior's Choice* [2013] FCCA 2050.
+
+**Left out:** *Cadbury Schweppes v Darrell Lea* (purple), *Taco Co v Taco Bell*, *10th Cantanae v Shoshana* and *Seafolly v Madden* (all in the syllabus): not in Wikijuris and the judgments couldn't be opened. Facts of the *Hogan* cases beyond what Wikijuris quotes were deliberately not added.
+
 ## Foundations 0.1–0.4 and the copyright introduction (11 November 2026)
 
 Written as the course's introductory lessons (`unit-foundations.js`, and lesson A of 1.1 in `unit-literary.js`).

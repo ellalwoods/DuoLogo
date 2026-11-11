@@ -204,18 +204,18 @@ Units are studied **in element-number order**, and each one unlocks when the one
 
 ## 3 · Passing off & the Australian Consumer Law *(4 units)*
 
-**3.1 Passing off: reputation** · 2 lessons
+**3.1 Passing off: reputation** · 1 lesson in the app · ✅ *written*
 - The classical trinity; goodwill and reputation; foreign reputation: *ConAgra v McCain* (1992, FCAFC); *Erven Warnink v Townend* (UK, 1979: extended passing off).
 
-**3.2 Misrepresentation and damage** · 2 lessons
+**3.2 Misrepresentation and damage** · 1 lesson in the app · ✅ *written (Cadbury v Darrell Lea left out: not in Wikijuris)*
 - Get-up, names and lookalikes; *Cadbury Schweppes v Darrell Lea* (2009, FCAFC: purple); kinds of damage.
 
-**3.3 Misleading or deceptive conduct** · 2 lessons
+**3.3 Misleading or deceptive conduct** · 1 lesson in the app · ✅ *written (Taco Bell left out: not in Wikijuris)*
 - ACL s 18 and s 29; the class of consumers and the ordinary or reasonable member: *Parkdale v Puxu* (1982, HCA); *Taco Co of Australia v Taco Bell* (1982, FCAFC: the four steps); *Campomar v Nike* (2000, HCA); disclaimers; remedies and ACCC enforcement.
 
-**3.4 Endorsement and character merchandising** · 2 lessons
+**3.4 Endorsement and character merchandising** · 1 lesson in the app · ✅ *written (10th Cantanae and Seafolly left out: not in Wikijuris)*
 - *Henderson v Radio Corp* (1960, NSW SC: the ballroom dancers); *Hogan v Koala Dundee* (1988, FCA); *10th Cantanae v Shoshana* (1987, FCAFC: no misrepresentation); *Seafolly v Madden* (2014, FCAFC: social media accusations of copying).
-- ✦ **Problem question: "The Influencer"**: a fake endorsement, a lookalike label and a comment war.
+- ✦ **Worked scenario (not yet written): "The Influencer"**: a fake endorsement, a lookalike label and a comment war.
 
 ---
 
