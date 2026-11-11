@@ -91,13 +91,13 @@ Every right is taught through the same five questions, in the same order. Both d
 ## 1 · Copyright *(17 units)*
 
 ### Stick 1 · What?
-**1.1 Literary works** · 2 lessons
+**1.1 Literary works** · 2 lessons · ✅ *written, in the app*
 - s 10 definitions; tables and compilations; computer programs. Single words, titles, slogans and headlines: *Exxon v Exxon Insurance* (UK, 1982); *Fairfax Media v Reed International* (2010, FCA). Software: *Data Access v Powerflex* (1999, HCA).
 
-**1.2 Dramatic, musical and artistic works** · 3 lessons
+**1.2 Dramatic, musical and artistic works** · 3 lessons · ✅ *written, in the app*
 - Dramatic works and formats: *Green v Broadcasting Corp of NZ* (1989, PC). Musical works. Artistic works: drawings, paintings, photographs, sculptures, engravings, buildings and models, and **works of artistic craftsmanship**: *Burge v Swarbrick* (2007, HCA).
 
-**1.3 Subject matter other than works (Part IV)** · 2 lessons
+**1.3 Subject matter other than works (Part IV)** · 2 lessons · ✅ *written, in the app*
 - Sound recordings, films, broadcasts, published editions (ss 89–92); makers; performers as co-owners of sound recordings (2005); performers' rights (Part XIA).
 
 ### Stick 2 · How?
