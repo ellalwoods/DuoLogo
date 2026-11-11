@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Duo Logo — design concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1C1F3A;--violet:#5A4FCF;--cobalt:#2E6BE6;--sky:#58A6E8;--peri:#8C9EF0;--tan:#C9A97A;--sage:#9DB0A0;--ochre:#C8743A;--paper:#F6F1E6;--line:#d9cfbb}
+*{box-sizing:border-box;margin:0}
+body{background:#e7e1d3;font-family:Fraunces,Georgia,serif;color:var(--ink);padding:36px}
+h1{font-size:34px;font-weight:600;letter-spacing:-.5px}
+.sub{font-style:italic;opacity:.7;margin:4px 0 28px}
+.row{display:flex;gap:28px;flex-wrap:wrap}
+.cap{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin:12px 4px 0;opacity:.65}
+.phone{width:300px;height:620px;border-radius:38px;background:var(--paper);box-shadow:0 0 0 9px var(--ink),0 22px 50px rgba(28,31,58,.35);overflow:hidden;position:relative;
+ background-image:radial-gradient(rgba(120,100,60,.06) 1px,transparent 1px);background-size:5px 5px}
+.mono{font-family:'IBM Plex Mono',monospace}
+.top{padding:22px 20px 0;display:flex;justify-content:space-between;align-items:center;font-size:11px}
+.tabs{position:absolute;bottom:0;left:0;right:0;height:62px;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;background:var(--paper)}
+.tabs span{font-size:20px;opacity:.35}.tabs span.on{opacity:1}
+.btn{display:block;margin:0 20px;padding:14px;border-radius:14px;background:var(--violet);color:#fff;text-align:center;font-weight:600;font-size:17px;box-shadow:0 4px 0 #3d348f}
+/* card */
+.card{margin:14px 16px;background:#fffdf7;border:1px solid var(--line);border-radius:6px;display:flex;min-height:340px;box-shadow:0 2px 0 var(--line)}
+.margin{width:66px;white-space:nowrap;border-right:1px solid #e9b9a0;padding:14px 6px;font-family:'IBM Plex Mono';font-size:10px;color:var(--violet);line-height:1.5}
+.body{padding:16px 14px;font-size:15px;line-height:1.45}
+.body h3{font-size:19px;margin-bottom:8px}
+.tag{display:table;margin-top:12px;padding:8px 10px;border:1px dashed var(--ink);border-radius:3px;font-size:11px;font-family:'IBM Plex Mono';background:#f3ecd9;transform:rotate(-1.5deg)}
+.prog{display:flex;gap:5px;padding:14px 20px 0}.prog i{flex:1;height:4px;border-radius:2px;background:var(--line)}.prog i.f{background:var(--cobalt)}
+/* examiner */
+.form{margin:16px;background:#fffdf7;border:1px solid var(--line);padding:14px;position:relative;font-size:13px}
+.form .lbl{font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;opacity:.6;text-transform:uppercase}
+.mark{font-size:26px;font-weight:600;letter-spacing:2px;margin:6px 0 10px;color:var(--cobalt)}
+.stamp{position:absolute;right:10px;top:46px;transform:rotate(-14deg);border:3px solid var(--ochre);color:var(--ochre);font-family:'IBM Plex Mono';font-weight:500;font-size:20px;padding:4px 10px;letter-spacing:2px;opacity:.88;border-radius:4px}
+.opts{margin:6px 16px}.opts div{border:1px solid var(--line);background:#fffdf7;border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:13px}
+.opts div.sel{border:2px solid var(--violet);background:#eeecfb}
+.opts b{font-family:'IBM Plex Mono';font-size:11px;color:var(--violet);margin-right:6px}
+.hold{margin:10px 16px;display:flex;gap:10px}.hold div{flex:1;text-align:center;padding:12px;border-radius:50px;font-family:'IBM Plex Mono';font-size:11px;letter-spacing:1px}
+/* raids */
+.threat{margin:10px 16px;display:flex;align-items:center;gap:12px;background:#fffdf7;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.threat .t{flex:1;font-size:13px}.threat .t small{display:block;font-family:'IBM Plex Mono';font-size:9.5px;opacity:.6;margin-top:2px}
+.pill{font-family:'IBM Plex Mono';font-size:9.5px;padding:3px 7px;border-radius:20px;background:#f6e3d6;color:var(--ochre)}
+.note{margin:12px 16px;padding:12px;border-left:3px solid var(--ochre);background:#f7eadf;font-size:12.5px;font-style:italic}
+</style></head><body>
+<h1>Duo Logo</h1>
+<div class="sub">A field guide, annotated by a lawyer. Concept screens, v0.1</div>
+<div class="row">
+
+<!-- HOME -->
+<div><div class="phone">
+ <div class="top"><span class="mono">TUE 10 NOV · DISPLAY SEASON</span><span class="mono">⚙</span></div>
+ <svg viewBox="0 0 300 380" width="300" height="380">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F1E6"/><stop offset="1" stop-color="#E8E4D2"/></linearGradient></defs>
+  <rect width="300" height="380" fill="url(#sky)"/>
+  <!-- gums -->
+  <g stroke="#7f8f80" stroke-width="2" fill="none" opacity=".75">
+   <path d="M38 300 C40 220 30 160 44 70"/><path d="M44 140 C60 120 70 110 86 104"/><path d="M40 190 C24 170 18 160 10 150"/>
+   <path d="M262 300 C258 230 270 150 255 60"/><path d="M258 130 C240 116 230 110 214 108"/>
+  </g>
+  <g fill="#9DB0A0" opacity=".45"><ellipse cx="70" cy="80" rx="50" ry="26"/><ellipse cx="30" cy="140" rx="30" ry="16"/><ellipse cx="240" cy="70" rx="50" ry="24"/><ellipse cx="226" cy="104" rx="26" ry="12"/></g>
+  <!-- ground -->
+  <path d="M0 290 Q150 270 300 292 L300 380 L0 380Z" fill="#E3D6BB"/>
+  <!-- bower walls: sticks -->
+  <g stroke="#B08E5E" stroke-width="2.2" stroke-linecap="round">
+   <line x1="112" y1="300" x2="104" y2="214"/><line x1="117" y1="300" x2="112" y2="206"/><line x1="122" y1="300" x2="120" y2="210"/><line x1="127" y1="300" x2="128" y2="216"/><line x1="132" y1="300" x2="136" y2="222"/><line x1="108" y1="300" x2="98" y2="226"/>
+   <line x1="170" y1="300" x2="166" y2="222"/><line x1="175" y1="300" x2="174" y2="214"/><line x1="180" y1="300" x2="182" y2="207"/><line x1="185" y1="300" x2="190" y2="213"/><line x1="190" y1="300" x2="198" y2="224"/>
+  </g>
+  <g stroke="#B08E5E" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 4" opacity=".55"><line x1="195" y1="300" x2="205" y2="236"/><line x1="137" y1="300" x2="144" y2="232"/></g>
+  <!-- display court treasures -->
+  <g>
+   <circle cx="92" cy="324" r="7" fill="#2E6BE6"/><circle cx="92" cy="324" r="4.2" fill="none" stroke="#fff" stroke-width="1" opacity=".6"/>
+   <rect x="150" y="330" width="22" height="6" rx="2" fill="#58A6E8" transform="rotate(-18 160 333)"/>
+   <path d="M210 316 q14 -10 22 6 q-12 2 -22 -6z" fill="#5A4FCF"/>
+   <circle cx="128" cy="345" r="6" fill="#8C9EF0"/><circle cx="135" cy="341" r="5" fill="#8C9EF0"/>
+   <path d="M60 340 q22 -12 34 -2" stroke="#2E6BE6" stroke-width="3" fill="none" stroke-linecap="round"/>
+   <circle cx="236" cy="346" r="7" fill="#2E6BE6"/>
+  </g>
+  <!-- bird -->
+  <g transform="translate(212 252)">
+   <path d="M0 22 C2 6 16 -2 28 2 C36 4 40 12 38 22 C34 34 14 38 0 22Z" fill="#1C1F3A"/>
+   <circle cx="30" cy="4" r="9" fill="#1C1F3A"/><circle cx="33" cy="2" r="2.6" fill="#7d74ff"/><circle cx="33" cy="2" r="1" fill="#1C1F3A"/>
+   <path d="M38 5 L46 7 L38 9Z" fill="#d8cf8a"/>
+   <path d="M0 22 L-14 32 L-6 22Z" fill="#1C1F3A"/>
+   <line x1="16" y1="36" x2="14" y2="46" stroke="#B08E5E" stroke-width="1.5"/><line x1="24" y1="36" x2="25" y2="46" stroke="#B08E5E" stroke-width="1.5"/>
+  </g>
+  <text x="150" y="372" text-anchor="middle" font-family="IBM Plex Mono" font-size="9" fill="#1C1F3A" opacity=".6">11 STICKS · 6 TREASURES · 2 GAPS</text>
+ </svg>
+ <div style="padding:6px 20px 12px"><div class="mono" style="font-size:10px;opacity:.6">UP NEXT · CH 2 FEATHERS · STICK 4 OF 5</div>
+ <div style="font-size:20px;font-weight:600">Substantial part</div></div>
+ <a class="btn">Continue</a>
+ <div class="tabs"><span class="on">🪺</span><span>🌿</span><span>🪶</span></div>
+</div><div class="cap">Bower · home</div></div>
+
+<!-- LESSON -->
+<div><div class="phone">
+ <div class="prog"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i></div>
+ <div class="top" style="padding-top:12px"><span class="mono">FORAGE · 3 / 6</span><span class="mono" style="color:var(--cobalt)">● FEATHERS</span></div>
+ <div class="card">
+  <div class="margin">s 14<br>CA<br><br>s 36<br>CA</div>
+  <div class="body">
+   <h3>Quality, not quantity</h3>
+   You can infringe by copying a <i>small</i> part, if it's an <b>important</b> part.<br><br>
+   Four notes of a riff can be enough. A whole page of dull boilerplate might not be.<br><br>
+   Courts ask: did you take the part that makes the work <i>the work</i>?
+   <div class="tag">IceTV v Nine Network<br>[2009] HCA 14</div>
+  </div>
+ </div>
+ <div style="text-align:center;font-size:12px;font-style:italic;opacity:.6;margin-top:6px">Tap a section number to read the Act</div>
+ <div style="position:absolute;bottom:84px;left:0;right:0"><a class="btn">Next card</a></div>
+</div><div class="cap">Forage · a lesson card</div></div>
+
+<!-- EXAMINER -->
+<div><div class="phone">
+ <div class="prog"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i><i></i></div>
+ <div class="top" style="padding-top:12px"><span class="mono">BUILD · THE EXAMINER'S STAMP</span><span class="mono" style="color:var(--cobalt)">● CAPS</span></div>
+ <div class="form">
+  <div class="lbl">Application · Class 30 · coffee</div>
+  <div class="mark">SMOOTH ROAST</div>
+  <div class="lbl">Applicant</div><div>Lantern Lane Roasters Pty Ltd</div>
+  <div class="lbl" style="margin-top:8px">Note</div><div style="font-style:italic">For ground coffee and beans.</div>
+  <div class="stamp">REFUSED</div>
+ </div>
+ <div class="mono" style="font-size:10px;margin:2px 16px 8px;opacity:.6">ON WHAT GROUND?</div>
+ <div class="opts">
+  <div class="sel"><b>s 41</b>Not capable of distinguishing: plain words other traders need to describe their coffee</div>
+  <div><b>s 44</b>Deceptively similar to an earlier mark</div>
+  <div><b>s 43</b>Deceptive or confusing connotation</div>
+ </div>
+ <div style="position:absolute;bottom:84px;left:0;right:0"><a class="btn">Check</a></div>
+</div><div class="cap">Build · press and hold to stamp</div></div>
+
+<!-- RAIDS -->
+<div><div class="phone">
+ <div class="top"><span class="mono">RAIDS</span><span class="mono">3 DUE</span></div>
+ <div style="padding:10px 20px 2px;font-size:22px;font-weight:600;line-height:1.15">A rival is eyeing your bower.</div>
+ <div style="padding:2px 20px 8px;font-size:13px;font-style:italic;opacity:.7">Answer to keep each treasure.</div>
+ <div class="threat"><svg width="26" height="26"><circle cx="13" cy="13" r="9" fill="#2E6BE6"/></svg><div class="t">Self Care v Allergan<small>CAPS · USE AS A TRADE MARK</small></div><span class="pill">eyed</span></div>
+ <div class="threat"><svg width="26" height="26"><path d="M3 18 q10 -16 20 -6" stroke="#5A4FCF" stroke-width="4" fill="none" stroke-linecap="round"/></svg><div class="t">Fair dealing: the closed list<small>FEATHERS · ss 40–42</small></div><span class="pill">eyed</span></div>
+ <div class="threat"><svg width="26" height="26"><rect x="2" y="10" width="22" height="6" rx="2" fill="#58A6E8"/></svg><div class="t">NRDC: manner of manufacture<small>PEGS · s 18(1)(a)</small></div><span class="pill">eyed</span></div>
+ <div class="note">Careful, counsel: send a letter of demand only if you're sure. Unjustified threats are actionable (s 129 TMA).</div>
+ <div style="position:absolute;bottom:84px;left:0;right:0"><a class="btn">Defend the bower</a></div>
+ <div class="tabs"><span>🪺</span><span>🌿</span><span class="on">🪶</span></div>
+</div><div class="cap">Raids · spaced review</div></div>
+
+</div></body></html>

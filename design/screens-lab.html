@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Duo Logo — Design B: The Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111418;--white:#FAFBFA;--grid:#E3EDF0;--cr:#2F6FDB;--tm:#E08A1E;--po:#E0614A;--pa:#1E9E6A;--de:#8A5CD6;--ci:#4F6A7A;--gr:#7A8088;--hi:#D9F25C}
+*{box-sizing:border-box;margin:0}
+body{background:#dfe5e7;font-family:'IBM Plex Sans',sans-serif;color:var(--ink);padding:36px}
+h1{font-size:32px;font-weight:700;letter-spacing:-.5px}
+.sub{font-family:'IBM Plex Mono';font-size:13px;opacity:.65;margin:6px 0 28px}
+.row{display:flex;gap:28px}
+.cap{font-family:'IBM Plex Mono';font-size:11px;text-transform:uppercase;letter-spacing:1.5px;margin:12px 4px 0;opacity:.65}
+.phone{width:300px;height:620px;border-radius:38px;box-shadow:0 0 0 9px #22272c,0 22px 50px rgba(17,20,24,.3);overflow:hidden;position:relative;background-color:var(--white);
+ background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:12px 12px}
+.mono{font-family:'IBM Plex Mono'}
+.top{padding:22px 16px 0;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono';font-size:10.5px}
+.tabs{position:absolute;bottom:0;left:0;right:0;height:58px;border-top:1px solid #cfd9dc;display:flex;justify-content:space-around;align-items:center;background:var(--white);font-family:'IBM Plex Mono';font-size:10px;letter-spacing:1px}
+.tabs span{opacity:.4}.tabs span.on{opacity:1;font-weight:600;border-bottom:2px solid var(--ink);padding-bottom:2px}
+.btn{display:block;margin:0 16px;padding:13px;border-radius:8px;background:var(--ink);color:#fff;text-align:center;font-weight:600;font-size:15px}
+.btn b{background:var(--hi);color:var(--ink);padding:1px 6px;border-radius:3px;font-family:'IBM Plex Mono';font-size:12px;margin-right:6px}
+/* table */
+.ptable{padding:0 14px}
+.colh{display:grid;grid-template-columns:18px repeat(6,1fr);gap:3px;font-family:'IBM Plex Mono';font-size:7.5px;text-align:center;margin-bottom:3px;letter-spacing:.3px}
+.grid{display:grid;grid-template-columns:18px repeat(6,1fr);gap:3px}
+.rh{font-family:'IBM Plex Mono';font-size:8px;display:flex;align-items:center;justify-content:center;opacity:.6}
+.el{height:42px;border-radius:3px;position:relative;color:#fff;padding:2px 3px;font-family:'IBM Plex Mono'}
+.el .n{font-size:6.5px;opacity:.85}.el .s{font-size:15px;font-weight:600;text-align:center;line-height:1;margin-top:3px}
+.el .bar{position:absolute;left:3px;right:3px;bottom:3px;height:2px;background:rgba(255,255,255,.35)}.el .bar i{display:block;height:2px;background:#fff}
+.el.decay{filter:saturate(.25) brightness(1.15);box-shadow:0 0 0 2px var(--hi),0 0 10px var(--hi)}
+.el.un{background:transparent!important;border:1px dashed #9aa6ab;color:#9aa6ab}
+.el.un .s{font-weight:400}
+.el.now{outline:2px solid var(--ink);outline-offset:1px;background:var(--hi)!important;color:var(--ink)}
+.fnd,.low{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-left:21px}
+.fnd .el,.low .el{height:30px}.fnd .el .s,.low .el .s{font-size:12px;margin-top:1px}
+.legend{display:flex;justify-content:space-between;padding:10px 16px 0;font-family:'IBM Plex Mono';font-size:9px}
+.stat{padding:8px 16px 12px;display:flex;gap:12px;align-items:baseline}
+.stat .big{font-size:30px;font-weight:700;font-family:'IBM Plex Mono'}
+/* experiment */
+.paper{margin:12px 14px;background:#fff;border:1px solid #cfd9dc;border-radius:4px;padding:14px 14px 12px}
+.paper .k{font-family:'IBM Plex Mono';font-size:9px;letter-spacing:1px;color:#5b6670;margin-top:9px}
+.paper .v{font-size:13px;line-height:1.38;margin-top:2px}
+.paper h3{font-size:17px;line-height:1.2}
+.res{display:inline-block;margin-top:3px;font-family:'IBM Plex Mono';font-size:11.5px;background:#fde6e1;color:#b53b26;padding:2px 6px;border-radius:3px}
+.net{margin:4px 14px 0}
+/* reaction */
+.eq{margin:18px 14px 8px;padding:16px 10px;background:#fff;border:1px solid #cfd9dc;border-radius:6px;text-align:center}
+.chip{display:inline-block;padding:7px 9px;border-radius:5px;font-size:12px;font-weight:500;margin:3px 2px;font-family:'IBM Plex Mono'}
+.chip.on{background:var(--po);color:#fff}.chip.slot{border:1.5px dashed var(--po);color:var(--po);background:#fff6f4}
+.plus{font-family:'IBM Plex Mono';font-weight:600;margin:0 1px}
+.arrow{font-family:'IBM Plex Mono';margin:10px 0 6px;font-size:12px;color:#5b6670}
+.prod{display:inline-block;padding:8px 14px;border:2px solid var(--ink);border-radius:5px;font-weight:700;letter-spacing:1px;font-family:'IBM Plex Mono';font-size:13px;opacity:.35}
+.tray{margin:6px 14px}.tray .chip{background:#fff;border:1px solid #c5cfd3;color:var(--ink)}
+.tray .chip.bad{border-color:#e7b7ad;text-decoration:line-through;color:#b53b26;background:#fff6f4}
+.hint{margin:10px 14px;font-size:12px;padding:10px;background:#fff;border-left:3px solid var(--hi);font-family:'IBM Plex Mono';line-height:1.4}
+/* half life */
+.due{margin:6px 14px;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #cfd9dc;border-radius:6px;padding:7px 9px}
+.due .el{width:34px;height:34px;flex:none}.due .el .s{font-size:13px;margin-top:6px}
+.due .t{flex:1;font-size:12.5px;font-weight:500}.due .t small{display:block;font-family:'IBM Plex Mono';font-size:9px;font-weight:400;opacity:.65;margin-top:1px}
+.due .p{font-family:'IBM Plex Mono';font-size:11px;font-weight:600}
+</style></head><body>
+<h1>Duo Logo · Design B: The Lab</h1>
+<div class="sub">The Periodic Table of Australian IP. Concept screens, v0.1</div>
+<div class="row">
+
+<!-- TABLE -->
+<div><div class="phone">
+ <div class="top"><span>THE TABLE</span><span>31 / 81 DISCOVERED</span></div>
+ <div class="stat"><span class="big">78%</span><span class="mono" style="font-size:10px;opacity:.7">COURSE RETENTION<br>▲ 4% THIS WEEK</span></div>
+ <div class="ptable">
+  <div class="fnd" id="fnd"></div>
+  <div style="height:6px"></div>
+  <div class="colh"><span></span><span style="color:var(--cr)">COPY</span><span style="color:var(--tm)">TM</span><span style="color:var(--po)">P/O·ACL</span><span style="color:var(--pa)">PAT</span><span style="color:var(--de)">DES</span><span style="color:var(--ci)">CONF</span></div>
+  <div class="grid" id="grid"></div>
+  <div style="height:8px"></div>
+  <div class="low" id="low"></div>
+ </div>
+ <div class="legend"><span>▮ discovered</span><span style="background:var(--hi);padding:0 3px">◉ decaying</span><span>⬚ undiscovered</span></div>
+ <div style="position:absolute;bottom:72px;left:0;right:0"><a class="btn"><b>Mm</b>Continue · Manner of manufacture</a></div>
+ <div class="tabs"><span class="on">TABLE</span><span>NOTEBOOK</span><span>HALF-LIFE</span></div>
+</div><div class="cap">Home · the syllabus as a periodic table</div></div>
+
+<!-- EXPERIMENT -->
+<div><div class="phone">
+ <div class="top"><span>Or · ORIGINALITY · CARD 4 / 15</span><span style="color:var(--cr)">● COPYRIGHT</span></div>
+ <div class="paper">
+  <div class="mono" style="font-size:9.5px;color:var(--cr);letter-spacing:1px">EXPERIMENT 14 · [2009] HCA 14</div>
+  <h3 style="margin-top:4px">IceTV v Nine Network</h3>
+  <div class="k">HYPOTHESIS</div><div class="v">Taking the time and title information from a TV schedule infringes copyright in it.</div>
+  <div class="k">METHOD</div><div class="v">IceTV checked its own program guide against Nine's published weekly schedules.</div>
+  <div class="k">RESULT</div><div class="res">✗ HYPOTHESIS REJECTED · 6–0</div>
+  <div class="k">DISCUSSION</div><div class="v">Originality needs effort directed to <b>expression</b>. Choosing what to broadcast is a business decision, not authorship.</div>
+  <div class="k">REPLICATION</div>
+  <svg class="net" width="250" height="56" style="margin:4px 0 0 -2px">
+   <line x1="34" y1="28" x2="120" y2="12" stroke="#2F6FDB" stroke-width="1.5"/><line x1="34" y1="28" x2="120" y2="46" stroke="#2F6FDB" stroke-width="1.5"/>
+   <line x1="34" y1="28" x2="0" y2="28" stroke="#b53b26" stroke-width="1.5" stroke-dasharray="3 2"/>
+   <circle cx="34" cy="28" r="9" fill="#2F6FDB"/><text x="34" y="31.5" font-family="IBM Plex Mono" font-size="8" fill="#fff" text-anchor="middle">09</text>
+   <circle cx="124" cy="12" r="7" fill="#fff" stroke="#2F6FDB" stroke-width="1.5"/><circle cx="124" cy="46" r="7" fill="#fff" stroke="#2F6FDB" stroke-width="1.5"/>
+   <text x="136" y="15" font-family="IBM Plex Mono" font-size="8.5">followed · Phone Dir. '10</text>
+   <text x="136" y="49" font-family="IBM Plex Mono" font-size="8.5">followed · Acohs '12</text>
+   <text x="0" y="52" font-family="IBM Plex Mono" font-size="8" fill="#b53b26">doubts Desktop '02</text>
+  </svg>
+ </div>
+ <div class="mono" style="text-align:center;font-size:10px;opacity:.6">TAP ▸ GO DEEPER</div>
+ <div style="position:absolute;bottom:22px;left:0;right:0"><a class="btn">Next card</a></div>
+</div><div class="cap">Lesson · a case as an experiment</div></div>
+
+<!-- REACTION -->
+<div><div class="phone">
+ <div class="top"><span>REACTION · 3 / 7</span><span style="color:var(--po)">● PASSING OFF</span></div>
+ <div style="padding:14px 16px 0;font-size:17px;font-weight:600;line-height:1.25">Balance the equation for passing off.</div>
+ <div class="eq">
+  <span class="chip on">Reputation</span><span class="plus">+</span><span class="chip on">Misrepresentation</span><br><span class="plus">+</span><span class="chip slot">?</span>
+  <div class="arrow">──────────▶</div>
+  <div class="prod">PASSING OFF</div>
+ </div>
+ <div class="mono" style="font-size:9.5px;margin:12px 16px 2px;opacity:.6;letter-spacing:1px">REACTANTS · DRAG ONE IN</div>
+ <div class="tray">
+  <span class="chip">Damage</span>
+  <span class="chip bad">Intention to deceive</span>
+  <span class="chip">Registered mark</span>
+  <span class="chip">Evidence of actual confusion</span>
+ </div>
+ <div class="hint">⚠ Contaminant: intention to deceive isn't an element. Innocent passing off is still passing off.</div>
+ <div style="position:absolute;bottom:22px;left:0;right:0"><a class="btn">Check</a></div>
+</div><div class="cap">Practice · causes of action as reactions</div></div>
+
+<!-- HALF-LIFE -->
+<div><div class="phone">
+ <div class="top"><span>HALF-LIFE</span><span>3 DECAYING</span></div>
+ <svg width="300" height="190" style="margin-top:6px">
+  <g font-family="IBM Plex Mono" font-size="8" fill="#5b6670">
+   <text x="14" y="22">100%</text><text x="14" y="146">0</text><text x="40" y="160">−14d</text><text x="152" y="160">−7d</text><text x="252" y="160">today</text>
+  </g>
+  <line x1="40" y1="18" x2="40" y2="146" stroke="#9aa6ab"/><line x1="40" y1="146" x2="286" y2="146" stroke="#9aa6ab"/>
+  <line x1="40" y1="82" x2="286" y2="82" stroke="#111418" stroke-dasharray="4 3"/><text x="44" y="78" font-family="IBM Plex Mono" font-size="8">recall threshold</text>
+  <path d="M40 20 C110 40 190 70 270 102" stroke="#E08A1E" stroke-width="2" fill="none"/>
+  <path d="M150 20 C190 50 230 76 270 92" stroke="#2F6FDB" stroke-width="2" fill="none"/>
+  <path d="M90 20 C150 30 220 42 270 52" stroke="#1E9E6A" stroke-width="2" fill="none"/>
+  <path d="M60 20 C130 50 200 80 270 112" stroke="#8A5CD6" stroke-width="2" fill="none"/>
+  <path d="M200 20 C230 26 255 31 270 34" stroke="#4F6A7A" stroke-width="2" fill="none"/>
+  <line x1="270" y1="18" x2="270" y2="146" stroke="#D9F25C" stroke-width="4" opacity=".8"/>
+  <circle cx="270" cy="102" r="3.5" fill="#E08A1E"/><circle cx="270" cy="92" r="3.5" fill="#2F6FDB"/><circle cx="270" cy="112" r="3.5" fill="#8A5CD6"/>
+ </svg>
+ <div class="due"><div class="el" style="background:var(--de)"><div class="s">Iu</div></div><div class="t">Informed user<small>s 19 DA · t½ 3d</small></div><span class="p">41%</span></div>
+ <div class="due"><div class="el" style="background:var(--tm)"><div class="s">Ds</div></div><div class="t">Deceptive similarity<small>s 10 TMA · t½ 7d</small></div><span class="p">46%</span></div>
+ <div class="due"><div class="el" style="background:var(--cr)"><div class="s">Au</div></div><div class="t">Authorisation<small>s 36(1A) CA · t½ 7d</small></div><span class="p">48%</span></div>
+ <div style="position:absolute;bottom:72px;left:0;right:0"><a class="btn">Stabilise 3 elements</a></div>
+ <div class="tabs"><span>TABLE</span><span>NOTEBOOK</span><span class="on">HALF-LIFE</span></div>
+</div><div class="cap">Review · the forgetting curve</div></div>
+
+</div>
+<script>
+const C=['cr','tm','po','pa','de','ci'];
+const rows=[['Wk','Sg','Rp','Mm','Vf','Id'],['Or','Dt','Mr','Is','Nd','Qc'],['Ow','Nu','Dm','En','Te','Ob'],['Sp','Ut','Md','Ex','Oi','Mu'],['Fd','Gf','Ch','Pu','Pt','Pi']];
+const RH=['1','2','3','4','5'];
+// states: f=full, d=decay, u=undiscovered, n=now
+const st=[['f','f','f','n','u','u'],['f','d','f','u','d','u'],['f','f','u','u','u','u'],['d','f','f','u','u','u'],['f','u','u','u','u','u']];
+let num=5,h='';
+rows.forEach((r,i)=>{h+=`<div class="rh">${RH[i]}</div>`;r.forEach((s,j)=>{num++;const k=st[i][j];
+ const pct=k=='d'?30:k=='f'?60+((i+j)*7)%40:0;
+ h+=`<div class="el ${k=='d'?'decay':k=='u'?'un':k=='n'?'now':''}" style="background:var(--${C[j]})"><div class="n">${num}</div><div class="s">${k=='u'?'?':s}</div>${k=='f'||k=='d'?`<div class="bar"><i style="width:${pct}%"></i></div>`:''}</div>`})});
+document.getElementById('grid').innerHTML=h;
+const tile=(s,n,k)=>`<div class="el ${k}" style="background:var(--gr)"><div class="s">${k=='un'?'?':s}</div></div>`;
+document.getElementById('fnd').innerHTML=['Th','Mp','Cn','Tr','',''].map((s,i)=>s?tile(s,i+1,''):'<div></div>').join('');
+document.getElementById('low').innerHTML=['Ij','Ac','Ad','Ic','Pb','Ai'].map(s=>tile(s,0,'un')).join('');
+</script>
+</body></html>
