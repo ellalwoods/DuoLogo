@@ -45,7 +45,7 @@ Progress is stored only in the browser on that device. Use **Notebook → Export
 | `unit-originality.js` | Copyright 1.5, transcribed from the checked `SAMPLE-UNIT.md` |
 | `reactions.js` | Reaction questions (passing off) |
 | `app.js` | Screens, lesson player, question formats, half-life spaced repetition, sound, backup |
-| `sw.js`, `manifest.webmanifest`, `icon.svg` | Offline support and home-screen install |
+| `sw.js`, `manifest.webmanifest`, `icon.svg`, `icon-*.png` | Offline support and home-screen install (the PNGs are for iPhone and Android, which don't use SVG icons) |
 
 To write a unit, add `D.units['<element id>']` with `lessons` (each with `cards` and `questions`) and an `outline`, in a new data file loaded from `index.html` and listed in `sw.js`. Card kinds: `rule`, `statute`, `case` (optional `exp` for the experiment layout), `test` (`steps`), `trap`, `example`, `compare` (`table`), `critique`. Question types: `choice`, `tf`, `match`, `order`, `sort`, `similarity`. Every card needs a `source`; set `flag: true` on anything unverified.
 
