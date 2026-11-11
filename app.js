@@ -47,21 +47,46 @@
     src.buffer = buf; f.type = type; f.frequency.value = freq; f.Q.value = q; g.gain.value = vol;
     src.connect(f).connect(g).connect(a.destination); src.start(t);
   }
+  // an oscillator through a low-pass filter: buzzers and deflating tones
+  function voice(f, at = 0, len = 0.2, vol = 0.1, type = 'sawtooth', lp = 800) {
+    const a = audio(), t = a.currentTime + at, o = a.createOscillator(), fl = a.createBiquadFilter(), g = a.createGain();
+    o.type = type; fl.type = 'lowpass'; fl.frequency.value = lp;
+    if (Array.isArray(f)) { o.frequency.setValueAtTime(f[0], t); o.frequency.exponentialRampToValueAtTime(f[1], t + len); } else o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    o.connect(fl).connect(g).connect(a.destination); o.start(t); o.stop(t + len + 0.02);
+  }
+  // FM synthesis: a metallic, instrument-like chime (nothing like DuoVino's glass)
+  function fm(f, at = 0, len = 0.5, vol = 0.07, ratio = 3.5, index = 1.2) {
+    const a = audio(), t = a.currentTime + at, c = a.createOscillator(), m = a.createOscillator(), mg = a.createGain(), g = a.createGain();
+    c.frequency.value = f; m.frequency.value = f * ratio;
+    mg.gain.setValueAtTime(f * index, t); mg.gain.exponentialRampToValueAtTime(f * index * 0.05, t + len);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.004); g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    m.connect(mg).connect(c.frequency); c.connect(g).connect(a.destination);
+    m.start(t); c.start(t); m.stop(t + len + 0.02); c.stop(t + len + 0.02);
+  }
+  const drop = (at, from, to, vol = 0.07) => tone([from, to], at, 0.06, vol);  // a pipette droplet: a fast upward glide
+  // Duo Logo's palette: lab electronics and liquids (relays, droplets, analyser chimes, buzzers, radar).
   const SOUNDS = {
-    tick: () => tone([1700, 1300], 0, 0.08, 0.03),                        // a button: glass rod on glass
-    tab: () => tone([420, 260], 0, 0.12, 0.08),                            // switching tabs: a soft wooden tock
-    page: () => noise(0, 0.12, 0.12, 'bandpass', 2400, 0.6),               // turning a notebook page
-    place: () => tone([520, 780], 0, 0.09, 0.06, 'triangle'),              // a chip clicks into a slot
-    ok: () => { tone(1568, 0, 0.9, 0.08); tone(2349, 0.07, 0.8, 0.05); tone(3136, 0.07, 0.6, 0.025); }, // beaker ping, a fifth up
-    bad: () => { tone(196, 0, 0.16, 0.07, 'square'); tone(147, 0.17, 0.24, 0.07, 'square'); },          // instrument error: two low beeps
-    fizz: () => { noise(0, 0.45, 0.25, 'highpass', 3500, 0.5); tone([900, 200], 0, 0.35, 0.04, 'sawtooth'); }, // a contaminant hisses
-    fizzle: () => { tone([440, 110], 0, 0.6, 0.08, 'triangle'); noise(0.05, 0.4, 0.12, 'lowpass', 900, 0.7); }, // the reaction stalls
-    react: () => {                                                          // bubbling, then a bright chord as the product forms
-      for (let i = 0; i < 9; i++) tone([300 + Math.random() * 500, 900 + Math.random() * 600], i * 0.07, 0.07, 0.05);
-      [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, 0.75 + i * 0.03, 1.2, 0.06));
+    tick: () => noise(0, 0.012, 0.22, 'highpass', 4200, 0.7),                                          // a button: a tiny relay click
+    tab: () => { noise(0, 0.01, 0.28, 'bandpass', 2600, 2); noise(0.035, 0.012, 0.2, 'bandpass', 1500, 2); }, // a toggle switch: click-clack
+    page: () => { noise(0, 0.18, 0.06, 'bandpass', 5200, 0.4); noise(0.02, 0.08, 0.08, 'lowpass', 500, 0.7); }, // graph paper slides over the bench
+    place: () => drop(0, 380, 1500),                                                                    // a pipette drop lands in the slot
+    ok: () => { fm(1319, 0, 0.35, 0.06); fm(1976, 0.09, 0.7, 0.055); },                                  // the analyser's "result ready" chime
+    bad: () => { voice(98, 0, 0.3, 0.06, 'sawtooth', 700); voice(104, 0, 0.3, 0.06, 'sawtooth', 700); }, // a detuned buzzer
+    fizz: () => {                                                                                       // a contaminant effervesces
+      for (let i = 0; i < 26; i++) noise(Math.random() * 0.5, 0.008, 0.25, 'highpass', 6000, 0.5);
+      for (let i = 0; i < 4; i++) drop(Math.random() * 0.4, 1800, 3200, 0.025);
     },
-    discover: () => { [523, 659, 784, 1047, 1568].forEach((f, i) => tone(f, i * 0.09, 0.7, 0.07)); tone(2093, 0.5, 1.4, 0.04); }, // a new element drops in
-    stable: () => { tone([392, 784], 0, 0.5, 0.06, 'triangle'); tone(1175, 0.45, 1, 0.06); },          // half-life extended
+    fizzle: () => { voice([260, 55], 0, 0.7, 0.08, 'sawtooth', 500); drop(0.15, 500, 700, 0.03); drop(0.4, 400, 520, 0.02); }, // it deflates
+    react: () => {                                                                                      // bubbling, then a soft electric chord
+      for (let i = 0; i < 10; i++) drop(i * 0.065, 300 + Math.random() * 400, 1000 + Math.random() * 800, 0.05);
+      [523, 659, 784, 1047].forEach((f, i) => fm(f, 0.75 + i * 0.025, 1.6, 0.05, 1.4, 0.6));
+    },
+    discover: () => {                                                                                   // a rising sweep, then a bright bell chord
+      tone([330, 990], 0, 0.5, 0.05);
+      [1047, 1568, 2093].forEach((f, i) => fm(f, 0.45 + i * 0.04, 1.4, 0.05, 2, 2));
+    },
+    stable: () => { [0, 0.18, 0.36, 0.54].forEach((at, i) => fm(1760, at, 0.45, 0.06 / (i * 1.8 + 1), 1, 0.3)); }, // a radar ping and its echoes
     geiger: () => { for (let i = 0; i < 7; i++) noise(i * 0.06 + Math.random() * 0.12, 0.012, 0.35, 'highpass', 2000, 0.3); }, // decay, faintly
   };
   const sfx = name => { if (!soundOn()) return; try { SOUNDS[name](); } catch { /* no audio */ } };
