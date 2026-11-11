@@ -27,6 +27,45 @@
   const strip = s => String(s).replace(/<[^>]+>/g, '');
   const buzz = p => { try { navigator.vibrate && navigator.vibrate(p); } catch { /* no haptics */ } };
 
+  /* ---------- sound: a small synthesised lab (Web Audio, no files, works offline) ---------- */
+  let actx = null;
+  const audio = () => { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === 'suspended') actx.resume(); return actx; };
+  const soundOn = () => S.settings.sound !== false;
+  // one enveloped oscillator: freq (or [from, to] for a glide), start offset, length, peak gain, wave type
+  function tone(f, at = 0, len = 0.2, vol = 0.1, type = 'sine') {
+    const a = audio(), t = a.currentTime + at, o = a.createOscillator(), g = a.createGain();
+    o.type = type;
+    if (Array.isArray(f)) { o.frequency.setValueAtTime(f[0], t); o.frequency.exponentialRampToValueAtTime(f[1], t + len); } else o.frequency.value = f;
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.006); g.gain.exponentialRampToValueAtTime(0.0001, t + len);
+    o.connect(g).connect(a.destination); o.start(t); o.stop(t + len + 0.02);
+  }
+  // filtered noise: swishes, fizz and hiss
+  function noise(at = 0, len = 0.1, vol = 0.2, type = 'bandpass', freq = 1200, q = 0.8) {
+    const a = audio(), t = a.currentTime + at, n = Math.floor(a.sampleRate * len), buf = a.createBuffer(1, n, a.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 2);
+    const src = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
+    src.buffer = buf; f.type = type; f.frequency.value = freq; f.Q.value = q; g.gain.value = vol;
+    src.connect(f).connect(g).connect(a.destination); src.start(t);
+  }
+  const SOUNDS = {
+    tick: () => tone([1700, 1300], 0, 0.08, 0.03),                        // a button: glass rod on glass
+    tab: () => tone([420, 260], 0, 0.12, 0.08),                            // switching tabs: a soft wooden tock
+    page: () => noise(0, 0.12, 0.12, 'bandpass', 2400, 0.6),               // turning a notebook page
+    place: () => tone([520, 780], 0, 0.09, 0.06, 'triangle'),              // a chip clicks into a slot
+    ok: () => { tone(1568, 0, 0.9, 0.08); tone(2349, 0.07, 0.8, 0.05); tone(3136, 0.07, 0.6, 0.025); }, // beaker ping, a fifth up
+    bad: () => { tone(196, 0, 0.16, 0.07, 'square'); tone(147, 0.17, 0.24, 0.07, 'square'); },          // instrument error: two low beeps
+    fizz: () => { noise(0, 0.45, 0.25, 'highpass', 3500, 0.5); tone([900, 200], 0, 0.35, 0.04, 'sawtooth'); }, // a contaminant hisses
+    fizzle: () => { tone([440, 110], 0, 0.6, 0.08, 'triangle'); noise(0.05, 0.4, 0.12, 'lowpass', 900, 0.7); }, // the reaction stalls
+    react: () => {                                                          // bubbling, then a bright chord as the product forms
+      for (let i = 0; i < 9; i++) tone([300 + Math.random() * 500, 900 + Math.random() * 600], i * 0.07, 0.07, 0.05);
+      [1047, 1319, 1568, 2093].forEach((f, i) => tone(f, 0.75 + i * 0.03, 1.2, 0.06));
+    },
+    discover: () => { [523, 659, 784, 1047, 1568].forEach((f, i) => tone(f, i * 0.09, 0.7, 0.07)); tone(2093, 0.5, 1.4, 0.04); }, // a new element drops in
+    stable: () => { tone([392, 784], 0, 0.5, 0.06, 'triangle'); tone(1175, 0.45, 1, 0.06); },          // half-life extended
+    geiger: () => { for (let i = 0; i < 7; i++) noise(i * 0.06 + Math.random() * 0.12, 0.012, 0.35, 'highpass', 2000, 0.3); }, // decay, faintly
+  };
+  const sfx = name => { if (!soundOn()) return; try { SOUNDS[name](); } catch { /* no audio */ } };
+
   /* ---------- course model ---------- */
   const GROUP = Object.fromEntries(D.groups.map(g => [g.id, g]));
   const EL = Object.fromEntries(D.elements.map(e => [e.id, e]));
@@ -176,6 +215,7 @@
       }).join('')}
       <p class="sect">Lab equipment</p>
       <div class="rows">
+        <button class="row" data-act="sound"><div class="t">Sound<small>Pings, fizzes and the odd Geiger click</small></div><span class="p">${soundOn() ? 'ON' : 'OFF'}</span></button>
         <button class="row" data-act="export"><div class="t">Export backup<small>Copy or download your progress</small></div></button>
         <button class="row" data-act="import"><div class="t">Import backup<small>Restore on a new phone</small></div></button>
         <button class="row" data-act="reset"><div class="t">Reset the lab<small>Forget everything on this device</small></div></button>
@@ -188,6 +228,7 @@
   function halflife() {
     snapshotRetention();
     const l = learned(), due = dueList();
+    if (due.length && actx) setTimeout(() => sfx('geiger'), 150);
     const W = 320, H = 170, x0 = 38, x1 = 300, y0 = 14, y1 = 132, span = 14;
     const X = t => x0 + (x1 - x0) * (1 - (now() - t) / (span * DAY));
     const Y = p => y1 - (y1 - y0) * p;
@@ -295,7 +336,7 @@
     let x0 = null;
     const body = app.querySelector('.paper');
     body.addEventListener('pointerdown', e => { x0 = e.clientX; });
-    body.addEventListener('pointerup', e => { if (x0 === null) return; const dx = e.clientX - x0; x0 = null; if (dx < -60) step(1); else if (dx > 60 && P.card) step(-1); });
+    body.addEventListener('pointerup', e => { if (x0 === null) return; const dx = e.clientX - x0; x0 = null; if (dx < -60) { sfx('page'); step(1); } else if (dx > 60 && P.card) { sfx('page'); step(-1); } });
   }
   function step(d) {
     if (d > 0 && P.card === lesson().cards.length - 1) { P.i = 0; return renderQ(); }
@@ -340,7 +381,7 @@
     if (P.locked) return;
     P.locked = true;
     const q = qList()[P.i];
-    if (ok) { P.correct++; buzz(15); } else { buzz([30, 40, 30]); P.misses.push(q); }
+    if (ok) { P.correct++; buzz(15); sfx('ok'); } else { buzz([30, 40, 30]); sfx('bad'); P.misses.push(q); }
     P.total++;
     if (P.kind === 'review') P.scores[q._item] = (P.scores[q._item] || 0) + (ok ? 1 : 0);
     const sheet = document.createElement('div');
@@ -358,6 +399,7 @@
   }
   function interlude() {
     P.phase = 'interlude';
+    sfx('stable');
     app.innerHTML = shell(`<span class="sym">${P.e.sym}</span> · ${esc(P.e.name)}`, `<div class="result"><p class="eyebrow">Lesson ${String.fromCharCode(64 + P.L)} written up</p><h2>Next: ${esc(lesson().title)}</h2><p class="note">${lesson().cards.length} cards, then ${lesson().questions.length} tests.</p></div>`,
       '<button class="btn" data-act="startlesson">Open the notebook</button>', 100 * (cardNo() - 1) / allCards());
   }
@@ -369,6 +411,7 @@
     S.days[todayKey()] = (S.days[todayKey()] || 0) + 1;
     save(); snapshotRetention();
     buzz([20, 60, 20]);
+    sfx('discover');
     app.innerHTML = shell(`<span class="sym">${P.e.sym}</span> · complete`, `<div class="result">
       <p class="eyebrow">${first ? 'New element discovered' : 'Element re-read'}</p>
       <div class="found">${tile(P.e, { tag: 'div' }).replace('class="el', 'class="el drop')}</div>
@@ -395,13 +438,15 @@
     renderQ();
   }
   function finishReview() {
+    let up = 0;
     const rows = P.items.map(id => {
       const n = P.questions.filter(q => q._item === id).length, sc = P.scores[id] || 0, ok = sc >= Math.ceil(n * 2 / 3);
-      review(id, ok);
+      review(id, ok); if (ok) up++;
       return `<div class="row">${tile(EL[id], { tag: 'div', small: true })}<div class="t">${esc(EL[id].name)}<small>${sc}/${n} · ${ok ? 'stabilised' : 'still unstable'} · t½ now ${fmtDays(halfLife(S.items[id]))}</small></div><span class="p">${ok ? '▲' : '▼'}</span></div>`;
     }).join('');
     S.days[todayKey()] = (S.days[todayKey()] || 0) + 1;
     save(); snapshotRetention();
+    sfx(up ? 'stable' : 'bad');
     const more = P.rx.length ? `<a class="btn" href="#${P.rx[0]}">Next: re-run a reaction</a>` : `<a class="btn" href="#halflife">Back to Half-life</a>`;
     app.innerHTML = shell('Stabilise · complete', `<div class="result"><p class="eyebrow">Measurements taken</p><h2>${P.correct} of ${P.total} tests passed</h2></div><div>${rows}</div>`, more, 100);
   }
@@ -428,14 +473,15 @@
   function rxIn(t) {
     const r = P.r; if (P.checked) return;
     const c = r.contaminants.find(x => x.t === t);
-    if (c) { P.bad.push(t); P.hint = `⚠ Contaminant: ${esc(c.why)}`; buzz([30, 40, 30]); }
-    else if (P.eq.length < r.reactants.length && !P.eq.includes(t)) { P.eq.push(t); P.hint = ''; buzz(8); }
+    if (c) { P.bad.push(t); P.hint = `⚠ Contaminant: ${esc(c.why)}`; buzz([30, 40, 30]); sfx('fizz'); }
+    else if (P.eq.length < r.reactants.length && !P.eq.includes(t)) { P.eq.push(t); P.hint = ''; buzz(8); sfx('place'); }
     renderReaction();
   }
   function rxCheck() {
     const r = P.r, full = P.eq.length === r.reactants.length, ok = full && !P.bad.length;
     P.checked = true;
     renderReaction(full ? 'go' : 'fizz');
+    sfx(ok ? 'react' : 'fizzle');
     const first = !S.items[P.id];
     if (first) learn(P.id); else review(P.id, ok);
     if (first && !ok) S.items[P.id].stage = 0;
@@ -479,9 +525,14 @@
 
   /* ---------- events ---------- */
   const go = h => { if (location.hash === h) route(); else location.hash = h; };
+  // Actions that make their own sound (or none): everything else gets a soft tick.
+  const SELF_SOUNDING = new Set(['choose', 'tf', 'slot', 'bucket', 'pair', 'simcheck', 'rxin', 'rxcheck', 'nextcard', 'prev', 'sound', 'close']);
   document.addEventListener('click', ev => {
+    const link = ev.target.closest('a[href^="#"]');
+    if (link) sfx(link.closest('.tabs') ? 'tab' : 'tick');
     const t = ev.target.closest('[data-act]');
     if (!t) return;
+    if (!SELF_SOUNDING.has(t.dataset.act) && !t.disabled) sfx('tick');
     if (t.dataset.act === 'close' && ev.target.closest('[data-stop]') && !ev.target.closest('.x')) return;
     const a = t.dataset.act;
     if (a === 'close') { overlay.innerHTML = ''; return; }
@@ -489,8 +540,9 @@
     if (a === 'quit') { const back = P && (P.kind === 'rx' || P.kind === 'review') ? '#halflife' : '#table'; P = null; go(back); return; }
     if (a === 'go') { overlay.innerHTML = ''; go(t.dataset.h); return; }
     if (a === 'deeper') { const d = t.nextElementSibling; d.hidden = !d.hidden; t.textContent = d.hidden ? 'TAP ▸ GO DEEPER' : 'TAP ▾ LESS'; t.setAttribute('aria-expanded', String(!d.hidden)); return; }
-    if (a === 'nextcard') return step(1);
-    if (a === 'prev') return step(-1);
+    if (a === 'nextcard') { sfx('page'); return step(1); }
+    if (a === 'prev') { sfx('page'); return step(-1); }
+    if (a === 'sound') { S.settings.sound = !soundOn(); save(); sfx('ok'); return notebook(); }
     if (a === 'startlesson') return renderCard();
     if (a === 'nextq') return nextQ();
     const q = P && P.phase === 'qs' ? qList()[P.i] : null;
@@ -507,7 +559,7 @@
       return answer(ok, ok ? '' : `It's ${q.a ? 'true' : 'false'}.`);
     }
     if (a === 'slot' && q && !P.locked) {
-      P.seq.push(t.dataset.t); app.querySelector('.order').innerHTML = orderUI(q); buzz(5);
+      P.seq.push(t.dataset.t); app.querySelector('.order').innerHTML = orderUI(q); buzz(5); if (P.seq.length < q.items.length) sfx('place');
       if (P.seq.length === q.items.length) {
         const ok = P.seq.every((s, i) => s === q.items[i]);
         app.querySelectorAll('.slot').forEach((el, i) => el.classList.add(P.seq[i] === q.items[i] ? 'right' : 'wrong'));
@@ -523,6 +575,7 @@
       app.querySelector('.sort').innerHTML = sortUI(q);
       app.querySelector(`.bucket[data-b="${b}"]`).classList.add(ok ? 'pulse' : 'shake');
       buzz(ok ? 8 : [20, 30, 20]);
+      if (s.k < s.items.length) sfx(ok ? 'place' : 'bad');
       if (s.k >= s.items.length) { const wrong = s.placed.filter(p => !p.ok); answer(!wrong.length, wrong.length ? 'Should be: ' + wrong.map(p => `${esc(p.t)} → ${esc(q.buckets[q.items.find(i => i.t === p.t).b])}`).join(' · ') : ''); }
       return;
     }
@@ -530,6 +583,7 @@
       const m = P.match, side = t.dataset.side, i = +t.dataset.i;
       if (!m.sel || m.sel.side === side) { m.sel = { side, i }; app.querySelector('.matchw').innerHTML = matchUI(q); return; }
       if (m.sel.i === i) { m.done.push(i); buzz(8); } else { m.miss++; buzz([20, 30, 20]); }
+      if (m.done.length < q.pairs.length) sfx(m.sel.i === i ? 'place' : 'bad');
       const missed = m.sel.i !== i; m.sel = null;
       app.querySelector('.matchw').innerHTML = matchUI(q);
       if (missed) app.querySelector(`.chip[data-side="${side}"][data-i="${i}"]`).classList.add('miss');
@@ -558,7 +612,7 @@
   });
   document.addEventListener('keydown', e => {
     if (!P || P.phase !== 'cards' || overlay.innerHTML) return;
-    if (e.key === 'ArrowRight') step(1); else if (e.key === 'ArrowLeft' && P.card) step(-1);
+    if (e.key === 'ArrowRight') { sfx('page'); step(1); } else if (e.key === 'ArrowLeft' && P.card) { sfx('page'); step(-1); }
   });
 
   /* ---------- router ---------- */

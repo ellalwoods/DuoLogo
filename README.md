@@ -10,7 +10,8 @@ Status: **first working slice of Design B, The Lab.** A static PWA built the Duo
 - **Copyright 1.5 · Originality, in full:** both lessons from [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md), 15 cards and 16 questions. Cards sit on graph paper as numbered figures with their section or citation in the margin, a **Go deeper** layer, and a **Source** line. Case cards for *IceTV* and *Phone Directories* are written up as experiments (hypothesis · method · result · discussion · replication); the statute card is a specimen with numbered elements; the test card is a flowchart; traps carry the hazard label. Question formats: multiple choice, true/false, citation network (match), order, Spectroscopy and essay plan (sort), and Similarity index (slider).
 - **One Reaction:** passing off. Tap reactants into the equation; contaminants (intention to deceive, a registered mark, evidence of actual confusion) are flagged with the reason. A missing reactant makes the reaction fizzle.
 - **Half-life:** real spaced repetition. Recall decays as p = 2^(−elapsed ÷ half-life); an element is due once p falls to 50%. Half-lives step 1 → 3 → 7 → 16 → 35 → 90 days with each successful review and step back one on a miss. The screen draws each element's forgetting curve over the last 14 days and lists what's below threshold. **Stabilise** reviews everything decaying (three questions per element, pass at two of three) and then re-runs any due reactions.
-- **Notebook:** your outline (each discovered element adds its summary), the reactions, every chapter and unit, and backup export/import and reset.
+- **Notebook:** your outline (each discovered element adds its summary), the reactions, every chapter and unit, backup export/import, reset, and a sound switch.
+- **Sound:** synthesised with Web Audio (no audio files, so it works offline): a glass ping for a right answer, two low instrument beeps for a wrong one, page turns, chips clicking into slots, a hiss when a contaminant goes in, bubbling and a chord when a reaction balances, an arpeggio when you discover an element, and a faint Geiger crackle when Half-life opens with something decaying. Turn it off in **Notebook → Sound**.
 
 Units other than 1.5 are in the table but not written yet. ⚑ in the app marks content not yet confirmed against a primary source.
 
@@ -43,7 +44,7 @@ Progress is stored only in the browser on that device. Use **Notebook → Export
 | `course.js` | The periodic table: groups, sticks, and all 81 units as elements |
 | `unit-originality.js` | Copyright 1.5, transcribed from the checked `SAMPLE-UNIT.md` |
 | `reactions.js` | Reaction questions (passing off) |
-| `app.js` | Screens, lesson player, question formats, half-life spaced repetition, backup |
+| `app.js` | Screens, lesson player, question formats, half-life spaced repetition, sound, backup |
 | `sw.js`, `manifest.webmanifest`, `icon.svg` | Offline support and home-screen install |
 
 To write a unit, add `D.units['<element id>']` with `lessons` (each with `cards` and `questions`) and an `outline`, in a new data file loaded from `index.html` and listed in `sw.js`. Card kinds: `rule`, `statute`, `case` (optional `exp` for the experiment layout), `test` (`steps`), `trap`, `example`, `compare` (`table`), `critique`. Question types: `choice`, `tf`, `match`, `order`, `sort`, `similarity`. Every card needs a `source`; set `flag: true` on anything unverified.
