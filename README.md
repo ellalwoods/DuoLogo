@@ -28,7 +28,7 @@ python3 -m http.server 8000
 
 ## Put it on your phone (GitHub Pages)
 
-Same as DuoVino: **Settings → Pages → Deploy from a branch → `main` / `(root)`**, then open `https://ellalwoods.github.io/duologo/` in Safari and **Share → Add to Home Screen**.
+Same as DuoVino: **Settings → Pages → Deploy from a branch → `main` / `(root)`**, then open `https://ellalwoods.github.io/DuoLogo/` in Safari and **Share → Add to Home Screen**.
 
 ## Your progress
 
