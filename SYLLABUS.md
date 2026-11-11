@@ -111,13 +111,13 @@ Every right is taught through the same five questions, in the same order. Both d
 - Qualified persons and first publication (s 32); the international regulations (the *Copyright (International Protection) Regulations 1969* are still in force: reg 4 covers Berne, UCC, WCT and WTO countries, plus Rome and WPPT for some subject matter ✔); **joint authorship** (s 10: collaboration, contributions not separate); *Prior v Lansdowne Press* (1977, Vic SC) ⚑ *not covered by Wikijuris; left out of the unit until checked*; authorship of films and sound recordings (makers, s 22(3)–(5) ✔).
 
 ### Stick 3 · Whose & how long?
-**1.7 Ownership** · 2 lessons
-- s 35: the author first owns it; employees (s 35(6)); employed journalists (s 35(4)); commissioned photos and portraits for private or domestic purposes (s 35(5)); Crown copyright (s 176); academics and universities.
+**1.7 Ownership** · 2 lessons · ✅ *written, in the app*
+- s 35: the author first owns it; employees (s 35(6)); employed journalists (s 35(4)); commissioned photos and portraits for private or domestic purposes (s 35(5)); Crown copyright (ss 176–180 ✔: 50 years from making); academics and universities ⚑ *not covered by Wikijuris; left out of the unit for now*.
 
-**1.8 Dealings** · 2 lessons
-- Assignment in writing (s 196(3)); exclusive licences (s 10) and standing to sue; implied licences; **Creative Commons** and open-source licences; collecting societies (APRA AMCOS, Copyright Agency); the Copyright Tribunal.
+**1.8 Dealings** · 2 lessons · ✅ *written, in the app*
+- Assignment in writing (s 196(3)); exclusive licences (s 10) and standing to sue; implied licences; **Creative Commons** and open-source licences; collecting societies (APRA AMCOS, Copyright Agency); the Copyright Tribunal. *In the app: assignment, licences, implied licences, Creative Commons, APRA and the educational statutory licence. Open-source licences, Copyright Agency and the Tribunal still to write.*
 
-**1.9 Duration** · 2 lessons
+**1.9 Duration** · 2 lessons · ✅ *written, in the app*
 - Life + 70, and the 2005 transition (no revival for works already out of copyright); Part IV durations; the **2019 rules for unpublished works** ✔ (s 33(2)–(3): different tables for works first made public before 1 January 2019 and for the rest; *Copyright Amendment (Disability Access and Other Measures) Act 2017* Sch 2, in force 1 Jan 2019); the **orphan works scheme** ✔ (Part V Div 2AAA, ss 116AAB–116AAF: no damages or account of profits, only a "reasonable payment", if the owner couldn't be identified and located; *Copyright Amendment Act 2026* Sch 1, in force 2 April 2026). Lots of **timeline** practice.
 
 ### Stick 4 · Breach
