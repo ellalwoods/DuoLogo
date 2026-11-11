@@ -1,0 +1,10 @@
+{
+  "name": "Duo Logo",
+  "short_name": "Duo Logo",
+  "description": "Australian intellectual property law as a periodic table.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#FAFBFA",
+  "theme_color": "#FAFBFA",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

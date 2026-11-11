@@ -2,14 +2,61 @@
 
 A study app for learning a full Australian intellectual property law course, in cards: fun to use, but with real depth (statutes, leading cases, tests, critique and problem questions), ending with a chapter on IP in practice.
 
-Status: design and syllabus stage. No app code yet.
+Status: **first working slice of Design B, The Lab.** A static PWA built the DuoVino way (no build step, vanilla JS, progress in localStorage, offline service worker).
+
+## What's in this build
+
+- **The Table (home):** the whole syllabus as a periodic table. Columns are the rights (copyright, trade marks, passing off & ACL, patents, designs, confidential information); rows are the Five Sticks (What? · How? · Whose & how long? · Breach · Escape). Foundations sit above; culture, specialist rights and enforcement sit below like the lanthanides; IP in practice is the Field work block. Each of the 81 units is an element. Tiles are **undiscovered** (dashed "?"), **ready** (dashed in the group colour), **discovered** (filled, with a memory bar), **decaying** (desaturated and glowing) or **stable** (thick border). Tap a tile to see every element in that cell. The headline number is **course retention**: the average estimated recall across everything you've learned.
+- **Copyright 1.5 · Originality, in full:** both lessons from [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md), 15 cards and 16 questions. Cards sit on graph paper as numbered figures with their section or citation in the margin, a **Go deeper** layer, and a **Source** line. Case cards for *IceTV* and *Phone Directories* are written up as experiments (hypothesis · method · result · discussion · replication); the statute card is a specimen with numbered elements; the test card is a flowchart; traps carry the hazard label. Question formats: multiple choice, true/false, citation network (match), order, Spectroscopy and essay plan (sort), and Similarity index (slider).
+- **One Reaction:** passing off. Tap reactants into the equation; contaminants (intention to deceive, a registered mark, evidence of actual confusion) are flagged with the reason. A missing reactant makes the reaction fizzle.
+- **Half-life:** real spaced repetition. Recall decays as p = 2^(−elapsed ÷ half-life); an element is due once p falls to 50%. Half-lives step 1 → 3 → 7 → 16 → 35 → 90 days with each successful review and step back one on a miss. The screen draws each element's forgetting curve over the last 14 days and lists what's below threshold. **Stabilise** reviews everything decaying (three questions per element, pass at two of three) and then re-runs any due reactions.
+- **Notebook:** your outline (each discovered element adds its summary), the reactions, every chapter and unit, and backup export/import and reset.
+
+Units other than 1.5 are in the table but not written yet. ⚑ in the app marks content not yet confirmed against a primary source.
+
+## Run it
+
+No build step. Serve the folder with any static server:
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+- `?demo` starts with a lived-in lab: Originality learned two days ago (now decaying) and the passing-off reaction learned four days ago.
+- `?shift=3` pretends it's 3 days later, so you can watch elements decay without waiting.
+
+## Put it on your phone (GitHub Pages)
+
+Same as DuoVino: **Settings → Pages → Deploy from a branch → `main` / `(root)`**, then open `https://ellalwoods.github.io/DuoLogo/` in Safari and **Share → Add to Home Screen**.
+
+## Your progress
+
+Progress is stored only in the browser on that device. Use **Notebook → Export backup** now and then, and **Import backup** to restore it on a new phone.
+
+## Files
+
+| File | What it is |
+|---|---|
+| `index.html` | Shell |
+| `styles.css` | The Lab's visual language (lab white, graph grid, group colours, IBM Plex) |
+| `course.js` | The periodic table: groups, sticks, and all 81 units as elements |
+| `unit-originality.js` | Copyright 1.5, transcribed from the checked `SAMPLE-UNIT.md` |
+| `reactions.js` | Reaction questions (passing off) |
+| `app.js` | Screens, lesson player, question formats, half-life spaced repetition, backup |
+| `sw.js`, `manifest.webmanifest`, `icon.svg` | Offline support and home-screen install |
+
+To write a unit, add `D.units['<element id>']` with `lessons` (each with `cards` and `questions`) and an `outline`, in a new data file loaded from `index.html` and listed in `sw.js`. Card kinds: `rule`, `statute`, `case` (optional `exp` for the experiment layout), `test` (`steps`), `trap`, `example`, `compare` (`table`), `critique`. Question types: `choice`, `tf`, `match`, `order`, `sort`, `similarity`. Every card needs a `source`; set `flag: true` on anything unverified.
+
+## Docs
 
 | File | What it is |
 |---|---|
 | [`SYLLABUS.md`](SYLLABUS.md) | The full course: 10 chapters, 81 units, ~175 lessons, plus sources |
-| [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md) | One unit (Copyright: Originality) written at full depth |
+| [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md) | One unit (Copyright: Originality) written at full depth, with a source for each card |
+| [`VERIFICATION.md`](VERIFICATION.md) | What was checked against which primary source, what changed, and what's still unverified (and why) |
 | [`DESIGN-B-LAB.md`](DESIGN-B-LAB.md) | **Chosen design:** The Lab, a periodic table of Australian IP |
-| [`CONCEPT.md`](CONCEPT.md) | Alternative design A: The Bower (satin bowerbird theme) |
+| [`CONCEPT.md`](CONCEPT.md) | Alternative design A: The Bower (not being built) |
 | [`design/`](design/) | Concept screen mock-ups for both designs |
 
-Legal content is a draft and must be checked against primary sources before use. See the Sources section of the syllabus.
+Legal content was checked on 11 November 2026 against the current Acts on legislation.gov.au, Wikijuris (CC BY-SA 3.0) and EUR-Lex. The judgments themselves couldn't be opened from the build environment, so case details rely on the extracts Wikijuris quotes; see `VERIFICATION.md`. Study aid, not legal advice.

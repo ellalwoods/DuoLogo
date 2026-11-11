@@ -62,7 +62,7 @@ Every right is taught through the same five questions, in the same order. Both d
 
 **Shorthand:** CA = *Copyright Act 1968*, TMA = *Trade Marks Act 1995*, PA = *Patents Act 1990*, DA = *Designs Act 2003*, ACL = *Australian Consumer Law* (CCA Sch 2), PBRA = *Plant Breeder's Rights Act 1994*. All Commonwealth. Case years are judgment years.
 
-⚑ = recent change, pending appeal, or detail to double-check before the unit ships. Every unit carries a **"law as at"** date.
+⚑ = recent change, pending appeal, or detail to double-check before the unit ships. ✔ = checked against the current Act on legislation.gov.au (11 November 2026). See [`VERIFICATION.md`](VERIFICATION.md) for the source of every check and the reason anything is still ⚑. Every unit carries a **"law as at"** date.
 
 ---
 
@@ -79,10 +79,10 @@ Every right is taught through the same five questions, in the same order. Both d
 
 **0.3 Constitution, institutions and courts** · 2 lessons
 - Constitution s 51(xviii); s 51(xxxi) and IP. *Grain Pool of WA v Commonwealth* (2000, HCA): the power is not frozen in 1900. *Nintendo v Centronics* (1994, HCA). *Phonographic Performance Co v Commonwealth* (2012, HCA).
-- IP Australia, the registers and hearing officers; Federal Court, Federal Circuit and Family Court (Div 2), state Supreme Courts; review and appeal routes ⚑ (Administrative Review Tribunal replaced the AAT in 2024).
+- IP Australia, the registers and hearing officers; Federal Court, Federal Circuit and Family Court (Div 2), state Supreme Courts; review and appeal routes: the Administrative Review Tribunal replaced the AAT on 14 October 2024 ✔ (*Administrative Review Tribunal Act 2024* s 2).
 
 **0.4 The international framework** · 2 lessons
-- Paris (national treatment, priority: **12 months for patents, 6 months for trade marks and designs**), Berne (no formalities, national treatment), TRIPS (minimum standards, three-step test), PCT, Madrid Protocol, Hague ⚑; WIPO; AUSFTA (2004) and why it changed Australian copyright.
+- Paris (national treatment, priority: **12 months for patents, 6 months for trade marks and designs**), Berne (no formalities, national treatment), TRIPS (minimum standards, three-step test), PCT, Madrid Protocol, Hague (Australia is **not** a party; under the 2021 Australia–UK FTA it agreed to make reasonable efforts to join ⚑ *secondary sources only*); WIPO; AUSFTA (2004) and why it changed Australian copyright.
 - Territoriality as the unit's theme.
 - ✦ **Problem question: "The Café"**: spot every right in one small business.
 
@@ -105,7 +105,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - The idea/expression dichotomy; *Zeccola v Universal City Studios* (1982, FCAFC: *Jaws* vs *Great White*); facts and history; material form (s 10) and when a work is "made" (s 22).
 
 **1.5 Originality** · 2 lessons · ✅ *fully written in [`SAMPLE-UNIT.md`](SAMPLE-UNIT.md)*
-- *University of London Press* (1916); *Sands & McDougall v Robinson* (1917, HCA); *Desktop Marketing v Telstra* (2002, FCAFC); *IceTV v Nine Network* (2009, HCA); *Telstra v Phone Directories* (2010, FCAFC); *Acohs v Ucorp* (2012, FCAFC); *Interlego v Tyco* (1989, PC). AI-generated material ⚑.
+- *University of London Press* (1916); *Sands & McDougall v Robinson* (1917, HCA); *Desktop Marketing v Telstra* (2002, FCAFC); *IceTV v Nine Network* (2009, HCA); *Telstra v Phone Directories* (2010, FCAFC); *Acohs v Ucorp* (2012, FCAFC); *Interlego v Tyco* (1989, PC ⚑ *report year; check the judgment year*). AI-generated material ⚑ *no Australian decision found as at Nov 2026*.
 
 **1.6 Authorship and connecting factors** · 2 lessons
 - Qualified persons and first publication (s 32); the international regulations; **joint authorship** (s 10: collaboration, contributions not separate); *Prior v Lansdowne Press* (1977, Vic SC); authorship of films and sound recordings.
@@ -118,7 +118,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - Assignment in writing (s 196(3)); exclusive licences (s 10) and standing to sue; implied licences; **Creative Commons** and open-source licences; collecting societies (APRA AMCOS, Copyright Agency); the Copyright Tribunal.
 
 **1.9 Duration** · 2 lessons
-- Life + 70, and the 2005 transition (no revival for works already out of copyright); Part IV durations; the **2019 rules for unpublished and orphan works** ⚑. Lots of **timeline** practice.
+- Life + 70, and the 2005 transition (no revival for works already out of copyright); Part IV durations; the **2019 rules for unpublished works** ✔ (s 33(2)–(3): different tables for works first made public before 1 January 2019 and for the rest; *Copyright Amendment (Disability Access and Other Measures) Act 2017* Sch 2, in force 1 Jan 2019); the **orphan works scheme** ✔ (Part V Div 2AAA, ss 116AAB–116AAF: no damages or account of profits, only a "reasonable payment", if the owner couldn't be identified and located; *Copyright Amendment Act 2026* Sch 1, in force 2 April 2026). Lots of **timeline** practice.
 
 ### Stick 4 · Breach
 **1.10 The exclusive rights** · 2 lessons
@@ -128,7 +128,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - s 36 and s 101; s 14 (substantial part); objective similarity plus causal connection; subconscious copying; quality not quantity. *IceTV* (2009, HCA); *Larrikin Music v EMI* (2010 FCA, 2011 FCAFC: *Kookaburra* and *Down Under*); *Network Ten v TCN Channel Nine* (2004, HCA: what is "a broadcast"?).
 
 **1.12 Authorisation and intermediaries** · 3 lessons
-- s 36(1A) and s 101(1A) factors. *UNSW v Moorhouse* (1975, HCA); *Universal Music v Sharman* (2005, FCA: Kazaa); *Cooper v Universal Music* (2006, FCAFC); *Roadshow Films v iiNet* (2012, HCA); *NRL Investments v Singtel Optus* (2012, FCAFC: TV Now, "who makes the copy?"). Safe harbours (Part V Div 2AA, extended in 2018 ⚑); site-blocking injunctions (s 115A, 2015, extended to search engines in 2018).
+- s 36(1A) and s 101(1A) factors. *UNSW v Moorhouse* (1975, HCA); *Universal Music v Sharman* (2005, FCA: Kazaa); *Cooper v Universal Music* (2006, FCAFC); *Roadshow Films v iiNet* (2012, HCA); *NRL Investments v Singtel Optus* (2012, FCAFC: TV Now, "who makes the copy?"). Safe harbours (Part V Div 2AA), extended ✔ by the *Copyright Amendment (Service Providers) Act 2018* (in force 29 Dec 2018) beyond carriage service providers to disability organisations, libraries, archives, key cultural institutions and educational institutions (s 116ABA); site-blocking injunctions (s 115A, in force 27 June 2015), extended ✔ to online search engine providers (s 115A(2)) by the *Copyright Amendment (Online Infringement) Act 2018* (in force 11 Dec 2018).
 
 **1.13 Secondary infringement, TPMs and RMI** · 2 lessons
 - Importation and sale with knowledge (ss 37–38, 102–103); parallel importation of books, music and software; technological protection measures (ss 116AK–116AQ); rights management information.
@@ -147,7 +147,7 @@ Every right is taught through the same five questions, in the same order. Both d
 
 **1.17 Copyright meets design, and copyright meets AI** · 2 lessons
 - ss 74–77A: corresponding designs and industrial application (more than 50 articles); s 75 and registered designs; *Burge v Swarbrick* again.
-- AI: human authorship after *Phone Directories*; training data and reproduction; the government's decision not to add a text-and-data-mining exception ⚑.
+- AI: human authorship after *Phone Directories*; training data and reproduction; the government's decision not to add a text-and-data-mining exception (announced October 2025 ⚑ *press reports only*). Note the *Copyright Amendment Act 2026* (in force 2 April 2026) covers orphan works, remote learning and other measures, not AI ✔.
 - ✦ **Problem question: "The Band"**: a sampled riff, a parody video, a borrowed album cover and an upload platform.
 
 ---
@@ -177,7 +177,7 @@ Every right is taught through the same five questions, in the same order. Both d
 
 ### Stick 3 · Whose & how long?
 **2.7 Duration, non-use and cancellation** · 3 lessons
-- 10-year terms renewable forever (ss 72, 75); assignment and licensing, authorised use (s 8, s 7(3)); removal for non-use (s 92, 3 years; s 101 discretion): *E & J Gallo Winery v Lion Nathan* (2010, HCA: BAREFOOT wine); rectification (s 88) and **genericide**; *Taylor v Killer Queen* (Katie Perry v Katy Perry) ⚑ *High Court appeal: check the outcome*.
+- 10-year terms renewable forever (ss 72, 75); assignment and licensing, authorised use (s 8, s 7(3)); removal for non-use (s 92, 3 years; s 101 discretion): *E & J Gallo Winery v Lion Nathan* (2010, HCA: BAREFOOT wine); rectification (s 88) and **genericide**; *Taylor v Killer Queen LLC* [2026] HCA 5 (Katie Perry v Katy Perry): decided 11 March 2026, reportedly 3–2 for Ms Taylor, restoring her KATIE PERRY registration and finding infringement by the singer's companies, with some issues remitted to the Federal Court ⚑ *outcome from secondary reports only; the judgment couldn't be opened*.
 
 ### Stick 4 · Breach
 **2.8 Use as a trade mark** · 2 lessons
@@ -188,11 +188,11 @@ Every right is taught through the same five questions, in the same order. Both d
 
 ### Stick 5 · Escape
 **2.10 Defences and parallel imports** · 2 lessons
-- s 122: own name, descriptive use in good faith, intended purpose, comparative advertising, exercising a right under the Act; prior continuous use (s 124); parallel imports (s 122A ⚑ commencement), *Paul's Retail v Lonsdale* (2012, FCAFC); unjustified threats (s 129); remedies (s 126, additional damages).
+- s 122: own name, descriptive use in good faith, intended purpose, comparative advertising, exercising a right under the Act; prior continuous use (s 124); parallel imports (s 122A ✔, inserted by the *IP Laws Amendment (Productivity Commission Response Part 1 and Other Measures) Act 2018* Sch 1 item 2, in force 25 Aug 2018), *Paul's Retail v Lonsdale* (2012, FCAFC); unjustified threats (s 129); remedies (s 126, additional damages).
 
 ### Also in this chapter
 **2.11 Certification marks, collective marks and geographical indications** · 2 lessons
-- Parts 16–17; wine GIs under the *Wine Australia Act 2013*; the Prosecco dispute ⚑; GIs in trade agreements ⚑.
+- Parts 16–17; wine GIs under the *Wine Australia Act 2013*; the Prosecco dispute and GIs in trade agreements: the Australia–EU FTA was concluded on 24 March 2026, reportedly protecting Prosecco as an EU GI for export labelling (phased out over 10 years) while Australian producers keep it as a grape variety name at home; not yet in force ⚑ *secondary sources only*.
 - ✦ **Problem question: "The Food Truck"**: a name clash, a lookalike logo, a lapsed registration and a cease-and-desist letter.
 
 ---
@@ -227,7 +227,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - s 18(1)(a) and s 6 of the Statute of Monopolies; *NRDC v Commissioner of Patents* (1959, HCA); *Commissioner v Microcell* (1959, HCA: mere new use); discoveries and products of nature; *D'Arcy v Myriad Genetics* (2015, HCA); s 18(2) (human beings).
 
 **4.4 Manner of manufacture II: business methods and software** · 2 lessons
-- *CCOM v Jiejing* (1994, FCAFC); *Grant v Commissioner* (2006, FCAFC); *Research Affiliates* (2014, FCAFC); *RPL Central* (2015, FCAFC); *Encompass v InfoTrack* (2019, FCAFC); *Aristocrat v Commissioner* (2022, HCA, 3–3) ⚑ *and what happened after*.
+- *CCOM v Jiejing* (1994, FCAFC); *Grant v Commissioner* (2006, FCAFC); *Research Affiliates* (2014, FCAFC); *RPL Central* (2015, FCAFC); *Encompass v InfoTrack* (2019, FCAFC); *Aristocrat v Commissioner* (2022, HCA, 3–3) and what happened after: on remittal Burley J found the claims unpatentable ([2024] FCA 212); a Full Court allowed Aristocrat's appeal ([2025] FCAFC 131, 19 Sept 2025); the High Court refused the Commissioner special leave ([2026] HCADisp 15, 5 Feb 2026) ⚑ *from secondary reports; the judgments couldn't be opened*.
 
 **4.5 Manner of manufacture III: medicine** · 2 lessons
 - *Apotex v Sanofi-Aventis* (2013, HCA): methods of medical treatment are patentable; new uses of known compounds; the public policy arguments.
@@ -250,7 +250,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - s 15; employee inventions at common law; *University of Western Australia v Gray* (2009, FCAFC); *Thaler v Commissioner* (2022, FCAFC: DABUS, AI can't be an inventor); co-ownership (s 16).
 
 **4.11 Term, extensions and innovation patents** · 1 lesson
-- 20 years (s 67); pharmaceutical extensions up to 5 years (s 70); innovation patents: 8 years, no new filings after 25 August 2021, the last expire in 2029 ⚑.
+- 20 years (s 67); pharmaceutical extensions up to 5 years (s 70); innovation patents: 8 years (s 68) ✔; phased out from 26 Aug 2021 ✔: an innovation patent can only be granted if its date of patent is before that day (s 52(3)), and certification needs every claim to have a priority date before it (s 101B(2)(ha)) (*IP Laws Amendment (PC Response Part 2 and Other Measures) Act 2020* Sch 1). So the last innovation patents expire by August 2029. (Careful: divisionals dated from an earlier parent could still be filed after August 2021.)
 
 ### Stick 4 · Breach
 **4.12 Infringement** · 3 lessons
@@ -258,7 +258,7 @@ Every right is taught through the same five questions, in the same order. Both d
 
 ### Stick 5 · Escape
 **4.13 Defences** · 3 lessons
-- Prior use (s 119); regulatory use (ss 119A–119B); experimental use (s 119C); exhaustion: *Calidad v Seiko Epson* (2020, HCA: refilled printer cartridges, the end of implied licence); innocent infringement (s 123); Crown use; compulsory licences ⚑ (the public interest test); the *Gillette* defence.
+- Prior use (s 119); regulatory use (ss 119A–119B); experimental use (s 119C); exhaustion: *Calidad v Seiko Epson* (2020, HCA: refilled printer cartridges, the end of implied licence); innocent infringement (s 123); Crown use; compulsory licences (s 133: the public interest test in s 133(3)(e) ✔, from Sch 4 of the 2020 Act, in force 27 Feb 2020); the *Gillette* defence.
 
 **4.14 Revocation, re-examination and amendment** · 2 lessons
 - Grounds of revocation (s 138); re-examination; amendment (s 102); unjustified threats (s 128); remedies (s 122, additional damages).
@@ -272,16 +272,16 @@ Every right is taught through the same five questions, in the same order. Both d
 - Design as overall appearance (s 5); visual features (s 7); products and component parts (s 6); what's excluded.
 
 **5.2 Registration and certification** · 1 lesson
-- Formalities registration, then examination and certification before you can sue (s 73(3)); the 2021 reforms ⚑.
+- Formalities registration, then examination and certification before you can sue (s 73(3) ✔); the 2021 reforms ✔ (*Designs Amendment (Advisory Council on Intellectual Property Response) Act 2021*: Sch 1–6 in force 10 March 2022).
 
 **5.3 New and distinctive** · 3 lessons
-- ss 15–16; the prior art base; **the informed user** and the s 19 factors; design freedom; statements of newness and distinctiveness; the 12-month grace period (2022) ⚑. *Review Australia v Innovative Lifestyle* (2008, FCAFC); *LED Technologies v Elecspess* (2008, FCA); *Hunter Pacific v Martec* (2016, FCA).
+- ss 15–16; the prior art base; **the informed user** and the s 19 factors; design freedom; statements of newness and distinctiveness; the 12-month grace period ✔ (s 17(1): the designer's own publications or uses in the 12 months before the priority date are disregarded; for publications on or after 10 March 2022, s 17(1A)). *Review Australia v Innovative Lifestyle* (2008, FCAFC); *LED Technologies v Elecspess* (2008, FCA); *Hunter Pacific v Martec* (2016, FCA).
 
 **5.4 Ownership, term and infringement** · 2 lessons
 - s 13 (designer, employer, commissioning party); 5 + 5 years (s 46); infringement (s 71), substantially similar in overall impression.
 
 **5.5 Defences and the copyright overlap** · 2 lessons
-- Spare parts (s 72): *GM Global Technology v SSS Auto Parts* (2019, FCA); innocent infringement (s 75); the prior use defence ⚑; unjustified threats (s 77); choosing between copyright, design and patent for one product; **IP in the fashion industry** (why most fashion is barely protected).
+- Spare parts (s 72): *GM Global Technology v SSS Auto Parts* (2019, FCA); innocent infringement (s 75); the prior use defence ✔ (s 71A, for designs with a priority date on or after 10 March 2022); unjustified threats (s 77); choosing between copyright, design and patent for one product; **IP in the fashion industry** (why most fashion is barely protected).
 - ✦ **Problem question: "The Furniture Label"**: a designer chair, a knock-off, an Instagram launch and an uncertified registration.
 
 ---
@@ -298,7 +298,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - Implied duties; trade secrets vs know-how; *Del Casale v Artedomus* (2007, NSWCA); restraints of trade; springboard injunctions; NDAs.
 
 **6.4 Defences and limits** · 2 lessons
-- Public interest and "iniquity": *Corrs Pavey Whiting & Byrne v Collector of Customs* (1987, FCAFC); government secrets: *Commonwealth v John Fairfax* (1980, HCA); privacy: *ABC v Lenah Game Meats* (2001, HCA) and the new statutory privacy tort ⚑; remedies (injunction, equitable compensation, account, constructive trust).
+- Public interest and "iniquity": *Corrs Pavey Whiting & Byrne v Collector of Customs* (1987, FCAFC); government secrets: *Commonwealth v John Fairfax* (1980, HCA); privacy: *ABC v Lenah Game Meats* (2001, HCA) and the new statutory tort for serious invasions of privacy ✔ (*Privacy Act 1988* Sch 2, inserted by the *Privacy and Other Legislation Amendment Act 2024*, in force 10 June 2025); remedies (injunction, equitable compensation, account, constructive trust).
 - ✦ **Problem question: "The Recipe"**: a departing chef, a secret sauce, a food blogger and a patent that published the method.
 
 ---
@@ -309,13 +309,13 @@ Every right is taught through the same five questions, in the same order. Both d
 - *Foster v Mountford* (1976, NT SC: secret sacred information); *Yumbulul v Reserve Bank* (1991, FCA); *Milpurrurru v Indofurn* (1994, FCA: the carpets case, cultural harm in damages); *Bulun Bulun v R & T Textiles* (1998, FCA: fiduciary duties to the clan); *ACCC v Birubi Art* (2018, FCA: fake souvenirs under the ACL).
 
 **7.2 ICIP: the gaps and the reforms** · 2 lessons
-- Why the existing regimes fit badly (communal ownership, no time limits, material form); protocols (Terri Janke's *True Tracks*); the Resale Royalty Right for Visual Artists Act 2009; the proposed standalone ICIP legislation ⚑; the WIPO treaty on genetic resources and traditional knowledge (2024) ⚑. *Content reviewed by First Nations sources before release.*
+- Why the existing regimes fit badly (communal ownership, no time limits, material form); protocols (Terri Janke's *True Tracks*); the Resale Royalty Right for Visual Artists Act 2009; the proposed standalone ICIP legislation (still at the options stage; no bill found as at Nov 2026 ⚑); the WIPO Treaty on Intellectual Property, Genetic Resources and Associated Traditional Knowledge (adopted 2024; Australia has signed but not ratified ⚑ *secondary sources only*). *Content reviewed by First Nations sources before release.*
 
 **7.3 Plant breeder's rights and circuit layouts** · 1 lesson
 - PBRA: new, distinct, uniform, stable; 20 years (25 for trees and vines); farm-saved seed; essentially derived varieties. *Circuit Layouts Act 1989*: eligible layouts, 10-year term.
 
 **7.4 Genetic resources and traditional knowledge** · 2 lessons
-- The Convention on Biological Diversity and its Nagoya Protocol (Australia's status ⚑); the FAO plant genetic resources treaty (ITPGRFA) and standard material transfer agreements; patent disclosure requirements; farmers' rights; access and benefit-sharing; Australian biodiscovery laws (Commonwealth, Queensland and Northern Territory ⚑).
+- The Convention on Biological Diversity and its Nagoya Protocol (Australia signed on 20 January 2012 and, as far as could be found, has not ratified ⚑); the FAO plant genetic resources treaty (ITPGRFA) and standard material transfer agreements; patent disclosure requirements; farmers' rights; access and benefit-sharing; Australian biodiscovery laws (Commonwealth, Queensland and Northern Territory ⚑ *state and territory legislation not checked: their registers weren't reachable*).
 
 ---
 
@@ -337,7 +337,7 @@ Every right is taught through the same five questions, in the same order. Both d
 - One product, many rights: what to file, when and where; priority and grace-period traps in each regime; licensing and assignment; IP in startups and employment contracts.
 
 **8.6 The frontier** · 2 lessons
-- AI as author, inventor and infringer; *JT International v Commonwealth* (2012, HCA: plain packaging, IP and "acquisition of property"); current law reform ⚑.
+- AI as author, inventor and infringer; *JT International v Commonwealth* (2012, HCA: plain packaging, IP and "acquisition of property"); current law reform ⚑ (as at Nov 2026: orphan works enacted ✔ 2026; TDM exception ruled out, October 2025; non-compete ban proposed; ICIP legislation in development).
 - ✦ **The Grand Problem**: one long fact pattern across the whole course (a startup with a brand, an app, a product design, a secret process, an employee who leaves and a copycat overseas). Model answer included.
 
 ---
@@ -359,31 +359,31 @@ Every right is taught through the same five questions, in the same order. Both d
 - *Matter:* red-flag report on a target software company.
 
 **9.4 Licensing and commercialisation** · 2 lessons
-- Exclusive, sole and non-exclusive licences; field-of-use and territory; royalties and milestones; improvements and grant-backs; background vs foreground IP in R&D collaborations and university spin-outs; competition law since the repeal of the s 51(3) licensing exemption (2019) ⚑; open source and Creative Commons in commercial products.
+- Exclusive, sole and non-exclusive licences; field-of-use and territory; royalties and milestones; improvements and grant-backs; background vs foreground IP in R&D collaborations and university spin-outs; competition law since the repeal of the s 51(3) licensing exemption ✔ (*Treasury Laws Amendment (2018 Measures No. 5) Act 2019* Sch 4, in force 12 September 2019; CCA s 51 now has no subsection (3)); open source and Creative Commons in commercial products.
 - *Matter:* issues list for a university–biotech licence.
 
 **9.5 Life sciences patents** · 3 lessons
-- How pharma patent disputes run: TGA registration and the ARTG; the patent notification certificates in the *Therapeutic Goods Act* (ss 26B–26C) ⚑; pharmaceutical term extensions (PA s 70) and springboarding (s 119A); PBS listing, generic entry and price reductions ⚑; why the **balance of convenience** dominates interlocutory injunctions; undertakings as to damages and Commonwealth claims on them ⚑; biologics and biosimilars; Swiss-style and method-of-treatment claims (*Apotex v Sanofi*).
+- How pharma patent disputes run: TGA registration and the ARTG; the patent certificates in the *Therapeutic Goods Act 1989* ✔ (s 26B certificate on applying to register or list; s 26C for patent infringement proceedings); pharmaceutical term extensions (PA s 70) and springboarding (s 119A); PBS listing, generic entry and price reductions ⚑ *(National Health Act not yet checked)*; why the **balance of convenience** dominates interlocutory injunctions; undertakings as to damages and Commonwealth claims on them ⚑ *(case law: judgments not reachable)*; biologics and biosimilars; Swiss-style and method-of-treatment claims (*Apotex v Sanofi*).
 - *Matter:* a generic is about to launch. Advise the patentee on an urgent interlocutory injunction.
 
 **9.6 Brand protection and anti-counterfeiting** · 2 lessons
-- Notices of objection and seizures by the Australian Border Force (TMA Part 13, CA Part V Div 7): timelines and what the owner must do ⚑; online marketplace takedowns; criminal referrals; cease-and-desist strategy without making **unjustified threats**; evidence (test purchases, investigators).
+- Notices of objection and seizures by the Australian Border Force (TMA Part 13 ✔, ss 132–136B: notice of objection, seizure, notice of seizure, claim for release, forfeiture if unclaimed; CA Part V Div 7 ✔): timelines and what the owner must do (the claim and action periods are prescribed by the regulations ⚑ *regulations not yet checked*); online marketplace takedowns; criminal referrals; cease-and-desist strategy without making **unjustified threats**; evidence (test purchases, investigators).
 - *Matter:* the ABF has seized a shipment of counterfeit sneakers. What now?
 
 **9.7 Domain names and online brand disputes** · 2 lessons
-- The .au domain space and auDA licensing rules ⚑; the **.au Dispute Resolution Policy** (auDRP) vs the UDRP for gTLDs, and the key difference (bad faith registration *or* use in auDRP; *and* in UDRP); domain names as trade mark infringement and passing off: *Buchanan Group v Sorgetti* (2002, FCA), *Sports Warehouse v Fry Consulting* (2010, FCA), *Mantra Group v Tailly (No 2)* (2010, FCA); keyword advertising: *Google v ACCC* (2013, HCA); intermediary liability. *(Source: Wikijuris, Governing the Internet.)*
+- The .au domain space and auDA licensing rules ⚑ *(auda.org.au not reachable from the checking environment)*; the **.au Dispute Resolution Policy** (auDRP) vs the UDRP for gTLDs, and the key difference (bad faith registration *or* use in auDRP; *and* in UDRP); domain names as trade mark infringement and passing off: *Buchanan Group v Sorgetti* (2002, FCA), *Sports Warehouse v Fry Consulting* (2010, FCA), *Mantra Group v Tailly (No 2)* (2010, FCA); keyword advertising: *Google v ACCC* (2013, HCA); intermediary liability. *(Source: Wikijuris, Governing the Internet.)*
 - *Matter:* a cybersquatter holds the client's brand in .com.au.
 
 **9.8 Advertising and consumer law disputes** · 1 lesson
-- Comparative advertising; claim substantiation; ACL ss 18 and 29 in competitor disputes; urgent injunctions against campaigns; ACCC enforcement and penalties; therapeutic goods advertising ⚑.
+- Comparative advertising; claim substantiation; ACL ss 18 and 29 in competitor disputes; urgent injunctions against campaigns; ACCC enforcement and penalties; therapeutic goods advertising ⚑ *(Advertising Code not yet checked)*.
 - *Matter:* a competitor's TV ad says "twice as effective". Can we stop it this week?
 
 **9.9 Running IP litigation in the Federal Court** · 3 lessons
-- The Intellectual Property National Practice Area and its practice note ⚑; concise statements; **expert evidence** (the expert evidence practice note, joint reports, concurrent evidence); technical primers and tutorials; survey evidence; confidentiality regimes; split trials (liability, then quantum); appeals to the Full Court and special leave; costs and settlement; IP Australia appeals heard afresh.
+- The Intellectual Property National Practice Area and its practice note ⚑ *(Federal Court site blocked automated access)*; concise statements; **expert evidence** (the expert evidence practice note, joint reports, concurrent evidence); technical primers and tutorials; survey evidence; confidentiality regimes; split trials (liability, then quantum); appeals to the Full Court and special leave; costs and settlement; IP Australia appeals heard afresh.
 - *Matter:* plan the evidence for a patent infringement trial.
 
 **9.10 Trade secrets and departing employees** · 2 lessons
-- First 48 hours: forensic imaging, search orders, interlocutory injunctions; restraints of trade (including NSW's *Restraints of Trade Act 1976*) and the proposed ban on non-competes for many employees ⚑; drafting confidentiality and IP clauses that actually work.
+- First 48 hours: forensic imaging, search orders, interlocutory injunctions; restraints of trade (including NSW's *Restraints of Trade Act 1976*) and the proposed ban on non-competes for many employees (an exposure draft bill released in 2026, expected to start in 2027 if passed; not law as at Nov 2026 ⚑ *secondary sources only*); drafting confidentiality and IP clauses that actually work.
 - *Matter:* a senior engineer resigns to join a competitor with a USB drive.
 
 **9.11 Advising on AI and data** · 1 lesson
