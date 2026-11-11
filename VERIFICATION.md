@@ -85,6 +85,28 @@ Units 1.1–1.4, 1.6–1.9 and 1.11 and the copyright-infringement Reaction were
 
 **Wording that is ours, not a court's:** the checklists (1.6 connecting factors; 1.11 full infringement answer) and every worked example are teaching structures built on the cited provisions and cases, and say so on the card.
 
+## Copyright 1.10 and 1.12–1.17 (11 November 2026)
+
+Written from the current Act (Compilation No. 65, in force 2 April 2026) and Wikijuris (Copyright infringement; Copyright limitations and exceptions; Copyright remedies), in `unit-rights.js`, `unit-authorisation.js`, `unit-secondary.js`, `unit-fair-dealing.js` and `unit-exceptions.js`.
+
+**Statutory text quoted or checked:** CA s 10(1) ("communicate", "adaptation", "access control technological protection measure", "electronic rights management information", "sufficient acknowledgement"); ss 22(6)–(6A), 28 (with the *Copyright Amendment Act 2026* Sch 2 remote-learning amendments, s 28(8)–(10)), 31(1), 36(1A), 37, 38, 39B, 40(1)–(8), 41, 41A, 42, 43, 43B, 43C, 44A(1)–(3), 44C–44F, 47B–47F, 47H, 47J, 65–68, 73, 85–88, 101(1A), 103A–103C, 103AA, 104, 109A, 110AA, 111, 112E, 113E, 113P–113S, 115A, 116ABA, 116AC–116AH, 116AN, 116AO, 116AP, 116B, 116C, 131A(2), 131D, 132APC, 183, 183A, 200AB; endnotes for s 41A (inserted by the *Copyright Amendment Act 2006*, No. 158, 2006).
+
+**Also for 1.16–1.17:** CA Part IX ss 190, 191, 191A–191B, 193–195AB, 195ABA, 195AC, 195AG, 195AHA, 195AI–195AL, 195ALA, 195AM, 195AN, 195ANA, 195AR, 195AS, 195AT, 195AW–195AWB, 195AZA; ss 10(1) ("material form"), 74–77A; *Copyright Regulations 2017* reg 12 (applied industrially: more than 50 articles). Wikijuris chapters: Moral Rights and Performers Rights; Registered designs ("The Design/Copyright Overlap").
+
+**Cases (checked against the extracts Wikijuris quotes; judgments not reachable):** *Perez v Fernandez* [2012] FMCA 2; *Burge v Swarbrick* [2007] HCA 17 (s 77 consequence); *Raben Footwear v Polygram* [1997] FCA 370; *Milpurrurru v Indofurn*; *De Garis v Neville Jeffress Pidler* (1990) 18 IPR 292; *TCN Channel Nine v Network Ten* [2001] FCA 108 (Conti J at [66]) and (2002) 118 FCR 417 (Hely J at [115]).
+
+**Corrections and clarifications:**
+- **Research or study "reasonable portion":** Wikijuris cites s 10(2)–(2A). The current Act puts the 10% / one-chapter rule in the s 40(5) table, and s 40(8) says s 10(2)–(2C) don't affect it. The card cites s 40(5).
+- **Syllabus 1.15** listed buildings under s 73; s 66 is the exception for depicting buildings (s 73 is about reconstructing them). Fixed in SYLLABUS.md.
+
+**Still ⚑ or left out:**
+- *UNSW v Moorhouse*, *Universal Music v Sharman* (Kazaa) and *Roadshow v iiNet*: not in Wikijuris and the judgments couldn't be opened; outcomes only, from secondary sources, flagged ⚑ on the cards.
+- *Milpurrurru v Indofurn*: Wikijuris cites it two ways ([1994] FCA 975 on one page, [1994] FCA 1544 on another). The card gives no neutral citation and is flagged ⚑.
+- *Cooper v Universal Music* (2006) and *NRL v Singtel Optus* (TV Now, 2012): left out; nothing primary reached to confirm the holdings.
+- Parody or satire: no Australian case law on the scope; the card says so.
+- *Meskenas v ACP Publishing* (syllabus 1.16): not in Wikijuris; left out.
+- **AI (1.17 lesson B):** no Australian decision on generative AI and copyright could be found (⚑, searches to November 2026); the October 2025 announcement that there will be no text-and-data-mining exception is from press reports only (⚑). The lesson is labelled as analysis applying the Act and earlier cases, not settled law.
+
 ## Foundations 0.1–0.4 and the copyright introduction (11 November 2026)
 
 Written as the course's introductory lessons (`unit-foundations.js`, and lesson A of 1.1 in `unit-literary.js`).

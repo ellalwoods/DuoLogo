@@ -126,34 +126,34 @@ Units are studied **in element-number order**, and each one unlocks when the one
 - Life + 70, and the 2005 transition (no revival for works already out of copyright); Part IV durations; the **2019 rules for unpublished works** ✔ (s 33(2)–(3): different tables for works first made public before 1 January 2019 and for the rest; *Copyright Amendment (Disability Access and Other Measures) Act 2017* Sch 2, in force 1 Jan 2019); the **orphan works scheme** ✔ (Part V Div 2AAA, ss 116AAB–116AAF: no damages or account of profits, only a "reasonable payment", if the owner couldn't be identified and located; *Copyright Amendment Act 2026* Sch 1, in force 2 April 2026). Lots of **timeline** practice.
 
 ### Stick 4 · Breach
-**1.10 The exclusive rights** · 2 lessons
+**1.10 The exclusive rights** · 2 lessons · ✅ *written, in the app*
 - s 31 (works) and ss 85–88 (Part IV): reproduce, publish, perform in public, communicate to the public (2001), adapt. "In public": the domestic vs commercial circle.
 
 **1.11 Direct infringement: copying a substantial part** · 3 lessons · ✅ *written, in the app*
 - s 36 and s 101; s 14 (substantial part); objective similarity plus causal connection; subconscious copying; quality not quantity. *IceTV* (2009, HCA); *Larrikin Music v EMI* (2010 FCA, 2011 FCAFC: *Kookaburra* and *Down Under*); *Network Ten v TCN Channel Nine* (2004, HCA: what is "a broadcast"?).
 
-**1.12 Authorisation and intermediaries** · 3 lessons
+**1.12 Authorisation and intermediaries** · 2 lessons in the app · ✅ *written; Cooper and TV Now left out for now (see VERIFICATION.md)*
 - s 36(1A) and s 101(1A) factors. *UNSW v Moorhouse* (1975, HCA); *Universal Music v Sharman* (2005, FCA: Kazaa); *Cooper v Universal Music* (2006, FCAFC); *Roadshow Films v iiNet* (2012, HCA); *NRL Investments v Singtel Optus* (2012, FCAFC: TV Now, "who makes the copy?"). Safe harbours (Part V Div 2AA), extended ✔ by the *Copyright Amendment (Service Providers) Act 2018* (in force 29 Dec 2018) beyond carriage service providers to disability organisations, libraries, archives, key cultural institutions and educational institutions (s 116ABA); site-blocking injunctions (s 115A, in force 27 June 2015), extended ✔ to online search engine providers (s 115A(2)) by the *Copyright Amendment (Online Infringement) Act 2018* (in force 11 Dec 2018).
 
-**1.13 Secondary infringement, TPMs and RMI** · 2 lessons
+**1.13 Secondary infringement, TPMs and RMI** · 2 lessons · ✅ *written, in the app*
 - Importation and sale with knowledge (ss 37–38, 102–103); parallel importation of books, music and software; technological protection measures (ss 116AK–116AQ); rights management information.
 
 ### Stick 5 · Escape
-**1.14 Fair dealing** · 3 lessons
+**1.14 Fair dealing** · 2 lessons in the app · ✅ *written, in the app*
 - Fair dealing, not fair use. Research or study (s 40 and the fairness factors); criticism or review (s 41); parody or satire (s 41A, 2006); reporting news (s 42); legal advice (s 43); disability (s 113E); sufficient acknowledgement. *De Garis v Neville Jeffress Pidler* (1990, FCA); *TCN Channel Nine v Network Ten* (2002, FCAFC: *The Panel*).
-- Critique: ALRC Report 122 (2014) and the Productivity Commission (2016) recommended fair use. Why it hasn't happened. **Essay plan** practice.
+- Critique: ALRC Report 122 (2014) and the Productivity Commission (2016) recommended fair use. Why it hasn't happened.
 
-**1.15 Other exceptions and statutory licences** · 2 lessons
-- Time-shifting (s 111) and format-shifting (ss 43C, 109A); artworks in public places (s 65); incidental filming (s 67); buildings (s 73); s 200AB; educational and government statutory licences.
+**1.15 Other exceptions and statutory licences** · 2 lessons · ✅ *written, in the app*
+- Time-shifting (s 111) and format-shifting (ss 43C, 109A); artworks in public places (s 65); incidental filming (s 67); buildings (s 66; s 73 is about reconstructing buildings); s 200AB; educational and government statutory licences.
 
 ### Also in this chapter
-**1.16 Moral rights** · 2 lessons
+**1.16 Moral rights** · 2 lessons · ✅ *written, in the app (Meskenas left out for now: not in Wikijuris)*
 - Part IX (2000): attribution (s 193), against false attribution (s 195AC), integrity (s 195AI); reasonableness (ss 195AR–AS); written consent, not waiver (s 195AW). *Meskenas v ACP Publishing* (2006, FMCA); *Perez v Fernandez* (2012, FMCA). Performers' moral rights.
 
-**1.17 Copyright meets design, and copyright meets AI** · 2 lessons
+**1.17 Copyright meets design, and copyright meets AI** · 2 lessons · ✅ *written, in the app*
 - ss 74–77A: corresponding designs and industrial application (more than 50 articles); s 75 and registered designs; *Burge v Swarbrick* again.
 - AI: human authorship after *Phone Directories*; training data and reproduction; the government's decision not to add a text-and-data-mining exception (announced October 2025 ⚑ *press reports only*). Note the *Copyright Amendment Act 2026* (in force 2 April 2026) covers orphan works, remote learning and other measures, not AI ✔.
-- ✦ **Problem question: "The Band"**: a sampled riff, a parody video, a borrowed album cover and an upload platform.
+- ✦ **Worked scenario (not yet written): "The Band"**: a sampled riff, a parody video, a borrowed album cover and an upload platform.
 
 ---
 
