@@ -266,6 +266,7 @@
     if (nbTab === 'reactions') body = `<p class="note nb-intro">Balance the equation: pick the elements of the cause of action and leave out the red herrings.</p>
       <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>`;
     if (nbTab === 'settings') body = `<div class="rows" style="margin-top:14px">
+        <button class="row" data-act="share"><div class="t">Share Duo Logo<small>Send a link to the app</small></div><span class="p">↗</span></button>
         <button class="row" data-act="welcome"><div class="t">How the course works<small>Where to start, and the order of lessons</small></div></button>
         <button class="row" data-act="sound"><div class="t">Sound<small>Pings, fizzes and the odd Geiger click</small></div><span class="p">${soundOn() ? 'ON' : 'OFF'}</span></button>
         <button class="row" data-act="export"><div class="t">Export backup<small>Copy or download your progress</small></div></button>
@@ -563,6 +564,16 @@
     buzz(ok ? [20, 60, 20] : [30, 40, 30]);
   }
 
+  /* ---------- share ---------- */
+  const shareUrl = () => location.href.split('#')[0].split('?')[0];
+  function shareApp() {
+    const url = shareUrl(), text = 'Duo Logo: learn Australian IP law before starting a job in IP.';
+    if (navigator.share) { navigator.share({ title: 'Duo Logo', text, url }).catch(() => {}); return; }
+    modal(`<p class="eyebrow">Share</p><h2>Share Duo Logo</h2><p class="note">Send this link. It opens in any browser, and can be added to a phone's home screen.</p>
+      <textarea class="textbox share-url" readonly rows="2">${esc(url)}</textarea>
+      <button class="btn" data-act="copylink" style="width:100%;margin:0">Copy link</button><p class="mono copied" hidden>Copied ✓</p>`);
+  }
+
   /* ---------- backup (as in DuoVino) ---------- */
   const backupText = () => JSON.stringify({ app: 'duologo', version: 1, exported: new Date().toISOString(), state: S });
   function modal(inner) { overlay.innerHTML = `<div class="scrim" data-act="close"><div class="panel" data-stop><button class="x" data-act="close" aria-label="Close">✕</button>${inner}</div></div>`; }
@@ -666,6 +677,8 @@
     if (a === 'rxout') { if (!P.checked) { P.eq = P.eq.filter(x => x !== t.dataset.t); renderReaction(); } return; }
     if (a === 'rxcheck') return rxCheck();
     if (a === 'rxagain') return startReaction(P.id);
+    if (a === 'share') return shareApp();
+    if (a === 'copylink') { const ta = overlay.querySelector('.share-url'); ta.select(); (navigator.clipboard ? navigator.clipboard.writeText(ta.value) : Promise.reject()).catch(() => document.execCommand('copy')).finally(() => { overlay.querySelector('.copied').hidden = false; }); return; }
     if (a === 'export') return exportBackup();
     if (a === 'import') return importBackup();
     if (a === 'restore') return restoreBackup();
