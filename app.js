@@ -18,7 +18,50 @@
     catch { return defaults(); }
   };
   let S = load();
-  const save = () => { S._updated = Date.now(); try { localStorage.setItem(STORE, JSON.stringify(S)); } catch { /* private mode */ } };
+  const save = () => { S._updated = Date.now(); try { localStorage.setItem(STORE, JSON.stringify(S)); } catch { /* private mode */ } cloudPush(); };
+
+  /* ---------- sign-in (as in DuoVino): name + an element + a case, synced to Supabase ---------- */
+  const CLOUD = window.DUOLOGO_CLOUD || {};
+  const cloudOn = !!(CLOUD.url && CLOUD.key);
+  const CODE_KEY = 'duologo.code', NAME_KEY = 'duologo.name', LOCAL_KEY = 'duologo.local';
+  const myCode = () => localStorage.getItem(CODE_KEY);
+  // Your "passcode" is your name + an element + a case you pick. Easy to remember; it only keeps people apart.
+  const PICK_ELEMENTS = ['u1-5', 'u1-1', 'u2-1', 'u2-8', 'u3-1', 'u4-6', 'u5-3', 'u6-1'];
+  const PICK_CASES = [['icetv', 'IceTV', '2009 · copyright'], ['moorhouse', 'Moorhouse', '1975 · copyright'], ['shell', 'Shell v Esso', '1963 · trade marks'],
+    ['clark', 'Clark Equipment', '1964 · trade marks'], ['kenman', 'Kenman Kandy', '2002 · trade marks'], ['campomar', 'Campomar v Nike', '2000 · TM & ACL'],
+    ['henderson', 'Henderson', '1960 · passing off'], ['parkdale', 'Parkdale v Puxu', '1982 · ACL']];
+  const pickCode = (name, el, cs) => `p:${name.toLowerCase().trim().replace(/\s+/g, ' ')}|${el}|${cs}`;
+  const pickOf = code => { if (!String(code || '').startsWith('p:')) return null; const [, el, cs] = code.slice(2).split('|'); return { el: D.elements.find(e => e.id === el), cs: PICK_CASES.find(x => x[0] === cs) }; };
+  async function codeId(code) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('duologo:' + code));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+  async function rpc(fn, args) {
+    const r = await fetch(`${CLOUD.url.replace(/\/$/, '')}/rest/v1/rpc/${fn}`, { method: 'POST',
+      headers: { apikey: CLOUD.key, ...(CLOUD.key.startsWith('eyJ') ? { Authorization: `Bearer ${CLOUD.key}` } : {}), 'Content-Type': 'application/json' }, body: JSON.stringify(args) });
+    if (!r.ok) { const e = new Error(`cloud ${fn} ${r.status}`); e.status = r.status; throw e; }
+    return r.json();
+  }
+  let pushTimer = null, pushing = Promise.resolve();
+  function cloudPush(now) {
+    if (!cloudOn || !myCode()) return;
+    clearTimeout(pushTimer);
+    const go = () => { pushing = pushing.then(async () => { try { await rpc('duologo_save', { p_id: await codeId(myCode()), p_name: localStorage.getItem(NAME_KEY) || '', p_state: S, p_create: false }); } catch { /* offline: next save retries */ } }); return pushing; };
+    if (now) return go();
+    pushTimer = setTimeout(go, 1500);
+  }
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') cloudPush(true); });
+  async function cloudPull() {
+    if (!cloudOn || !myCode()) return;
+    try {
+      const res = await rpc('duologo_load', { p_id: await codeId(myCode()) });
+      if (res && res.state && (res.state._updated || 0) > (S._updated || 0)) {
+        S = { ...defaults(), ...res.state };
+        try { localStorage.setItem(STORE, JSON.stringify(S)); } catch { /* ignore */ }
+        if (!P) route();
+      }
+    } catch { /* offline: carry on with this device's copy */ }
+  }
 
   const key = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
   const todayKey = () => key(new Date(now()));
@@ -249,6 +292,14 @@
   }
 
   /* ---------- NOTEBOOK ---------- */
+  function accountRows() {
+    if (!cloudOn) return '';
+    const pk = myCode() ? pickOf(myCode()) : null;
+    if (!pk) return `<button class="row" data-act="signin"><div class="t">Sign in<small>Keep your progress on any phone or computer</small></div><span class="p">→</span></button>`;
+    const name = localStorage.getItem(NAME_KEY) || 'You';
+    return `<div class="row acct"><div class="el" style="--c:${colourOf(pk.el)}"><div class="n"><span>${pk.el.z}</span></div><div class="s">${pk.el.sym}</div></div><div class="t">${esc(name)}<small>Login: ${esc(name)} · ${pk.el.sym} · ${esc(pk.cs[1])}</small></div></div>
+        <div class="seg acct-acts"><button data-act="rekey">Change element & case</button><button data-act="signout">Switch account</button></div>`;
+  }
   const NB_TABS = [['notes', 'Notes'], ['units', 'Units'], ['reactions', 'Reactions'], ['settings', 'Settings']];
   let nbTab = 'notes';
   function notebook() {
@@ -266,6 +317,7 @@
     if (nbTab === 'reactions') body = `<p class="note nb-intro">Balance the equation: pick the elements of the cause of action and leave out the red herrings.</p>
       <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>`;
     if (nbTab === 'settings') body = `<div class="rows" style="margin-top:14px">
+        ${accountRows()}
         <button class="row" data-act="share"><div class="t">Share Duo Logo<small>Send a link to the app</small></div><span class="p">↗</span></button>
         <button class="row" data-act="welcome"><div class="t">How the course works<small>Where to start, and the order of lessons</small></div></button>
         <button class="row" data-act="sound"><div class="t">Sound<small>Pings, fizzes and the odd Geiger click</small></div><span class="p">${soundOn() ? 'ON' : 'OFF'}</span></button>
@@ -600,7 +652,7 @@
   /* ---------- events ---------- */
   const go = h => { if (location.hash === h) route(); else location.hash = h; };
   // Actions that make their own sound (or none): everything else gets a soft tick.
-  const SELF_SOUNDING = new Set(['choose', 'tf', 'slot', 'bucket', 'pair', 'simcheck', 'rxin', 'rxcheck', 'nextcard', 'prev', 'sound', 'close', 'nbtab']);
+  const SELF_SOUNDING = new Set(['choose', 'tf', 'slot', 'bucket', 'pair', 'simcheck', 'rxin', 'rxcheck', 'nextcard', 'prev', 'sound', 'close', 'nbtab', 'l-el', 'l-case']);
   document.addEventListener('click', ev => {
     const link = ev.target.closest('a[href^="#"]');
     if (link) sfx(link.closest('.tabs') ? 'tab' : 'tick');
@@ -678,6 +730,16 @@
     if (a === 'rxcheck') return rxCheck();
     if (a === 'rxagain') return startReaction(P.id);
     if (a === 'share') return shareApp();
+    if (a === 'l-el') { W.el = t.dataset.id; sfx('place'); return loginReady(); }
+    if (a === 'l-case') { W.cs = t.dataset.id; sfx('place'); return loginReady(); }
+    if (a === 'l-go') return loginGo();
+    if (a === 'l-create') { const p = W.pending; if (p) createLab(p.name, p.code, p.note); return; }
+    if (a === 'l-cancel') { app.className = ''; return route(); }
+    if (a === 'l-local') { localStorage.setItem(LOCAL_KEY, '1'); app.className = ''; return route(); }
+    if (a === 'signin') { localStorage.removeItem(LOCAL_KEY); return login(); }
+    if (a === 'rekey') { overlay.innerHTML = ''; return login('rekey'); }
+    if (a === 'signout') return modal(`<p class="eyebrow">Account</p><h2>Switch account?</h2><p class="note">Your progress is saved to your lab. Open it again any time with your name, element and case.</p><button class="btn" data-act="signout-yes" style="width:100%;margin:0">Switch account</button>`);
+    if (a === 'signout-yes') return signOut();
     if (a === 'copylink') { const ta = overlay.querySelector('.share-url'); ta.select(); (navigator.clipboard ? navigator.clipboard.writeText(ta.value) : Promise.reject()).catch(() => document.execCommand('copy')).finally(() => { overlay.querySelector('.copied').hidden = false; }); return; }
     if (a === 'export') return exportBackup();
     if (a === 'import') return importBackup();
@@ -694,9 +756,89 @@
     if (e.key === 'ArrowRight') { sfx('page'); step(1); } else if (e.key === 'ArrowLeft' && P.card) { sfx('page'); step(-1); }
   });
 
+  /* ---------- Who's in the lab? (sign-in) ---------- */
+  let W = { mode: 'in', el: '', cs: '' };
+  function login(mode = 'in', msg = '') {
+    P = null; W = { mode, el: '', cs: '' };
+    const rekey = mode === 'rekey';
+    app.className = 'login-mode';
+    app.innerHTML = `<div class="login">
+      <div class="l-head"><img src="icon.svg" alt="" width="52" height="52"><h1>${rekey ? 'New element & case' : 'Who\'s in the lab?'}</h1></div>
+      <p class="l-sub">${rekey ? 'Pick a new element and case for your login.' : 'Your name, an element and a case make up your login, so your progress follows you to any phone or computer.'}</p>
+      <input class="l-input" id="l-name" placeholder="Your name" autocomplete="off" value="${esc(localStorage.getItem(NAME_KEY) || '')}" ${rekey ? 'disabled' : ''}>
+      <p class="sect l-step">Your element</p>
+      <div class="l-els">${PICK_ELEMENTS.map(id => { const e = D.elements.find(x => x.id === id); return `<button class="l-el" data-act="l-el" data-id="${id}" style="--c:${colourOf(e)}"><span class="sym">${e.sym}</span><small>${esc(GROUP[e.block] ? GROUP[e.block].short : '')}</small></button>`; }).join('')}</div>
+      <p class="sect l-step">Your case</p>
+      <div class="l-cases">${PICK_CASES.map(([id, n, sub]) => `<button class="l-case" data-act="l-case" data-id="${id}"><strong>${n}</strong><small>${sub}</small></button>`).join('')}</div>
+      ${msg ? `<p class="l-err">${msg}</p>` : ''}
+      <button class="btn l-go" data-act="l-go" disabled>${rekey ? 'Save' : 'Open my lab'}</button>
+      ${rekey ? '<button class="link" data-act="l-cancel">Cancel</button>' : '<button class="link" data-act="l-local">Not now: keep my progress on this device only</button>'}
+    </div>`;
+    const f = app.querySelector('#l-name');
+    f.addEventListener('input', loginReady);
+    f.addEventListener('keydown', e => { if (e.key === 'Enter') f.blur(); });
+  }
+  function loginReady() {
+    const name = app.querySelector('#l-name')?.value.trim();
+    app.querySelectorAll('.l-el').forEach(x => x.classList.toggle('on', x.dataset.id === W.el));
+    app.querySelectorAll('.l-case').forEach(x => x.classList.toggle('on', x.dataset.id === W.cs));
+    const go = app.querySelector('[data-act="l-go"]'); if (go) go.disabled = !(name && W.el && W.cs);
+  }
+  const pickWords = pk => `<b>${pk.el.sym}</b> and <b>${esc(pk.cs[1])}</b>`;
+  function loginError(msg) {
+    let e = app.querySelector('.l-err'); if (!e) { e = document.createElement('p'); e.className = 'l-err'; app.querySelector('[data-act="l-go"]').before(e); } e.innerHTML = msg;
+  }
+  const notSetUp = err => err && err.status === 404;
+  async function loginGo() {
+    const name = app.querySelector('#l-name').value.trim(); if (!name || !W.el || !W.cs) return;
+    const code = pickCode(name, W.el, W.cs), pk = pickOf(code), mode = W.mode;
+    const btn = app.querySelector('[data-act="l-go"]'); btn.disabled = true; btn.textContent = 'Opening…';
+    try {
+      const res = await rpc('duologo_load', { p_id: await codeId(code) });
+      if (mode === 'rekey') {
+        if (res) return login('rekey', 'That one\'s taken. Try a different pair?');
+        return createLab(name, code, `Done. Next time, pick ${pickWords(pk)}.`);
+      }
+      if (res) {
+        localStorage.setItem(CODE_KEY, code); localStorage.setItem(NAME_KEY, res.name || name); localStorage.removeItem(LOCAL_KEY);
+        S = { ...defaults(), ...(res.state || {}) };
+        try { localStorage.setItem(STORE, JSON.stringify(S)); } catch { /* ignore */ }
+        sfx('discover'); app.className = ''; if (location.hash !== '#table') history.replaceState(null, '', '#table'); return route();
+      }
+      btn.disabled = false; btn.textContent = 'Open my lab';
+      const carry = PATH.some(isDone);
+      modal(`<p class="eyebrow">New lab</p><h2>New lab for ${esc(name)}?</h2><p class="note">There's no lab yet for ${esc(name)} with ${pickWords(pk)}.${carry ? ' A new one brings the progress already on this device.' : ''} Already have one? Tap Stay and check your element and case.</p>
+        <button class="btn" data-act="l-create" style="width:100%;margin:0 0 8px">Start my lab</button><button class="btn ghost" data-act="close" style="width:100%;margin:0">Stay</button>`);
+      W.pending = { name, code, note: `Your lab opens with ${pickWords(pk)}. Pick them on any device.` };
+    } catch (err) {
+      btn.disabled = false; btn.textContent = mode === 'rekey' ? 'Save' : 'Open my lab';
+      loginError(notSetUp(err) ? 'Sign-in isn\'t switched on yet (the database still needs its one-time setup). You can carry on below and sign in later from Notebook → Settings.' : 'Couldn\'t reach the lab. Are you online?');
+    }
+  }
+  async function createLab(name, code, note) {
+    try {
+      S._updated = Date.now();
+      const ok = await rpc('duologo_save', { p_id: await codeId(code), p_name: name, p_state: S, p_create: true });
+      if (!ok) { overlay.innerHTML = ''; return loginError('That one\'s taken. Try a different pair?'); }
+      localStorage.setItem(CODE_KEY, code); localStorage.setItem(NAME_KEY, name); localStorage.removeItem(LOCAL_KEY);
+      save(); app.className = ''; overlay.innerHTML = '';
+      route();
+      sfx('discover');
+      modal(`<p class="eyebrow">Signed in</p><h2>Welcome, ${esc(name)}</h2><p class="note">${note}</p><button class="btn" data-act="close" style="width:100%;margin:0">Got it</button>`);
+    } catch (err) { overlay.innerHTML = ''; loginError(notSetUp(err) ? 'Sign-in isn\'t switched on yet. You can carry on on this device for now.' : 'Couldn\'t reach the lab. Are you online?'); }
+  }
+  async function signOut() {
+    await cloudPush(true);
+    localStorage.removeItem(CODE_KEY);
+    S = defaults();
+    try { localStorage.setItem(STORE, JSON.stringify(S)); } catch { /* ignore */ }
+    overlay.innerHTML = ''; login();
+  }
+
   /* ---------- router ---------- */
   function route() {
     overlay.innerHTML = '';
+    if (cloudOn && !myCode() && !localStorage.getItem(LOCAL_KEY)) return login();
     window.scrollTo(0, 0);
     const h = location.hash.slice(1);
     if (h.startsWith('unit-')) return startUnit(h.slice(5));
@@ -710,6 +852,7 @@
   }
   window.addEventListener('hashchange', route);
   route();
+  cloudPull();
 
   if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(r => r.update()).catch(() => {});
 })();

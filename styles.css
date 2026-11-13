@@ -266,6 +266,31 @@ a { color: inherit; }
 .nb-intro { margin: 14px 16px 6px; }
 .nb-foot { margin: 10px 16px 16px; font-size: 10.5px; color: var(--muted); }
 
+/* ---------- sign-in ---------- */
+.login { padding: 34px 16px 40px; }
+.l-head { display: flex; align-items: center; gap: 12px; }
+.l-head img { border-radius: 11px; }
+.l-head h1 { font-size: 26px; line-height: 1.15; }
+.l-sub { font-size: 14.5px; line-height: 1.45; margin: 12px 0 16px; color: var(--muted); }
+.l-input { width: 100%; font: inherit; font-size: 17px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.l-input:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+.l-step { margin: 20px 0 8px; }
+.l-els { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.l-el { position: relative; height: 66px; border-radius: 4px; border: 1.5px dashed var(--c); color: var(--c); background: #fff; font-family: var(--mono); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; transition: transform .15s; }
+.l-el .sym { font-size: 22px; font-weight: 600; }
+.l-el small { font-size: 9px; letter-spacing: .5px; opacity: .8; }
+.l-el.on { background: var(--c); color: #fff; border-style: solid; transform: scale(1.04); box-shadow: 0 0 0 2px var(--ink); }
+.l-cases { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.l-case { text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.l-case strong { display: block; font-size: 14.5px; font-style: italic; }
+.l-case small { display: block; font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 2px; }
+.l-case.on { background: var(--hi); border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.l-err { color: var(--bad); background: var(--badbg); font-size: 13.5px; line-height: 1.45; padding: 10px 12px; border-radius: 6px; margin: 16px 0 0; }
+.btn.l-go { width: 100%; margin: 20px 0 0; }
+.login .link { margin-top: 14px; }
+.acct { background: #fbfde9; }
+.acct-acts { margin: 6px 0 12px; }
+
 /* ---------- wide screens (desktop browsers) ---------- */
 @media (min-width: 900px) {
   :root { --nav: 220px; }
@@ -306,6 +331,9 @@ a { color: inherit; }
   /* lists, notebook, half-life */
   .sect { margin: 26px 24px 8px; font-size: 11px; }
   .rows, .chap, .outline, .empty-msg { margin-left: 24px; margin-right: 24px; }
+  .login .sect { margin-left: 0; margin-right: 0; }
+  .login { max-width: 640px; margin: 0 auto; padding: 60px 24px; } .l-head h1 { font-size: 32px; } .l-sub { font-size: 16px; }
+  .l-el { height: 84px; cursor: pointer; } .l-el .sym { font-size: 28px; } .l-case { cursor: pointer; padding: 12px 14px; } .l-case strong { font-size: 16px; }
   .seg { margin: 18px 24px 8px; } .seg button { font-size: 12.5px; padding: 11px 6px; }
   .row { padding: 10px 14px; } .row .t { font-size: 15.5px; } .row .t small { font-size: 11px; }
   .row .el { width: 44px; height: 44px; } .row .el .s { font-size: 16px; margin-top: 6px; }

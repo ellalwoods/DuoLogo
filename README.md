@@ -35,9 +35,15 @@ python3 -m http.server 8000
 
 Same as DuoVino: **Settings → Pages → Deploy from a branch → `main` / `(root)`**, then open `https://ellalwoods.github.io/DuoLogo/` in Safari and **Share → Add to Home Screen**.
 
-## Your progress
+## Your progress and signing in
 
-Progress is stored only in the browser on that device. Use **Notebook → Settings → Export backup** now and then, and **Import backup** to restore it on a new phone.
+**Sign in (as in DuoVino):** the first screen asks *Who's in the lab?* Your **name**, one of eight **elements** and one of eight **cases** make up your login (for example *Ella · Or · IceTV*). Your progress then syncs to a small Supabase database, so it follows you to any phone or computer: sign in with the same three picks. The login itself is never stored; the app sends only a SHA-256 hash of it, the table can't be read directly, and the app can only call two functions (`duologo_load`, `duologo_save`). It uses the same Supabase project as DuoVino, with its own `duologo_` table.
+
+- **One-time setup:** in the Supabase dashboard open **SQL Editor → New query**, paste the whole of [`supabase/duologo.sql`](supabase/duologo.sql) and click **Run**. Until then, the sign-in screen says sign-in isn't switched on yet, and *Not now* keeps progress on the device.
+- **Notebook → Settings** shows who you're signed in as, with **Change element & case** and **Switch account**. If you chose *Not now*, there's a **Sign in** row instead.
+- To turn sign-in off entirely, blank the `url` in `cloud-config.js`.
+
+Progress is also kept in the browser, so it works offline and syncs when you're back online. **Notebook → Settings → Export backup** still works as an extra copy.
 
 ## Files
 
@@ -51,6 +57,7 @@ Progress is stored only in the browser on that device. Use **Notebook → Settin
 | `unit-tm-basics.js`, `unit-tm-registration.js`, `unit-tm-infringement.js` | Trade marks 2.1–2.3, 2.4–2.6 and 2.7–2.11 |
 | `unit-passing-off.js` | Passing off & the ACL 3.1–3.4 |
 | `reactions.js` | Reaction questions (passing off; copyright infringement) |
+| `cloud-config.js`, `supabase/duologo.sql` | Sign-in: the Supabase project to sync with, and the one-time database setup |
 | `app.js` | Screens, lesson player, question formats, half-life spaced repetition, sound, backup |
 | `sw.js`, `manifest.webmanifest`, `icon.svg`, `icon-*.png` | Offline support and home-screen install (the PNGs are for iPhone and Android, which don't use SVG icons) |
 
