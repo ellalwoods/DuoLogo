@@ -659,7 +659,8 @@
     const t = ev.target.closest('[data-act]');
     if (!t) return;
     if (!SELF_SOUNDING.has(t.dataset.act) && !t.disabled) sfx('tick');
-    if (t.dataset.act === 'close' && ev.target.closest('[data-stop]') && !ev.target.closest('.x')) return;
+    // A tap inside a sheet only closes it via a close button (✕, Stay, Got it), not by bubbling up to the backdrop.
+    if (t.dataset.act === 'close' && t.classList.contains('scrim') && ev.target.closest('[data-stop]')) return;
     const a = t.dataset.act;
     if (a === 'close') { overlay.innerHTML = ''; return; }
     if (a === 'cell') return cellSheet(t.dataset.id);
