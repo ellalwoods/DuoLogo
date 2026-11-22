@@ -300,7 +300,7 @@
     return `<div class="row acct"><div class="el" style="--c:${colourOf(pk.el)}"><div class="n"><span>${pk.el.z}</span></div><div class="s">${pk.el.sym}</div></div><div class="t">${esc(name)}<small>Login: ${esc(name)} · ${pk.el.sym} · ${esc(pk.cs[1])}</small></div></div>
         <div class="seg acct-acts"><button data-act="rekey">Change element & case</button><button data-act="signout">Switch account</button></div>`;
   }
-  const NB_TABS = [['notes', 'Notes'], ['units', 'Units'], ['reactions', 'Reactions'], ['settings', 'Settings']];
+  const NB_TABS = [['notes', 'Notes'], ['units', 'Units'], ['reactions', 'Reactions'], ['job', 'Job'], ['settings', 'Settings']];
   let nbTab = 'notes';
   function notebook() {
     const outlines = D.elements.filter(e => S.items[e.id] && D.units[e.id] && D.units[e.id].outline);
@@ -314,6 +314,8 @@
       return `<details class="chap" ${els.includes(nextElement()) ? 'open' : ''}><summary><span>${ch.n} · ${esc(ch.name)}</span><span class="mono">${f}/${els.length}</span></summary>
         <div class="units">${els.map(e => `<button class="row ${e === nextElement() ? 'path-next' : ''}" data-act="cell" data-id="${e.id}">${tile(e, { tag: 'div', small: true })}<div class="t">${esc(e.name)}<small>Unit ${e.unit} · ${status(e)}</small></div></button>`).join('')}</div></details>`;
     }).join('') + '<p class="note mono nb-foot">Lessons unlock one at a time in element-number order. Units still being written are skipped.</p>';
+    if (nbTab === 'job') body = `<p class="note nb-intro">Practice for the job, outside the course: tasks, habits and how to approach them. Your results here don't change your course progress.</p>
+      <div class="rows">${(D.jobs || []).map(j => { const r = S.jobs && S.jobs[j.id]; return `<a class="row" style="text-decoration:none" href="#${j.id}"><div class="el" style="--c:${D.graphite}"><div class="s">Jb</div></div><div class="t">${esc(j.title)}<small>${esc(j.sub || '')} · ${r ? 'best ' + r.best + '%' : 'not yet tried'}</small></div><span class="p">▸</span></a>`; }).join('')}</div>`;
     if (nbTab === 'reactions') body = `<p class="note nb-intro">Balance the equation: pick the elements of the cause of action and leave out the red herrings.</p>
       <div class="rows">${D.reactions.map(r => `<a class="row" style="text-decoration:none" href="#${r.id}"><div class="el" style="--c:${GROUP[r.group].colour}"><div class="s">→</div></div><div class="t">Reaction: ${r.product.toLowerCase()}<small>${S.items[r.id] ? Math.round(recall(S.items[r.id]) * 100) + '% recall' : 'not yet run'}</small></div><span class="p">▸</span></a>`).join('')}</div>`;
     if (nbTab === 'settings') body = `<div class="rows" style="margin-top:14px">
@@ -395,7 +397,7 @@
   const lesson = () => P.u.lessons[P.L];
   const allCards = () => P.u.lessons.reduce((n, l) => n + l.cards.length, 0);
   const cardNo = () => P.u.lessons.slice(0, P.L).reduce((n, l) => n + l.cards.length, 0) + P.card + 1;
-  const qList = () => P.kind === 'unit' ? lesson().questions : P.questions;
+  const qList = () => P.kind === 'unit' || P.kind === 'job' ? lesson().questions : P.questions;
 
   function shell(label, inner, foot, pct) {
     app.className = 'player-mode';
@@ -471,7 +473,7 @@
     if (q.type === 'sort') { P.sort = { items: shuffle(q.items), k: 0, placed: [] }; body += `<div class="sort">${sortUI(q)}</div>`; }
     if (q.type === 'match') { P.match = { left: shuffle(q.pairs.map((_, i) => i)), right: shuffle(q.pairs.map((_, i) => i)), sel: null, done: [], miss: 0 }; body += `<div class="matchw">${matchUI(q)}</div>`; }
     if (q.type === 'similarity') { body += `<div class="simi"><div class="read" id="sv">50</div><input type="range" min="0" max="100" value="50" id="sr" aria-label="Similarity reading"><div class="ends"><span>${esc(q.ends[0])}</span><span>${esc(q.ends[1])}</span></div><div class="gauge" hidden><div class="zone" style="left:${q.lo}%;width:${q.hi - q.lo}%"></div><div class="pin"></div></div></div>`; foot = '<button class="btn" data-act="simcheck">Take the reading</button>'; }
-    const label = P.kind === 'unit' ? `<span class="sym">${P.e.sym}</span> · Lesson ${String.fromCharCode(65 + P.L)} tests · ${P.i + 1} / ${list.length}` : `Stabilise · ${P.i + 1} / ${list.length}`;
+    const label = P.kind === 'unit' || P.kind === 'job' ? `<span class="sym">${P.e.sym}</span> · Lesson ${String.fromCharCode(65 + P.L)} tests · ${P.i + 1} / ${list.length}` : `Stabilise · ${P.i + 1} / ${list.length}`;
     app.innerHTML = shell(label, body, foot, 100 * P.i / list.length);
     window.scrollTo(0, 0);
     if (q.type === 'similarity') { const r = app.querySelector('#sr'); r.addEventListener('input', () => { app.querySelector('#sv').textContent = r.value; }); }
@@ -511,6 +513,7 @@
     if (P.i < qList().length) return renderQ();
     if (P.kind === 'review') return finishReview();
     if (P.L < P.u.lessons.length - 1) { P.L++; P.card = 0; return interlude(); }
+    if (P.kind === 'job') return finishJob();
     finishUnit();
   }
   function interlude() {
@@ -537,6 +540,27 @@
       <p class="note">Half-life: ${fmtDays(halfLife(S.items[P.id]))}. It starts to decay now; Half-life will tell you when to stabilise it.</p>
       <p class="note">Your notes in the Notebook have a new entry.</p>
     </div>`, `<a class="btn" href="#table">Back to the Table</a>`, 100);
+  }
+
+  /* ---------- ON THE JOB: practice lessons, outside the course order (no Table, no unit progress) ---------- */
+  function startJob(id) {
+    const j = (D.jobs || []).find(x => x.id === id);
+    if (!j) { location.hash = '#notebook'; return; }
+    P = { kind: 'job', id, e: { sym: 'Jb', name: j.title, block: 'job' }, u: j, L: 0, phase: 'cards', card: 0, i: 0, correct: 0, total: 0, misses: [] };
+    app.style.setProperty('--g', D.graphite);
+    renderCard();
+  }
+  function finishJob() {
+    const pct = Math.round(100 * P.correct / P.total);
+    S.jobs = S.jobs || {};
+    const rec = S.jobs[P.id] || { best: 0, plays: 0 };
+    S.jobs[P.id] = { best: Math.max(rec.best, pct), plays: rec.plays + 1, done: now() };
+    save(); buzz([20, 60, 20]); sfx('ok');
+    app.innerHTML = shell(`<span class="sym">Jb</span> · on the job`, `<div class="result">
+      <p class="eyebrow">Practice complete</p><h2>${esc(P.u.title)}</h2>
+      <div class="score">${pct}%</div><p class="mono" style="font-size:11px">${P.correct} of ${P.total} tests passed</p>
+      <p class="note">Practice doesn't touch your course progress, the Table or Half-life.</p>
+    </div>`, `<a class="btn" href="#notebook">Back to On the job</a>`, 100);
   }
 
   /* ---------- STABILISE: review decaying elements ---------- */
@@ -666,7 +690,7 @@
     if (a === 'cell') return cellSheet(t.dataset.id);
     if (a === 'welcome') return welcome();
     if (a === 'welcome-go' || a === 'welcome-close') { S.seenWelcome = true; save(); overlay.innerHTML = ''; if (a === 'welcome-go') go('#unit-' + PATH[0].id); return; }
-    if (a === 'quit') { const back = P && (P.kind === 'rx' || P.kind === 'review') ? '#halflife' : '#table'; P = null; go(back); return; }
+    if (a === 'quit') { const back = P && (P.kind === 'rx' || P.kind === 'review') ? '#halflife' : P && P.kind === 'job' ? '#notebook' : '#table'; if (P && P.kind === 'job') nbTab = 'job'; P = null; go(back); return; }
     if (a === 'go') { overlay.innerHTML = ''; go(t.dataset.h); return; }
     if (a === 'deeper') { const d = t.nextElementSibling; d.hidden = !d.hidden; t.textContent = d.hidden ? 'TAP ▸ GO DEEPER' : 'TAP ▾ LESS'; t.setAttribute('aria-expanded', String(!d.hidden)); return; }
     if (a === 'nextcard') { sfx('page'); return step(1); }
@@ -844,6 +868,7 @@
     const h = location.hash.slice(1);
     if (h.startsWith('unit-')) return startUnit(h.slice(5));
     if (h.startsWith('review-')) return startReview([h.slice(7)]);
+    if (h.startsWith('job-')) return startJob(h);
     if (h.startsWith('rx-')) return startReaction(h);
     if (h === 'stabilise') return startReview(dueList().map(([id]) => id));
     P = null;
